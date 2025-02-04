@@ -16,5 +16,22 @@ class ClienteModel extends Model
     {
         return $this->where('CORREO_ELECTRONICO', $email)->first();
     }
+    
+     // Método para obtener clientes con su rol
+     public function obtenerClientesConRol()
+     {
+         return $this->select('cliente.*, rol.ROL')
+                     ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
+                     ->findAll();
+     }
+ 
+     // Método para filtrar por rol
+     public function filtrarPorRol($rolId)
+     {
+         return $this->select('cliente.*, rol.ROL')
+                     ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
+                     ->where('cliente.ID_ROL', $rolId)
+                     ->findAll();
+     }
 }
 ?>

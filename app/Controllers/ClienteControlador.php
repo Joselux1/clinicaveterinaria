@@ -22,7 +22,7 @@ class ClienteControlador extends BaseController
         $data['clientes'] = $query->paginate($perPage); // Obtener clientes paginados
         $data['pager'] = $clienteModel->pager; // Pasar el objeto del paginador a la vista
         $data['nombre'] = $nombre ?? ''; // Asegurar que se pase a la vista
-    
+        $data['queryString'] = !empty($_GET) ? '?' . http_build_query($_GET) : '';
         return view('lista_cliente', $data); // Cargar la vista con los datos
     }
     
@@ -80,4 +80,91 @@ class ClienteControlador extends BaseController
         $clienteModel->delete($id); // Eliminar cliente
         return redirect()->to('/clientes')->with('success', 'Cliente eliminado correctamente.');
     }
+    public function register()
+    {
+        return view('register');
+    }
+
+    public function Registro()
+    {   
+
+      
+        helper(['form', 'url']);
+
+        $rules = [
+            'NOMBRE' => 'required|min_length[3]|max_length[50]',
+            'CORREO_ELECTRONICO' => 'required|valid_email|is_unique[cliente.CORREO_ELECTRONICO]', // Tabla corregida
+            'CONTRASEÑA' => 'required|min_length[6]', // Se cambia a minúscula para coincidir con el input del formulario
+            'password_confirm' => 'required|matches[CONTRASEÑA]', // Debe coincidir con el input del formulario
+        ];
+
+        if (!$this->validate($rules)) {
+            return view('register', [
+                'validation' => $this->validator,
+            ]);
+        }
+
+        $clienteModel = new ClienteModel();
+        $clienteModel->save([
+            'NOMBRE' => $this->request->getPost('NOMBRE'),
+            'CORREO_ELECTRONICO' => $this->request->getPost('CORREO_ELECTRONICO'),
+            'CONTRASEÑA' => password_hash($this->request->getPost('CONTRASEÑA'), PASSWORD_DEFAULT), // Encriptación correcta
+        ]);
+
+        return redirect()->to('/login')->with('success', 'Usuario registrado correctamente.');
+    }
+
+    public function login()
+    {
+        return view('/login');
+    }
+
+    public function InicioSesion()
+    {
+
+        helper(['form', 'url']);
+        $session = session();
+
+        $rules = [
+            'CORREO_ELECTRONICO' => 'required|valid_email',
+            'CONTRASEÑA' => 'required', // Minúscula para coincidir con el input
+        ];
+
+        if (!$this->validate($rules)) {
+            return view('login', [
+                'validation' => $this->validator,
+            ]);
+        }
+
+        $clienteModel = new ClienteModel();
+        $cliente = $clienteModel->where('CORREO_ELECTRONICO', $this->request->getPost('CORREO_ELECTRONICO'))->first();
+
+        if ($cliente && password_verify($this->request->getPost('CONTRASEÑA'), $cliente['CONTRASEÑA'])) {
+            $session->set([
+                'PK_ID_CLIENTE' => $cliente['PK_ID_CLIENTE'],
+                'NOMBRE' => $cliente['NOMBRE'],
+                'CORREO_ELECTRONICO' => $cliente['CORREO_ELECTRONICO'],
+                'isLoggedIn' => true,
+            ]);
+
+            return redirect()->to('/dashboard')->with('success', 'Inicio de sesión exitoso.');
+        }
+
+        return redirect()->to('/login')->with('error', 'Correo o contraseña incorrectos.');
+    }
+
+    public function logout()
+    {
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/login')->with('success', 'Has cerrado sesión correctamente.');
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
 }
+
+    
+

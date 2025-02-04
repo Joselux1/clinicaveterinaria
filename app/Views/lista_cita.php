@@ -22,11 +22,32 @@
     <a href="<?= base_url('citas/crear') ?>" class="btn btn-primary mb-3">Crear Cita</a>
 
     <form method="GET" action="<?= base_url('citas') ?>" class="mb-3">
-        <div class="container d-flex">
+    <div class="container">
             <div class="input-group w-auto">
-            <input type="text" name="DIAGNOSTICO" class="form-control" placeholder="Diagnóstico" value="<?= isset($diagnostico) ? esc($diagnostico) : '' ?>">
-            <button type="submit" class="btn btn-primary">Buscar</button>
-            </div>
+            <tbody>
+                <tr>
+                    <!-- Filtro por Fecha -->
+                    <td><input type="text" name="FECHA" class="form-control" placeholder="Buscar por Fecha" value="<?= isset($fecha) ? esc($fecha) : '' ?>"></td>
+
+                    <!-- Filtro por Diagnóstico -->
+                    <td><input type="text" name="DIAGNOSTICO" class="form-control" placeholder="Buscar por Diagnóstico" value="<?= esc($diagnostico ?? '') ?>"></td>
+
+                    <!-- Filtro por Tratamiento -->
+                    <td><input type="text" name="TRATAMIENTO" class="form-control" placeholder="Buscar por Tratamiento" value="<?= esc($tratamiento ?? '') ?>"></td>
+
+                    <!-- Filtro por ID Veterinario -->
+                    <td><input type="text" name="VETERINARIO_ID" class="form-control" placeholder="Buscar por ID Veterinario" value="<?= esc($veterinario_id ?? '') ?>"></td>
+
+                    <!-- Filtro por ID Mascota -->
+                    <td><input type="text" name="MASCOTA_ID" class="form-control" placeholder="Buscar por ID Mascota" value="<?= esc($mascota_id ?? '') ?>"></td>
+
+                    <!-- Filtro por Fecha Baja -->
+                    <td><input type="text" name="FECHA_BAJA" class="form-control" placeholder="Buscar por Fecha Baja" value="<?= esc($fecha_baja ?? '') ?>"></td>
+
+                    <!-- Botón de Buscar -->
+                    <td><button type="submit" class="btn btn-primary">Buscar</button></td>
+                </tr>
+            </tbody>
         </div>
     </form>
 
