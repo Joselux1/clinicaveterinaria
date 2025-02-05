@@ -64,3 +64,7 @@ $routes->get(from: 'dashboard', to: 'ClienteControlador::dashboard'); // Perfil 
 //ROL
 $routes->get('rol', 'RolControlador::index'); // Muestra la lista de clientes con roles
 $routes->post('RolControlador/filtrarPorRol', 'RolControlador::filtrarPorRol'); // Filtra clientes según el rol seleccionado
+
+//agregar usuario 
+$routes->post('/agregar_usuario', 'ClienteControlador::AgregarUsuario'); // Procesa el formulario y agrega el usuario
+

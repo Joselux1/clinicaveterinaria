@@ -127,7 +127,7 @@ class ClienteControlador extends BaseController
 
         $rules = [
             'CORREO_ELECTRONICO' => 'required|valid_email',
-            'CONTRASEÑA' => 'required', // Minúscula para coincidir con el input
+            'CONTRASEÑA' => 'required', 
         ];
 
         if (!$this->validate($rules)) {
@@ -164,6 +164,38 @@ class ClienteControlador extends BaseController
     {
         return view('dashboard');
     }
+
+
+    public function AgregarUsuario()
+    {   
+        helper(['form', 'url']);
+    
+        $rules = [
+            'NOMBRE' => 'required|min_length[3]|max_length[50]',
+            'CORREO_ELECTRONICO' => 'required|valid_email|is_unique[cliente.CORREO_ELECTRONICO]',
+          
+         
+        ];
+    
+     
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('validation', $this->validator);
+        }
+    
+        // Guardar el nuevo usuario
+        $clienteModel = new ClienteModel();
+        $clienteModel->save([
+            'NOMBRE' => $this->request->getPost('NOMBRE'),
+            'CORREO_ELECTRONICO' => $this->request->getPost('CORREO_ELECTRONICO'),
+           
+            
+        ]);
+    
+     
+        return redirect()->to('clientes')->with('success', 'Usuario agregado correctamente.');
+    }
+    
+
 }
 
     

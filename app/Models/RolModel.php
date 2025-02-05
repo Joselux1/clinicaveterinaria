@@ -8,7 +8,7 @@ class RolModel extends Model
 {
     protected $table = 'rol';  // El nombre de la tabla
     protected $primaryKey = 'PK_ID_ROL';  // Clave primaria de la tabla
-    protected $allowedFields = ['NOMBRE', 'CONTRASEÑA', 'CORREO_ELECTRONICO', 'FECHA_BAJA', 'ID_ROL'];  // Campos que se pueden insertar o actualizar
+    protected $allowedFields = ['PK_ID_ROL','ROL'];  // Campos que se pueden insertar o actualizar
     protected $useTimestamps = false;  
 
     // Si deseas agregar más métodos como 'findByName'

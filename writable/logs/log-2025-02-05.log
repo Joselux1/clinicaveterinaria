@@ -1,0 +1,296 @@
+CRITICAL - 2025-02-05 15:16:06 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+[Method: GET, Route: clientes]
+in APPPATH\Views\lista_cliente.php on line 5055.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente', [], true)
+ 3 APPPATH\Controllers\ClienteControlador.php(26): view('lista_cliente', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 15:20:28 --> ParseError: syntax error, unexpected end of file
+[Method: GET, Route: clientes]
+in APPPATH\Views\lista_cliente.php on line 5044.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente', [], true)
+ 3 APPPATH\Controllers\ClienteControlador.php(26): view('lista_cliente', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 15:20:40 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+[Method: GET, Route: clientes]
+in APPPATH\Views\lista_cliente.php on line 5044.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente', [], true)
+ 3 APPPATH\Controllers\ClienteControlador.php(26): view('lista_cliente', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 15:21:53 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+[Method: GET, Route: clientes]
+in APPPATH\Views\lista_cliente.php on line 5032.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente', [], true)
+ 3 APPPATH\Controllers\ClienteControlador.php(26): view('lista_cliente', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 15:21:56 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+[Method: GET, Route: clientes]
+in APPPATH\Views\lista_cliente.php on line 5032.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente', [], true)
+ 3 APPPATH\Controllers\ClienteControlador.php(26): view('lista_cliente', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:08:20 --> ErrorException: Undefined variable $cliente
+[Method: GET, Route: mascotas]
+in APPPATH\Views\lista_mascota.php on line 601.
+ 1 APPPATH\Views\lista_mascota.php(601): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php', 601)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_mascota', [], true)
+ 5 APPPATH\Controllers\MascotaControlador.php(24): view('lista_mascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MascotaControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MascotaControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:08:25 --> ErrorException: Undefined variable $cliente
+[Method: GET, Route: mascotas]
+in APPPATH\Views\lista_mascota.php on line 601.
+ 1 APPPATH\Views\lista_mascota.php(601): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php', 601)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_mascota', [], true)
+ 5 APPPATH\Controllers\MascotaControlador.php(24): view('lista_mascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MascotaControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MascotaControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:09:09 --> ErrorException: Undefined variable $cliente
+[Method: GET, Route: mascotas]
+in APPPATH\Views\lista_mascota.php on line 601.
+ 1 APPPATH\Views\lista_mascota.php(601): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php', 601)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_mascota', [], true)
+ 5 APPPATH\Controllers\MascotaControlador.php(24): view('lista_mascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MascotaControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MascotaControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-05 16:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-05 16:14:14 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: citas]
+in APPPATH\Views\lista_cita.php on line 603.
+ 1 APPPATH\Views\lista_cita.php(603): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cita.php', 603)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cita.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cita', [], true)
+ 5 APPPATH\Controllers\CitasControlador.php(30): view('lista_cita', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-05 16:17:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-05 16:19:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "lista_medicamento.php"
+[Method: GET, Route: medicamentos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('lista_medicamento.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_medicamento', [], true)
+ 3 APPPATH\Controllers\MedicamentoControlador.php(25): view('lista_medicamento', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MedicamentoControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MedicamentoControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:20:13 --> ErrorException: Undefined variable $mascota
+[Method: GET, Route: medicamentos]
+in APPPATH\Views\lista_medicamento.php on line 601.
+ 1 APPPATH\Views\lista_medicamento.php(601): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $mascota', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php', 601)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_medicamento', [], true)
+ 5 APPPATH\Controllers\MedicamentoControlador.php(25): view('lista_medicamento', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MedicamentoControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MedicamentoControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:20:21 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: medicamentos]
+in APPPATH\Views\lista_medicamento.php on line 601.
+ 1 APPPATH\Views\lista_medicamento.php(601): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php', 601)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_medicamento', [], true)
+ 5 APPPATH\Controllers\MedicamentoControlador.php(25): view('lista_medicamento', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MedicamentoControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MedicamentoControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:20:47 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: medicamentos]
+in APPPATH\Views\lista_medicamento.php on line 601.
+ 1 APPPATH\Views\lista_medicamento.php(601): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php', 601)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_medicamento', [], true)
+ 5 APPPATH\Controllers\MedicamentoControlador.php(25): view('lista_medicamento', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MedicamentoControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MedicamentoControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:20:48 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: medicamentos]
+in APPPATH\Views\lista_medicamento.php on line 601.
+ 1 APPPATH\Views\lista_medicamento.php(601): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php', 601)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_medicamento', [], true)
+ 5 APPPATH\Controllers\MedicamentoControlador.php(25): view('lista_medicamento', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MedicamentoControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MedicamentoControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:20:50 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: medicamentos]
+in APPPATH\Views\lista_medicamento.php on line 601.
+ 1 APPPATH\Views\lista_medicamento.php(601): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php', 601)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_medicamento', [], true)
+ 5 APPPATH\Controllers\MedicamentoControlador.php(25): view('lista_medicamento', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MedicamentoControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MedicamentoControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:21:42 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: medicamentos]
+in APPPATH\Views\lista_medicamento.php on line 599.
+ 1 APPPATH\Views\lista_medicamento.php(599): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php', 599)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_medicamento', [], true)
+ 5 APPPATH\Controllers\MedicamentoControlador.php(25): view('lista_medicamento', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MedicamentoControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MedicamentoControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:22:14 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: medicamentos]
+in APPPATH\Views\lista_medicamento.php on line 599.
+ 1 APPPATH\Views\lista_medicamento.php(599): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php', 599)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_medicamento.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_medicamento', [], true)
+ 5 APPPATH\Controllers\MedicamentoControlador.php(25): view('lista_medicamento', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MedicamentoControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MedicamentoControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:23:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "listar_rol.php"
+[Method: GET, Route: rol]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('listar_rol.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 3 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 16:26:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "listar_rol.php"
+[Method: GET, Route: rol]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('listar_rol.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 3 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 17:02:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "agregar_usuario.php"
+[Method: POST, Route: agregar_usuario]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('agregar_usuario.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('agregar_usuario', [], true)
+ 3 APPPATH\Controllers\ClienteControlador.php(180): view('agregar_usuario', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->AgregarUsuario()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 17:07:13 --> ErrorException: Undefined variable $roles
+[Method: POST, Route: agregar_usuario]
+in APPPATH\Views\agregar_usuario.php on line 31.
+ 1 APPPATH\Views\agregar_usuario.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\agregar_usuario.php', 31)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\agregar_usuario.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('agregar_usuario', [], true)
+ 5 APPPATH\Controllers\ClienteControlador.php(180): view('agregar_usuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->AgregarUsuario()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-05 17:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-05 17:10:17 --> ErrorException: Undefined variable $roles
+[Method: GET, Route: clientes]
+in APPPATH\Views\lista_cliente.php on line 434.
+ 1 APPPATH\Views\lista_cliente.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cliente.php', 434)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cliente.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente', [], true)
+ 5 APPPATH\Controllers\ClienteControlador.php(26): view('lista_cliente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-05 17:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-05 17:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-05 17:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
