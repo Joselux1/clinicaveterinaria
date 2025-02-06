@@ -46,7 +46,7 @@ class ClienteControlador extends BaseController
             if (!$validation->withRequest($this->request)->run()) {
                 // Mostrar errores de validación
                 $data['validation'] = $validation;
-            } else {
+            }else{
                 // Preparar datos del formulario
                 $clienteData = [
                     'NOMBRE' => $this->request->getPost('NOMBRE'),
@@ -168,7 +168,7 @@ class ClienteControlador extends BaseController
 
     public function AgregarUsuario()
     {   
-        helper(['form', 'url']);
+        helper(['form', 'url']);  
     
         $rules = [
             'NOMBRE' => 'required|min_length[3]|max_length[50]',
@@ -187,6 +187,7 @@ class ClienteControlador extends BaseController
         $clienteModel->save([
             'NOMBRE' => $this->request->getPost('NOMBRE'),
             'CORREO_ELECTRONICO' => $this->request->getPost('CORREO_ELECTRONICO'),
+            'CONTRASEÑA' => $this->request->getPost('CONTRASEÑA'),
            
             
         ]);
