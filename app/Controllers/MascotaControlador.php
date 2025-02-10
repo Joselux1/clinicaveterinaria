@@ -11,15 +11,37 @@ class MascotaControlador extends BaseController
         $mascotaModel = new MascotaModel();
         $query = $mascotaModel;
         $nombre = $this->request->getVar('NOMBRE');  // Obtener el nombre desde la URL
+        $especie = $this->request->getVar('ESPECIE');
+        $raza = $this->request->getVar('RAZA');
+        $edad = $this->request->getVar('EDAD');
+        $fecha_baja = $this->request->getVar('FECHA_BAJA');
 
-        if ($nombre) {
-            $query = $query->like('NOMBRE', $nombre);
+      
+
+        if (!empty($nombre)) {
+            $query->like('NOMBRE', $nombre);
+        }
+        if (!empty($especie)) {
+            $query->like('ESPECIE', $especie);
+        }
+        if (!empty($raza)) {
+            $query->like('RAZA', $raza);
+        }
+        if (!empty($edad)) {
+            $query->where('EDAD', $edad);
+        }
+        if (!empty($fecha_baja)) {
+            $query->where('FECHA_BAJA', $fecha_baja);
         }
 
         $perPage = 3;  // Número de elementos por página
         $data['mascotas'] = $query->paginate($perPage);  // Obtener mascotas paginadas
         $data['pager'] = $mascotaModel->pager;  // Pasar el objeto del paginador a la vista
         $data['nombre'] = $nombre ?? '';  // Asegurar que se pase a la vista
+        $data['especie'] = $especie ?? '';
+        $data['raza'] = $raza ?? '';
+        $data['edad'] = $edad ?? '';
+        $data['fecha_baja'] = $fecha_baja ?? '';
 
         return view('lista_mascota', $data);  // Cargar la vista con los datos
     }

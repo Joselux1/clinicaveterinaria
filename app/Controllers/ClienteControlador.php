@@ -9,29 +9,36 @@ class ClienteControlador extends BaseController
 {
     public function index()
     {
-        
         $clienteModel = new ClienteModel();
     
-        $nombre = $this->request->getVar('NOMBRE'); // Obtener el nombre desde la URL
-        
-        // Construir la consulta para obtener clientes con sus roles
+        $nombre = $this->request->getVar('NOMBRE');
+        $correo = $this->request->getVar('CORREO_ELECTRONICO');
+        $fecha_baja = $this->request->getVar('FECHA_BAJA');
+    
+        // Construir la consulta
         $query = $clienteModel->select('cliente.*, rol.ROL')
                               ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left');
-        
-        if ($nombre) {
-            $query = $query->like('cliente.NOMBRE', $nombre);
+    
+        if (!empty($nombre)) {
+            $query->like('cliente.NOMBRE', $nombre);
         }
-        
+    
+        if (!empty($correo)) {
+            $query->like('cliente.CORREO_ELECTRONICO', $correo);
+        }
+    
+        if (!empty($fecha_baja)) {
+            $query->where('cliente.FECHA_BAJA', $fecha_baja);
+        }
+    
         $perPage = 3; // Número de elementos por página
-        $data['clientes'] = $query->paginate($perPage); // Obtener clientes paginados
-        $data['pager'] = $clienteModel->pager; // Pasar el objeto del paginador a la vista
-        $data['nombre'] = $nombre ?? ''; // Asegurar que se pase a la vista
-        
-        // Obtener todos los roles
-
-        
-        return view('lista_cliente', $data); // Cargar la vista con los datos
-        
+        $data['clientes'] = $query->paginate($perPage);
+        $data['pager'] = $clienteModel->pager;
+        $data['nombre'] = $nombre ?? '';
+        $data['correo'] = $correo ?? '';  
+        $data['fecha_baja'] = $fecha_baja ?? '';
+    
+        return view('lista_cliente', $data);
     }
     
 

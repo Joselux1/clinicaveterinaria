@@ -10,21 +10,37 @@ class MedicamentoControlador extends BaseController
     public function index()
     {
         $medicamentoModel = new MedicamentoModel();
-        $query = $medicamentoModel;
-        $nombre = $this->request->getVar('NOMBRE'); // Obtener el nombre desde la URL
 
-        if ($nombre) {
-            $query = $query->like('NOMBRE', $nombre);
+        // Obtener los filtros desde la URL
+        $nombre = $this->request->getVar('NOMBRE');
+        $descripcion = $this->request->getVar('DESCRIPCION');
+        $fecha_baja = $this->request->getVar('FECHA_BAJA');
+
+        // Construir la consulta
+        $query = $medicamentoModel->select('*');
+
+        if (!empty($nombre)) {
+            $query->like('NOMBRE', $nombre);
+        }
+        if (!empty($descripcion)) {
+            $query->like('DESCRIPCION', $descripcion);
+        }
+        if (!empty($fecha_baja)) {
+            $query->where('FECHA_BAJA', $fecha_baja);
         }
 
-        $perPage = 3; // Número de elementos por página
-        $data['medicamentos'] = $query->paginate($perPage); // Obtener medicamentos paginados
-        $data['pager'] = $medicamentoModel->pager; // Pasar el objeto del paginador a la vista
-        $data['nombre'] = $nombre ?? ''; // Asegurar que se pase a la vista
+        // Paginación
+        $perPage = 5;  // Número de elementos por página
+        $data['medicamentos'] = $query->paginate($perPage);
+        $data['pager'] = $medicamentoModel->pager;
 
-        return view('lista_medicamento', $data); // Cargar la vista con los datos
+        // Pasar filtros a la vista para que los inputs no se borren al recargar
+        $data['nombre'] = $nombre ?? '';
+        $data['descripcion'] = $descripcion ?? '';
+        $data['fecha_baja'] = $fecha_baja ?? '';
+
+        return view('lista_medicamento', $data);
     }
-
     public function guardarMedicamento($id = null)
     {
         $medicamentoModel = new MedicamentoModel();

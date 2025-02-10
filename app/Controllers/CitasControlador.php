@@ -18,15 +18,36 @@ class CitasControlador extends BaseController
         $citasModel = new CitaModel();
         $query = $citasModel;
         $fecha = $this->request->getVar('FECHA'); // Obtener el nombre desde la URL
+        $diagnostico = $this->request->getVar('DIAGNOSTICO');
+        $tratamiento = $this->request->getVar('TRATAMIENTO');
+        $fecha_baja = $this->request->getVar('FECHA_BAJA');
     
-        if ($fecha) {
-            $query = $query->like('FECHA', $fecha);
+        if (!empty($fecha)) {
+            $query->like('FECHA', $fecha);
+        }
+        if (!empty($diagnostico)) {
+            $query->like('DIAGNOSTICO', $diagnostico);
+        }
+        if (!empty($tratamiento)) {
+            $query->like('TRATAMIENTO', $tratamiento);
+        }
+        if (!empty($veterinario_id)) {
+            $query->where('VETERINARIO_ID', $veterinario_id);
+        }
+        if (!empty($mascota_id)) {
+            $query->where('MASCOTA_ID', $mascota_id);
+        }
+        if (!empty($fecha_baja)) {
+            $query->where('FECHA_BAJA', $fecha_baja);
         }
     
         $perPage = 3; // Número de elementos por página
         $data['citas'] = $query->paginate($perPage); // Obtener clientes paginados
         $data['pager'] = $citasModel->pager; // Pasar el objeto del paginador a la vista
-        $data['FECHA'] = $fecha ?? ''; // Asegurar que se pase a la vista
+        $data['fecha'] = $fecha ?? '';
+        $data['diagnostico'] = $diagnostico ?? '';
+        $data['tratamiento'] = $tratamiento ?? '';
+        $data['fecha_baja'] = $fecha_baja ?? '';
         return view('lista_cita', $data);  // Aquí correspondería a tu vista de listado de citas
     }
 
