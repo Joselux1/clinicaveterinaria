@@ -12,15 +12,23 @@ class RolControlador extends Controller
     {
         $rolModel = new RolModel();
         $clienteModel = new ClienteModel();
+        $query = $clienteModel;
 
         // Obtener todos los roles y clientes
         $roles = $rolModel->findAll();
         $clientes = $clienteModel->obtenerClientesConRol();
+      
 
+        $perPage = 3; // Número de elementos por página
+        $data['clientes'] = $query->paginate($perPage); // Obtener clientes paginados
+        $data['pager'] = $clienteModel->pager; // Pasar el objeto del paginador a la vista
+        $data['nombre'] = $nombre ?? ''; // Asegurar que se pase a la vista
+      
         return view('listar_rol', [
             'roles' => $roles,
             'clientes' => $clientes,
-            'selectedRol' => null
+            'pager' => $data['pager'],
+            'nombre' => $data['nombre'],
         ]);
     }
 

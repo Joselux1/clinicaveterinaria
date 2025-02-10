@@ -1,0 +1,164 @@
+CRITICAL - 2025-02-10 09:15:33 --> ErrorException: Undefined array key "CORREO_ELECTRONICO"
+[Method: GET, Route: mascotas]
+in APPPATH\Views\lista_mascota.php on line 762.
+ 1 APPPATH\Views\lista_mascota.php(762): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CORREO_ELECTRONICO"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php', 762)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_mascota', [], true)
+ 5 APPPATH\Controllers\MascotaControlador.php(24): view('lista_mascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MascotaControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MascotaControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:28:31 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: citas]
+in APPPATH\Views\lista_cita.php on line 761.
+ 1 APPPATH\Views\lista_cita.php(761): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cita.php', 761)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cita.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cita', [], true)
+ 5 APPPATH\Controllers\CitasControlador.php(30): view('lista_cita', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:30:34 --> ErrorException: Undefined array key "VETERINARIO"
+[Method: GET, Route: citas]
+in APPPATH\Views\lista_cita.php on line 764.
+ 1 APPPATH\Views\lista_cita.php(764): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "VETERINARIO"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cita.php', 764)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cita.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cita', [], true)
+ 5 APPPATH\Controllers\CitasControlador.php(30): view('lista_cita', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:39:34 --> ErrorException: Undefined variable $medicamento
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 762.
+ 1 APPPATH\Views\listar_rol.php(762): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $medicamento', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 762)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:40:47 --> ErrorException: Undefined array key "PK_ID_ROL"
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 762.
+ 1 APPPATH\Views\listar_rol.php(762): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_ROL"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 762)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:40:48 --> ErrorException: Undefined array key "PK_ID_ROL"
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 762.
+ 1 APPPATH\Views\listar_rol.php(762): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_ROL"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 762)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:41:02 --> ErrorException: Undefined array key "PK_ID_ROL"
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 762.
+ 1 APPPATH\Views\listar_rol.php(762): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_ROL"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 762)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:41:03 --> ErrorException: Undefined array key "PK_ID_ROL"
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 762.
+ 1 APPPATH\Views\listar_rol.php(762): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_ROL"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 762)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:41:03 --> ErrorException: Undefined array key "PK_ID_ROL"
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 762.
+ 1 APPPATH\Views\listar_rol.php(762): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_ROL"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 762)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:41:25 --> ErrorException: Undefined array key "PK_ID_ROL"
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 762.
+ 1 APPPATH\Views\listar_rol.php(762): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_ROL"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 762)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:54:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "listar_rol.php"
+[Method: GET, Route: rol]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('listar_rol.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 3 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 12:54:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "listar_rol.php"
+[Method: GET, Route: rol]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('listar_rol.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 3 APPPATH\Controllers\RolControlador.php(27): view('listar_rol', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

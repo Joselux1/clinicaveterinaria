@@ -1,0 +1,348 @@
+CRITICAL - 2025-02-07 10:54:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "listar_rol.php"
+[Method: GET, Route: rol]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('listar_rol.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 3 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:00:39 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 3548.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 3 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:02:40 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 651.
+ 1 APPPATH\Views\listar_rol.php(651): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 651)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:03:10 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 651.
+ 1 APPPATH\Views\listar_rol.php(651): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 651)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:04:34 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 651.
+ 1 APPPATH\Views\listar_rol.php(651): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 651)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:06:26 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 504.
+ 1 APPPATH\Views\listar_rol.php(504): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 504)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:06:42 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 504.
+ 1 APPPATH\Views\listar_rol.php(504): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 504)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:12:06 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 505.
+ 1 APPPATH\Views\listar_rol.php(505): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 505)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:12:19 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 505.
+ 1 APPPATH\Views\listar_rol.php(505): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 505)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:12:37 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 505.
+ 1 APPPATH\Views\listar_rol.php(505): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 505)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:12:53 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: rol]
+in APPPATH\Views\listar_rol.php on line 505.
+ 1 APPPATH\Views\listar_rol.php(505): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php', 505)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\listar_rol.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('listar_rol', [], true)
+ 5 APPPATH\Controllers\RolControlador.php(20): view('listar_rol', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:18:24 --> ErrorException: Undefined variable $query
+[Method: GET, Route: rol]
+in APPPATH\Controllers\RolControlador.php on line 22.
+ 1 APPPATH\Controllers\RolControlador.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $query', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Controllers\\RolControlador.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RolControlador->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolControlador))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:27:53 --> ErrorException: Undefined array key "ROL"
+[Method: GET, Route: clientes]
+in APPPATH\Views\lista_cliente.php on line 467.
+ 1 APPPATH\Views\lista_cliente.php(467): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ROL"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cliente.php', 467)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cliente.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente', [], true)
+ 5 APPPATH\Controllers\ClienteControlador.php(26): view('lista_cliente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:28:45 --> ErrorException: Undefined array key "ROL"
+[Method: GET, Route: clientes]
+in APPPATH\Views\lista_cliente.php on line 468.
+ 1 APPPATH\Views\lista_cliente.php(468): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ROL"', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cliente.php', 468)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_cliente.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente', [], true)
+ 5 APPPATH\Controllers\ClienteControlador.php(26): view('lista_cliente', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-07 11:44:33 --> mysqli_sql_exception: Unknown column 'clientes.ID_ROL' in 'on clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(24): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-07 11:44:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'clientes.ID_ROL' in 'on clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(24): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:44:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'clientes.ID_ROL' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(24): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:44:33 --> [Caused by] mysqli_sql_exception: Unknown column 'clientes.ID_ROL' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(24): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-07 11:46:00 --> mysqli_sql_exception: Unknown column 'clientes.ID_ROL' in 'on clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(24): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-07 11:46:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'clientes.ID_ROL' in 'on clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(24): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:46:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'clientes.ID_ROL' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(24): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:46:00 --> [Caused by] mysqli_sql_exception: Unknown column 'clientes.ID_ROL' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+JOIN `rol` ON `rol`.`PK_ID_ROL` = `clientes`.`ID_ROL`', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(24): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:19:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "lista_cliente_2.php"
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('lista_cliente_2.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_cliente_2', [], true)
+ 3 APPPATH\Controllers\ClienteControlador.php(33): view('lista_cliente_2', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

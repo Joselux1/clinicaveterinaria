@@ -11,19 +11,27 @@ class ClienteControlador extends BaseController
     {
         
         $clienteModel = new ClienteModel();
-        $query = $clienteModel;
+    
         $nombre = $this->request->getVar('NOMBRE'); // Obtener el nombre desde la URL
-    
+        
+        // Construir la consulta para obtener clientes con sus roles
+        $query = $clienteModel->select('cliente.*, rol.ROL')
+                              ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left');
+        
         if ($nombre) {
-            $query = $query->like('NOMBRE', $nombre);
+            $query = $query->like('cliente.NOMBRE', $nombre);
         }
-    
+        
         $perPage = 3; // Número de elementos por página
         $data['clientes'] = $query->paginate($perPage); // Obtener clientes paginados
         $data['pager'] = $clienteModel->pager; // Pasar el objeto del paginador a la vista
         $data['nombre'] = $nombre ?? ''; // Asegurar que se pase a la vista
-        $data['queryString'] = !empty($_GET) ? '?' . http_build_query($_GET) : '';
+        
+        // Obtener todos los roles
+
+        
         return view('lista_cliente', $data); // Cargar la vista con los datos
+        
     }
     
 
