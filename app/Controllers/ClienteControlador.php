@@ -91,9 +91,12 @@ class ClienteControlador extends BaseController
 
     public function borrar($id)
     {
-        $clienteModel = new ClienteModel();
-        $clienteModel->delete($id); // Eliminar cliente
-        return redirect()->to('/clientes')->with('success', 'Cliente eliminado correctamente.');
+       
+     $clienteModel = new ClienteModel();
+    $fecha_baja = date('Y-m-d H:i:s'); // Fecha actual
+    $clienteModel->update($id, ['FECHA_BAJA' => $fecha_baja]);
+
+    return redirect()->to('/clientes')->with('success', 'Cliente marcado como dado de baja correctamente.');
     }
     public function register()
     {

@@ -379,7 +379,7 @@
 														</div>
 														
 														<div class="mb-10">
-														<input type="text" name="FECHA_BAJA" class="form-control" placeholder="Fecha de  Baja" value="<?= esc($fecha_baja ?? '') ?>">
+														<input type="text" name="FECHA_BAJA" class="form-control" placeholder="Fecha de  Baja" value="<?= esc(data: 	$fecha_baja ?? '') ?>">
 														</div>
 												
 														<div class="d-flex justify-content-end">
@@ -725,12 +725,12 @@
 											<thead>
 												<!--begin::Table row-->
 												<tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
-												
 													<th class="min-w-125px">Usuarios</th>
 													<th class="min-w-125px">Correo Electrónico</th>
 													<th class="min-w-125px">Rol</th>
 													<th class="text-end min-w-100px">Acciones</th>
 												</tr>
+
 												<!--end::Table row-->
 											</thead>
 											<!--end::Table head-->
@@ -742,6 +742,7 @@
 																			<td><?= esc($cliente['NOMBRE']) ?></td>
 																			<td><?= esc($cliente['CORREO_ELECTRONICO']) ?></td>
 																			<td><?= esc($cliente['ROL']) ?></td>
+																			
 																			<td class="text-end">
 																				<a href="#" class="btn btn-light btn-active-light-primary btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Modificar
 																					<span class="svg-icon svg-icon-5 m-0">

@@ -1,0 +1,57 @@
+CRITICAL - 2025-02-11 09:35:12 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: clientes/editar/2]
+in APPPATH\Views\cliente_form.php on line 785.
+ 1 APPPATH\Views\cliente_form.php(785): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\cliente_form.php', 785)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\cliente_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('cliente_form', [], true)
+ 5 APPPATH\Controllers\ClienteControlador.php(89): view('cliente_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->guardarCliente('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-11 09:37:15 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: clientes/editar/4]
+in APPPATH\Views\cliente_form.php on line 772.
+ 1 APPPATH\Views\cliente_form.php(772): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\cliente_form.php', 772)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\cliente_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('cliente_form', [], true)
+ 5 APPPATH\Controllers\ClienteControlador.php(89): view('cliente_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->guardarCliente('4')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-11 12:26:40 --> ErrorException: Undefined variable $cliente
+[Method: GET, Route: mascotas]
+in APPPATH\Views\lista_mascota.php on line 756.
+ 1 APPPATH\Views\lista_mascota.php(756): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php', 756)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_mascota', [], true)
+ 5 APPPATH\Controllers\MascotaControlador.php(46): view('lista_mascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MascotaControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MascotaControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-11 12:26:57 --> ErrorException: Undefined variable $cliente
+[Method: GET, Route: mascotas]
+in APPPATH\Views\lista_mascota.php on line 757.
+ 1 APPPATH\Views\lista_mascota.php(757): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', 'C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php', 757)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\clinicaveterinaria\\app\\Views\\lista_mascota.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('lista_mascota', [], true)
+ 5 APPPATH\Controllers\MascotaControlador.php(46): view('lista_mascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MascotaControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MascotaControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-11 12:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
