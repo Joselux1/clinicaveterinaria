@@ -754,10 +754,10 @@
 																				</a>
 																				<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 																					<div class="menu-item px-3">
-																						<a href="<?= base_url('clientes/editar/' . $medicamento['PK_ID_MEDICAMENTO']) ?>" class="btn btn-warning btn-sm w-100">Editar</a>
+																						<a href="<?= base_url('medicamentos/editar/' . $medicamento['PK_ID_MEDICAMENTO']) ?>" class="btn btn-warning btn-sm w-100">Editar</a>
 																					</div>
 																					<div class="menu-item px-3">
-																						<a href="<?= base_url('clientes/eliminar/') . esc($medicamento['PK_ID_MEDICAMENTO']) ?>" class="btn btn-danger btn-sm w-100" onclick="return confirm('¿Estás seguro de eliminar este Medicamento?');">Eliminar</a>
+																						<a href="<?= base_url('medicamentos/eliminar/') . esc($medicamento['PK_ID_MEDICAMENTO']) ?>" class="btn btn-danger btn-sm w-100" onclick="return confirm('¿Estás seguro de eliminar este Medicamento?');">Eliminar</a>
 																					</div>
 																				</div>
 																			</td>
