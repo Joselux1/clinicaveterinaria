@@ -71,7 +71,7 @@
 							
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Apps</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Contenido</span>
 									</div>
 								</div>
 								
@@ -382,7 +382,21 @@
 														<div class="mb-10">
 														<input type="text" name="TRATAMIENTO" class="form-control" placeholder="Buscar por Tratamiento" value="<?= esc($tratamiento ?? '') ?>">
 														</div>
-												
+														<div class="mb-10">
+															<select name="filtro_fecha_baja" class="form-control" onchange="this.form.submit()">
+																<option value="1" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '1' ? 'selected' : '' ?>>
+																	Citas Activas
+																</option>
+																<option value="2" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '2' ? 'selected' : '' ?>>
+																	Citas Archivadas
+																</option>
+																<option value="3" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '3' ? 'selected' : '' ?>>
+																	Todas
+																</option>
+															</select>
+														</div>
+
+
 														<div class="d-flex justify-content-end">
 															<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Buscar</button>
 														</div>
@@ -415,7 +429,7 @@
 														<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
 													</svg>
 												</span>
-												<!--end::Svg Icon-->Crear Cita</button></a>
+												<!--end::Svg Icon-->Añadir</button></a>
 												<!--end::Add user-->
 											</div>
 											<!--end::Toolbar-->

@@ -14,6 +14,7 @@ class ClienteControlador extends BaseController
         $nombre = $this->request->getVar('NOMBRE');
         $correo = $this->request->getVar('CORREO_ELECTRONICO');
         $fecha_baja = $this->request->getVar('FECHA_BAJA');
+        $filtroFechaBaja = $this->request->getVar('filtro_fecha_baja') ?? '1'; // Por defecto muestra activos
     
         // Construir la consulta
         $query = $clienteModel->select('cliente.*, rol.ROL')
@@ -27,19 +28,32 @@ class ClienteControlador extends BaseController
             $query->like('cliente.CORREO_ELECTRONICO', $correo);
         }
     
-        if (!empty($fecha_baja)) {
-            $query->where('cliente.FECHA_BAJA', $fecha_baja);
+        // Aplicar filtro según el valor del selector
+        switch ($filtroFechaBaja) {
+            case '1': // Activos
+                $query->where('cliente.FECHA_BAJA', null);
+                break;
+            case '2': // Dados de baja
+                $query->where('cliente.FECHA_BAJA IS NOT NULL');
+                break;
+            case '3': // Todos (sin filtro)
+                break;
+            default:
+                $query->where('cliente.FECHA_BAJA', null); // Por defecto, activos
+                break;
         }
     
         $perPage = 3; // Número de elementos por página
         $data['clientes'] = $query->paginate($perPage);
         $data['pager'] = $clienteModel->pager;
         $data['nombre'] = $nombre ?? '';
-        $data['correo'] = $correo ?? '';  
+        $data['correo'] = $correo ?? '';
         $data['fecha_baja'] = $fecha_baja ?? '';
+        $data['filtro_fecha_baja'] = $filtroFechaBaja;
     
         return view('lista_cliente', $data);
     }
+    
     
 
     public function guardarCliente($id = null)

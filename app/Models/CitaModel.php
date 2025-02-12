@@ -25,9 +25,6 @@ class CitaModel extends Model
         return $this->where('PK_ID_CITA', $id)->first();
     }
 
-    // Función para marcar una cita como "baja" (en este caso actualizando FECHA_BAJA)
-    public function marcarBaja($id)
-    {
-        return $this->update($id, ['FECHA_BAJA' => date('Y-m-d H:i:s')]);
-    }
+  
+  
 }

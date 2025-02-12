@@ -90,7 +90,7 @@
 
 							<div class="menu-item">
 								<div class="menu-content pt-8 pb-2">
-									<span class="menu-section text-muted text-uppercase fs-8 ls-1">Apps</span>
+									<span class="menu-section text-muted text-uppercase fs-8 ls-1">Contenido</span>
 								</div>
 							</div>
 
@@ -448,10 +448,19 @@
 														</div>
 
 														<div class="mb-10">
-															<input type="text" name="FECHA_BAJA" class="form-control"
-																placeholder="Fecha de  Baja"
-																value="<?= esc(data: $fecha_baja ?? '') ?>">
+															<select name="filtro_fecha_baja" class="form-control" onchange="this.form.submit()">
+																<option value="1" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '1' ? 'selected' : '' ?>>
+																	Clientes Activos
+																</option>
+																<option value="2" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '2' ? 'selected' : '' ?>>
+																	Clientes Dados de Baja
+																</option>
+																<option value="3" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '3' ? 'selected' : '' ?>>
+																	Todos
+																</option>
+															</select>
 														</div>
+
 
 														<div class="d-flex justify-content-end">
 															<button type="submit" class="btn btn-primary fw-bold px-6"
@@ -630,7 +639,7 @@
 										<thead>
 											<!--begin::Table row-->
 											<tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
-												<th class="min-w-125px">Usuarios</th>
+												<th class="min-w-125px">Clientes</th>
 												<th class="min-w-125px">Correo Electrónico</th>
 												<th class="min-w-125px">Rol</th>
 												<th class="text-end min-w-100px">Acciones</th>

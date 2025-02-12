@@ -39,3 +39,812 @@ INFO - 2025-02-12 10:57:00 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2025-02-12 10:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-02-12 11:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-02-12 11:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 16:11:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 16:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 16:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 16:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 16:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 16:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-12 16:57:13 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:57:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:13 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-12 16:57:42 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:57:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:42 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-12 16:57:46 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:57:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:46 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-12 16:57:46 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:57:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:46 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-12 16:57:47 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:57:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:47 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-12 16:57:58 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:57:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:57:58 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-12 16:58:22 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:58:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:58:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:58:22 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE \'%1%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL
+AND  `cliente`.`NOMBRE` LIKE :cliente.NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-12 16:58:30 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:58:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:58:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:58:30 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-12 16:58:31 --> mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-12 16:58:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: clientes]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:58:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 16:58:31 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cliente`
+LEFT JOIN `rol` ON `cliente`.`ID_ROL` = `rol`.`PK_ID_ROL`
+WHERE `nombre`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\ClienteControlador.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-12 17:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 17:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 17:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 17:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 17:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 17:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 17:20:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 17:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 17:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
