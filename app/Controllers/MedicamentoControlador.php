@@ -54,7 +54,7 @@ class MedicamentoControlador extends BaseController
             $validation->setRules([
                 'NOMBRE' => 'required|min_length[3]|max_length[50]',
                 'DESCRIPCION' => 'required|min_length[3]|max_length[255]',
-                'CITA_ID' => 'required|integer',
+                //'CITA_ID' => 'required|integer',
             ]);
 
             if (!$validation->withRequest($this->request)->run()) {

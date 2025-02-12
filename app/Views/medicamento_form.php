@@ -357,12 +357,9 @@
                                                                 <input type="text" class="form-control" id="DESCRIPCION" name="DESCRIPCION" value="<?= isset($medicamento) ? esc($medicamento['DESCRIPCION']) : '' ?>" required>
                                                             </div>
 
-                                                            <div class="mb-3">
-                                                                <label for="CITA_ID" class="form-label">Cita ID</label>
-                                                                <input type="number" class="form-control" id="CITA_ID" name="CITA_ID" value="<?= isset($medicamento) ? esc($medicamento['CITA_ID']) : '' ?>" required>
-                                                            </div>
-
-                                                            <button type="submit" class="btn btn-primary"><?= isset($medicamento) ? 'Actualizar Medicamento' : 'Crear Medicamento' ?></button>
+                                                       
+                                                            <button type="submit" class="btn btn-success"><?= isset($medicamento) ? 'Actualizar Medicamento' : 'Crear Medicamento' ?></button>
+															<a href="<?= base_url('medicamentos') ?>" class="btn btn-secondary">Cancelar</a>
                                                     </div>
                                                     <!--end::User Info-->
                                                     <!--end::Summary-->

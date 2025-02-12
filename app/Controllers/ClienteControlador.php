@@ -131,6 +131,7 @@ class ClienteControlador extends BaseController
 
         return redirect()->to('/login')->with('success', 'Usuario registrado correctamente.');
     }
+    
 
     public function login()
     {

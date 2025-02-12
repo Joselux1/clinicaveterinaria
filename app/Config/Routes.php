@@ -25,6 +25,7 @@ $routes->post('/citas/guardar', 'CitasControlador::guardar');  // Guardar una nu
 $routes->get('/citas/editar/(:num)', 'CitasControlador::editar/$1');  // Editar una cita
 $routes->post('/citas/editar/(:num)', 'CitasControlador::editar/$1');  // Editar una cita
 $routes->post('/citas/actualizar/(:num)', 'CitasControlador::actualizar/$1');  // Actualizar una cita
+$routes->get('/citas/actualizar/(:num)', 'CitasControlador::actualizar/$1');  // Mostrar formulario para actualizar una cita
 $routes->get('/citas/eliminar/(:num)', 'CitasControlador::eliminar/$1');  // Eliminar una cita
 $routes->get('/citas/baja/(:num)', 'CitasControlador::baja/$1');  // Marcar una cita como "baja"
 

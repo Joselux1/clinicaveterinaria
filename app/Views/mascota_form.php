@@ -362,7 +362,7 @@
                                                                 <input type="number" name="EDAD" class="form-control" value="<?= old('EDAD', esc($mascota['EDAD'] ?? '')) ?>" required>
                                                             </div>
 															<!-- Botones -->
-                                                            <button type="submit" class="btn btn-primary"><?= $mascota ? 'Actualizar' : 'Crear' ?> Mascota</button>
+                                                            <button type="submit" class="btn btn-success"><?= $mascota ? 'Actualizar' : 'Crear' ?> Mascota</button>
 															<a href="<?= base_url('mascotas') ?>" class="btn btn-secondary">Cancelar</a>
 														</form>
                                                     </div>

@@ -53,7 +53,7 @@ class CitasControlador extends BaseController
 
     public function crear()
     {
-        return view('citas/crear');  // Vista para crear una nueva cita
+        return view('citas_form');  // Vista para crear una nueva cita
     }
 
     public function guardar()
@@ -68,7 +68,7 @@ class CitasControlador extends BaseController
         ];
         
         $this->citaModel->insert($data);
-        return redirect()->to('/citas')->with('success', 'Cita creada con éxito');
+        return redirect()->to('citas')->with('success', 'Cita creada con éxito');
     }
 
     public function editar($id)

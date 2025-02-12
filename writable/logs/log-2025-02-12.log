@@ -1,0 +1,41 @@
+INFO - 2025-02-12 07:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 07:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 07:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 07:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 07:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 07:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 07:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 07:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 08:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 09:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-12 09:22:00 --> ArgumentCountError: Too few arguments to function App\Controllers\CitasControlador::actualizar(), 0 passed in C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: POST, Route: citas/actualizar]
+in APPPATH\Controllers\CitasControlador.php on line 80.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->actualizar()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 10:41:23 --> ArgumentCountError: Too few arguments to function App\Controllers\CitasControlador::actualizar(), 0 passed in C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: POST, Route: citas/actualizar]
+in APPPATH\Controllers\CitasControlador.php on line 79.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->actualizar()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 10:43:23 --> ArgumentCountError: Too few arguments to function App\Controllers\CitasControlador::actualizar(), 0 passed in C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: POST, Route: citas/actualizar]
+in APPPATH\Controllers\CitasControlador.php on line 79.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->actualizar()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-12 10:57:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 10:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 11:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-12 11:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
