@@ -10,37 +10,48 @@ class MedicamentoControlador extends BaseController
     public function index()
     {
         $medicamentoModel = new MedicamentoModel();
-
-        // Obtener los filtros desde la URL
+    
         $nombre = $this->request->getVar('NOMBRE');
         $descripcion = $this->request->getVar('DESCRIPCION');
         $fecha_baja = $this->request->getVar('FECHA_BAJA');
-
+        $filtroFechaBaja = $this->request->getVar('filtro_fecha_baja') ?? '1'; // Por defecto muestra activos
+    
         // Construir la consulta
         $query = $medicamentoModel->select('*');
-
+    
         if (!empty($nombre)) {
             $query->like('NOMBRE', $nombre);
         }
+    
         if (!empty($descripcion)) {
             $query->like('DESCRIPCION', $descripcion);
         }
-        if (!empty($fecha_baja)) {
-            $query->where('FECHA_BAJA', $fecha_baja);
+    
+        // Aplicar filtro según el valor del selector
+        switch ($filtroFechaBaja) {
+            case '1': // Activos
+                $query->where('FECHA_BAJA', null);
+                break;
+            case '2': // Dados de baja
+                $query->where('FECHA_BAJA IS NOT NULL');
+                break;
+            case '3': // Todos (sin filtro)
+                break;
+            default:
+                $query->where('FECHA_BAJA', null); // Por defecto, activos
+                break;
         }
-
-        // Paginación
-        $perPage = 5;  // Número de elementos por página
+    
+        $perPage = 3; // Número de elementos por página
         $data['medicamentos'] = $query->paginate($perPage);
         $data['pager'] = $medicamentoModel->pager;
-
-        // Pasar filtros a la vista para que los inputs no se borren al recargar
         $data['nombre'] = $nombre ?? '';
         $data['descripcion'] = $descripcion ?? '';
         $data['fecha_baja'] = $fecha_baja ?? '';
-
+        $data['filtro_fecha_baja'] = $filtroFechaBaja;
+    
         return view('lista_medicamento', $data);
-    }
+    }    
     public function guardarMedicamento($id = null)
     {
         $medicamentoModel = new MedicamentoModel();
@@ -89,9 +100,11 @@ class MedicamentoControlador extends BaseController
     }
 
     public function borrar($id)
-    {
-        $medicamentoModel = new MedicamentoModel();
-        $medicamentoModel->delete($id); // Eliminar medicamento
-        return redirect()->to('/medicamentos')->with('success', 'Medicamento eliminado correctamente.');
-    }
+{
+    $medicamentoModel = new MedicamentoModel();
+    $fecha_baja = date('Y-m-d H:i:s'); // Fecha actual
+    $medicamentoModel->update($id, ['FECHA_BAJA' => $fecha_baja]);
+
+    return redirect()->to('/medicamentos')->with('success', 'Medicamento marcado como dado de baja correctamente.');
+}
 }

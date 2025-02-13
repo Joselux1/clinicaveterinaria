@@ -1,0 +1,868 @@
+INFO - 2025-02-13 08:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 08:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 08:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 08:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 08:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 08:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 08:34:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 08:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 08:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-13 08:50:32 --> mysqli_sql_exception: Unknown column 'veterinario.VETERINARIO_ID' in 'field list' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `cita`.*...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cita`.*...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cita`.*...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `cita`.*...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+#6 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1288): CodeIgniter\BaseModel->findAll(3, 0)
+#7 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(57): CodeIgniter\BaseModel->paginate(3)
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#10 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 08:50:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'veterinario.VETERINARIO_ID' in 'field list'
+[Method: GET, Route: citas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `cita`.*, `veterinario`.`VETERINARIO_ID`
+FROM `cita`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL
+ LIMIT 3', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+ 4 SYSTEMPATH\BaseModel.php(1288): CodeIgniter\BaseModel->findAll(3, 0)
+ 5 APPPATH\Controllers\CitasControlador.php(57): CodeIgniter\BaseModel->paginate(3)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 08:50:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'veterinario.VETERINARIO_ID' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cita`.*, `veterinario`.`VETERINARIO_ID`
+FROM `cita`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cita`.*, `veterinario`.`VETERINARIO_ID`
+FROM `cita`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `cita`.*, `veterinario`.`VETERINARIO_ID`
+FROM `cita`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL
+ LIMIT 3', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+ 6 SYSTEMPATH\BaseModel.php(1288): CodeIgniter\BaseModel->findAll(3, 0)
+ 7 APPPATH\Controllers\CitasControlador.php(57): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 08:50:32 --> [Caused by] mysqli_sql_exception: Unknown column 'veterinario.VETERINARIO_ID' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `cita`.*, `veterinario`.`VETERINARIO_ID`
+FROM `cita`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cita`.*, `veterinario`.`VETERINARIO_ID`
+FROM `cita`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cita`.*, `veterinario`.`VETERINARIO_ID`
+FROM `cita`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `cita`.*, `veterinario`.`VETERINARIO_ID`
+FROM `cita`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL
+ LIMIT 3', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(3, 0)
+ 7 SYSTEMPATH\BaseModel.php(1288): CodeIgniter\BaseModel->findAll(3, 0)
+ 8 APPPATH\Controllers\CitasControlador.php(57): CodeIgniter\BaseModel->paginate(3)
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 08:51:18 --> mysqli_sql_exception: Table 'clinicaveterinaria.clientes' doesn't exist in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(57): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-13 08:51:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'clinicaveterinaria.clientes' doesn't exist
+[Method: GET, Route: citas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `clientes` ON `cita`.`VETERINARIO_ID` = `clientes`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\CitasControlador.php(57): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 08:51:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'clinicaveterinaria.clientes' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `clientes` ON `cita`.`VETERINARIO_ID` = `clientes`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `clientes` ON `cita`.`VETERINARIO_ID` = `clientes`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `clientes` ON `cita`.`VETERINARIO_ID` = `clientes`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\CitasControlador.php(57): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 08:51:18 --> [Caused by] mysqli_sql_exception: Table 'clinicaveterinaria.clientes' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `clientes` ON `cita`.`VETERINARIO_ID` = `clientes`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `clientes` ON `cita`.`VETERINARIO_ID` = `clientes`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `clientes` ON `cita`.`VETERINARIO_ID` = `clientes`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `clientes` ON `cita`.`VETERINARIO_ID` = `clientes`.`PK_ID_VETERINARIO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\CitasControlador.php(57): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 08:55:04 --> mysqli_sql_exception: Unknown column 'cita.CLIENTE_ID' in 'on clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(60): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-13 08:55:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+[Method: GET, Route: citas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\CitasControlador.php(60): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 08:55:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\CitasControlador.php(60): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 08:55:04 --> [Caused by] mysqli_sql_exception: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\CitasControlador.php(60): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 09:10:28 --> mysqli_sql_exception: Unknown column 'cita.CLIENTE_ID' in 'on clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(60): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-13 09:10:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+[Method: GET, Route: citas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\CitasControlador.php(60): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 09:10:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\CitasControlador.php(60): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 09:10:28 --> [Caused by] mysqli_sql_exception: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `veterinario` ON `cita`.`VETERINARIO_ID` = `veterinario`.`ID_VETERINARIO`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\CitasControlador.php(60): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 09:17:26 --> mysqli_sql_exception: Unknown column 'cita.CLIENTE_ID' in 'on clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(59): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-13 09:17:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+[Method: GET, Route: citas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\CitasControlador.php(59): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 09:17:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\CitasControlador.php(59): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 09:17:26 --> [Caused by] mysqli_sql_exception: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\CitasControlador.php(59): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 09:18:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-13 09:31:19 --> mysqli_sql_exception: Unknown column 'cita.CLIENTE_ID' in 'on clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(59): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-13 09:31:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+[Method: GET, Route: citas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\CitasControlador.php(59): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 09:31:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\CitasControlador.php(59): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 09:31:19 --> [Caused by] mysqli_sql_exception: Unknown column 'cita.CLIENTE_ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `cliente` ON `cita`.`CLIENTE_ID` = `cliente`.`ID_CLIENTE`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\CitasControlador.php(59): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 09:31:55 --> mysqli_sql_exception: Unknown column 'mascota.ID_MASCOTA' in 'on clause' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(58): CodeIgniter\BaseModel->paginate(3)
+#7 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-13 09:31:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'mascota.ID_MASCOTA' in 'on clause'
+[Method: GET, Route: citas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\CitasControlador.php(58): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 09:31:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'mascota.ID_MASCOTA' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\CitasControlador.php(58): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 09:31:55 --> [Caused by] mysqli_sql_exception: Unknown column 'mascota.ID_MASCOTA' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cita`
+LEFT JOIN `mascota` ON `cita`.`MASCOTA_ID` = `mascota`.`ID_MASCOTA`
+LEFT JOIN `medicamento` ON `cita`.`MEDICAMENTO_ID` = `medicamento`.`ID_MEDICAMENTO`
+WHERE `cita`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\CitasControlador.php(58): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 09:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:47:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 09:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-13 11:17:53 --> mysqli_sql_exception: Unknown column 'VETERINARIO_ID' in 'field list' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `ci...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ci...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ci...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ci...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(88): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->guardar()
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#10 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 11:17:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'VETERINARIO_ID' in 'field list'
+[Method: POST, Route: citas/guardar]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (:FECHA:, :DIAGNOSTICO:, :TRATAMIENTO:, :VETERINARIO_ID:, :MASCOTA_ID:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\CitasControlador.php(88): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->guardar()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 11:17:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'VETERINARIO_ID' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (:FECHA:, :DIAGNOSTICO:, :TRATAMIENTO:, :VETERINARIO_ID:, :MASCOTA_ID:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\CitasControlador.php(88): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->guardar()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 11:17:53 --> [Caused by] mysqli_sql_exception: Unknown column 'VETERINARIO_ID' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (:FECHA:, :DIAGNOSTICO:, :TRATAMIENTO:, :VETERINARIO_ID:, :MASCOTA_ID:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\CitasControlador.php(88): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->guardar()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 11:18:10 --> mysqli_sql_exception: Unknown column 'VETERINARIO_ID' in 'field list' in C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\clinicaveterinaria\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `ci...', 0)
+#1 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ci...')
+#2 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ci...')
+#3 C:\xampp\htdocs\clinicaveterinaria\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ci...', Array, false)
+#4 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\clinicaveterinaria\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\clinicaveterinaria\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\clinicaveterinaria\app\Controllers\CitasControlador.php(88): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(933): App\Controllers\CitasControlador->guardar()
+#9 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+#10 C:\xampp\htdocs\clinicaveterinaria\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\clinicaveterinaria\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\clinicaveterinaria\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 11:18:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'VETERINARIO_ID' in 'field list'
+[Method: POST, Route: citas/guardar]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (:FECHA:, :DIAGNOSTICO:, :TRATAMIENTO:, :VETERINARIO_ID:, :MASCOTA_ID:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\CitasControlador.php(88): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->guardar()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 11:18:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'VETERINARIO_ID' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (:FECHA:, :DIAGNOSTICO:, :TRATAMIENTO:, :VETERINARIO_ID:, :MASCOTA_ID:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\CitasControlador.php(88): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->guardar()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 11:18:10 --> [Caused by] mysqli_sql_exception: Unknown column 'VETERINARIO_ID' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (\'2025-02-07\', \'1212\', \'123123\', NULL, NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cita` (`FECHA`, `DIAGNOSTICO`, `TRATAMIENTO`, `VETERINARIO_ID`, `MASCOTA_ID`) VALUES (:FECHA:, :DIAGNOSTICO:, :TRATAMIENTO:, :VETERINARIO_ID:, :MASCOTA_ID:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\CitasControlador.php(88): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CitasControlador->guardar()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CitasControlador))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 11:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 11:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 11:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 11:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 11:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 11:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 11:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

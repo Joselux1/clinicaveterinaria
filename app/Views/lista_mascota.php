@@ -13,7 +13,7 @@
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="../assets/media/logos/icons8-favicon-48.png" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
@@ -388,8 +388,20 @@
 																</div>
 
 																<div class="mb-10">
-																<input type="text" name="FECHA_BAJA" class="form-control" placeholder="Fecha Baja" value="<?= esc($fecha_baja ?? '') ?>">			
-																</div>
+																	<select name="filtro_fecha_baja" class="form-control" onchange="this.form.submit()">
+																		<option value="1" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '1' ? 'selected' : '' ?>>
+																			Mascotas Activas
+																		</option>
+																		<option value="2" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '2' ? 'selected' : '' ?>>
+																			Mascotas Archivadas
+																		</option>
+																		<option value="3" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '3' ? 'selected' : '' ?>>
+																			Todas
+																		</option>
+																	</select>
+																</div>	
+
+
 																													
 																<div class="d-flex justify-content-end">
 																	<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Buscar</button>
@@ -563,7 +575,7 @@
 																						<a href="<?= base_url('mascotas/editar/' . $mascota['PK_ID_MASCOTA']) ?>" class="btn btn-warning btn-sm w-100">Editar</a>
 																					</div>
 																					<div class="menu-item px-3">
-																						<a href="<?= base_url('mascotas/eliminar/') . esc($mascota['PK_ID_MASCOTA']) ?>" class="btn btn-danger btn-sm w-100" onclick="return confirm('¿Estás seguro de eliminar este Cita?');">Eliminar</a>
+																						<a href="<?= base_url('mascotas/eliminar/') . esc($mascota['PK_ID_MASCOTA']) ?>" class="btn btn-danger btn-sm w-100" onclick="return confirm('¿Estás seguro de eliminar este Mascota?');">Eliminar</a>
 																					</div>
 																				</div>
 																			</td>

@@ -9,43 +9,62 @@ class MascotaControlador extends BaseController
     public function index()
     {
         $mascotaModel = new MascotaModel();
-        $query = $mascotaModel;
-        $nombre = $this->request->getVar('NOMBRE');  // Obtener el nombre desde la URL
+    
+        $nombre = $this->request->getVar('NOMBRE');
         $especie = $this->request->getVar('ESPECIE');
         $raza = $this->request->getVar('RAZA');
         $edad = $this->request->getVar('EDAD');
         $fecha_baja = $this->request->getVar('FECHA_BAJA');
-
-      
-
+        $filtroFechaBaja = $this->request->getVar('filtro_fecha_baja') ?? '1'; // Por defecto muestra activos
+    
+        // Construir la consulta
+        $query = $mascotaModel->select('mascota.*, cliente.NOMBRE as CLIENTE_NOMBRE')
+                              ->join('cliente', 'mascota.CLIENTE_ID = cliente.PK_ID_CLIENTE', 'left');
+    
         if (!empty($nombre)) {
-            $query->like('NOMBRE', $nombre);
+            $query->like('mascota.NOMBRE', $nombre);
         }
+    
         if (!empty($especie)) {
-            $query->like('ESPECIE', $especie);
+            $query->like('mascota.ESPECIE', $especie);
         }
+    
         if (!empty($raza)) {
-            $query->like('RAZA', $raza);
+            $query->like('mascota.RAZA', $raza);
         }
+    
         if (!empty($edad)) {
-            $query->where('EDAD', $edad);
+            $query->where('mascota.EDAD', $edad);
         }
-        if (!empty($fecha_baja)) {
-            $query->where('FECHA_BAJA', $fecha_baja);
+    
+        // Aplicar filtro según el valor del selector
+        switch ($filtroFechaBaja) {
+            case '1': // Activos
+                $query->where('mascota.FECHA_BAJA', null);
+                break;
+            case '2': // Archivados
+                $query->where('mascota.FECHA_BAJA IS NOT NULL');
+                break;
+            case '3': // Todos (sin filtro)
+                break;
+            default:
+                $query->where('mascota.FECHA_BAJA', null); // Por defecto, activos
+                break;
         }
-
-        $perPage = 3;  // Número de elementos por página
-        $data['mascotas'] = $query->paginate($perPage);  // Obtener mascotas paginadas
-        $data['pager'] = $mascotaModel->pager;  // Pasar el objeto del paginador a la vista
-        $data['nombre'] = $nombre ?? '';  // Asegurar que se pase a la vista
+    
+        $perPage = 3; // Número de elementos por página
+        $data['mascotas'] = $query->paginate($perPage);
+        $data['pager'] = $mascotaModel->pager;
+        $data['nombre'] = $nombre ?? '';
         $data['especie'] = $especie ?? '';
         $data['raza'] = $raza ?? '';
         $data['edad'] = $edad ?? '';
         $data['fecha_baja'] = $fecha_baja ?? '';
-
-        return view('lista_mascota', $data);  // Cargar la vista con los datos
+        $data['filtro_fecha_baja'] = $filtroFechaBaja;
+    
+        return view('lista_mascota', $data);
     }
-
+    
     public function guardarMascota($id = null)
     {
         $mascotaModel = new MascotaModel();
@@ -99,7 +118,9 @@ class MascotaControlador extends BaseController
     public function borrar($id)
     {
         $mascotaModel = new MascotaModel();
-        $mascotaModel->delete($id);  // Eliminar mascota
-        return redirect()->to('/mascotas')->with('success', 'Mascota eliminada correctamente.');
+        $fecha_baja = date('Y-m-d H:i:s'); // Fecha actual
+        $mascotaModel->update($id, ['FECHA_BAJA' => $fecha_baja]);
+    
+        return redirect()->to('/mascotas')->with('success', 'Mascota marcada como dada de baja correctamente.');
     }
 }
