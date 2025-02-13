@@ -8,7 +8,7 @@ class ClienteModel extends Model
 {
     protected $table = 'cliente'; // Nombre de la tabla
     protected $primaryKey = 'PK_ID_CLIENTE'; // Clave primaria
-    protected $allowedFields = ['NOMBRE', 'CONTRASEÑA', 'CORREO_ELECTRONICO', 'FECHA_BAJA']; // Campos permitidos
+    protected $allowedFields = ['NOMBRE', 'CONTRASEÑA', 'CORREO_ELECTRONICO', 'FECHA_BAJA','ID_ROL']; // Campos permitidos
 
     public function findByEmail(string $email)
     {

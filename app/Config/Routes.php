@@ -17,6 +17,8 @@ $routes->post('clientes/guardar', 'ClienteControlador::guardarCliente');
 $routes->get('clientes/editar/(:num)', 'ClienteControlador::guardarCliente/$1');
 $routes->post('clientes/editar/(:num)', 'ClienteControlador::guardarCliente/$1');
 $routes->get('clientes/eliminar/(:num)', 'ClienteControlador::borrar/$1');
+$routes->post('clientes/reactivar/(:num)', 'ClienteControlador::reactivar/$1');
+
 
 // Rutas para el controlador de Citas
 $routes->get('/citas', 'CitasControlador::index');  // Muestra el listado de citas

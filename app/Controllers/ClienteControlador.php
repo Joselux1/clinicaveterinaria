@@ -117,6 +117,15 @@ class ClienteControlador extends BaseController
         return view('register');
     }
 
+    public function reactivar($id)
+{
+    $clienteModel = new ClienteModel();
+    $clienteModel->update($id, ['FECHA_BAJA' => null]);
+
+    return redirect()->to('/clientes')->with('success', 'Cliente reactivado correctamente.');
+}
+
+
     public function Registro()
     {   
 
@@ -153,38 +162,44 @@ class ClienteControlador extends BaseController
     }
 
     public function InicioSesion()
-    {
+{
+    helper(['form', 'url']);
+    $session = session();
 
-        helper(['form', 'url']);
-        $session = session();
+    $rules = [
+        'CORREO_ELECTRONICO' => 'required|valid_email',
+        'CONTRASEÑA' => 'required', 
+    ];
 
-        $rules = [
-            'CORREO_ELECTRONICO' => 'required|valid_email',
-            'CONTRASEÑA' => 'required', 
-        ];
-
-        if (!$this->validate($rules)) {
-            return view('login', [
-                'validation' => $this->validator,
-            ]);
-        }
-
-        $clienteModel = new ClienteModel();
-        $cliente = $clienteModel->where('CORREO_ELECTRONICO', $this->request->getPost('CORREO_ELECTRONICO'))->first();
-
-        if ($cliente && password_verify($this->request->getPost('CONTRASEÑA'), $cliente['CONTRASEÑA'])) {
-            $session->set([
-                'PK_ID_CLIENTE' => $cliente['PK_ID_CLIENTE'],
-                'NOMBRE' => $cliente['NOMBRE'],
-                'CORREO_ELECTRONICO' => $cliente['CORREO_ELECTRONICO'],
-                'isLoggedIn' => true,
-            ]);
-
-            return redirect()->to('/dashboard')->with('success', 'Inicio de sesión exitoso.');
-        }
-
-        return redirect()->to('/login')->with('error', 'Correo o contraseña incorrectos.');
+    if (!$this->validate($rules)) {
+        return view('login', [
+            'validation' => $this->validator,
+        ]);
     }
+
+    $clienteModel = new ClienteModel();
+
+    $cliente = $clienteModel->select('cliente.*, rol.ROL')
+                            ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
+                            ->where('cliente.CORREO_ELECTRONICO', $this->request->getPost('CORREO_ELECTRONICO'))
+                            ->first();
+
+    if ($cliente && password_verify($this->request->getPost('CONTRASEÑA'), $cliente['CONTRASEÑA'])) {
+ 
+        $session->set([
+            'PK_ID_CLIENTE' => $cliente['PK_ID_CLIENTE'],
+            'NOMBRE' => $cliente['NOMBRE'],
+            'CORREO_ELECTRONICO' => $cliente['CORREO_ELECTRONICO'],
+            'ROL' => $cliente['ROL'], // Guardamos el rol en sesión
+            'isLoggedIn' => true,
+        ]);
+
+        return redirect()->to('/home')->with('success', 'Inicio de sesión exitoso.');
+    }
+
+    return redirect()->to('/login')->with('error', 'Correo o contraseña incorrectos.');
+}
+
 
     public function logout()
     {
