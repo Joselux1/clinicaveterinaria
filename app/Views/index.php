@@ -14,7 +14,7 @@
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="../assets/media/logos/icons8-favicon-48.png" />>
+		<link rel="shortcut icon" href="../assets/media/logos/icons8-favicon-48.png" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
@@ -33,6 +33,16 @@
 	<body id="kt_body" class="header-fixed-top header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
 		<!--begin::Main-->
 		<!--begin::Root-->
+		<div class="container mt-3">
+        <?php if (session()->has('success')): ?>
+            <div class="alert alert-success">
+                <?= session('success') ?>
+            </div>
+        <?php endif; ?>
+
+        <h1>Bienvenido, <?= esc(session()->get('NOMBRE')); ?>!</h1>
+        <p>Has iniciado sesión correctamente.</p>
+    </div>
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Page-->
 			<div class="page d-flex flex-row flex-column-fluid">
@@ -182,21 +192,23 @@
 				</div>
 					<!--end::Aside menu-->
 								<!--begin::Footer-->
-								<div  class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer"> 
-									<div class="card shadow-sm border-0 rounded-3">
-										<div class="card-body text-center">
-											<h5 class="card-title">Usuario Logueado</h5>
-											<hr>
-											<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
-											<p class="card-text">
-												<strong>Rol:</strong>
-												<span class="badge bg-primary">
-													<?= esc(session()->get('ROL')); ?>
-												</span>
-											</p>
-										</div>
+								<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer"> 
+								<div class="card shadow-sm border-0 rounded-3">
+									<div class="card-body text-center">
+										<h5 class="card-title">Usuario Logueado</h5>
+										<hr>
+										<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
+										<p class="card-text">
+											<strong>Rol:</strong>
+											<span class="badge bg-primary">
+												<?= esc(session()->get('ROL')); ?>
+											</span>
+										</p>
+										<a href="<?= base_url('logout'); ?>" class="btn btn-danger w-100 mt-2">Cerrar Sesión</a>
 									</div>
-								</div>
+								</di>
+							</div>
+
 
 											<!--end::Footer-->
 											

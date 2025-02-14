@@ -136,7 +136,7 @@ class ClienteControlador extends BaseController
             'NOMBRE' => 'required|min_length[3]|max_length[50]',
             'CORREO_ELECTRONICO' => 'required|valid_email|is_unique[cliente.CORREO_ELECTRONICO]', // Tabla corregida
             'CONTRASEÑA' => 'required|min_length[6]', // Se cambia a minúscula para coincidir con el input del formulario
-            'password_confirm' => 'required|matches[CONTRASEÑA]', // Debe coincidir con el input del formulario
+            'repetir_contraseña' => 'required|matches[CONTRASEÑA]', // Debe coincidir con el input del formulario
         ];
 
         if (!$this->validate($rules)) {
@@ -168,7 +168,7 @@ class ClienteControlador extends BaseController
 
     $rules = [
         'CORREO_ELECTRONICO' => 'required|valid_email',
-        'CONTRASEÑA' => 'required', 
+        'CONTRASEÑA' => 'required'
     ];
 
     if (!$this->validate($rules)) {
@@ -185,12 +185,12 @@ class ClienteControlador extends BaseController
                             ->first();
 
     if ($cliente && password_verify($this->request->getPost('CONTRASEÑA'), $cliente['CONTRASEÑA'])) {
- 
+
         $session->set([
             'PK_ID_CLIENTE' => $cliente['PK_ID_CLIENTE'],
             'NOMBRE' => $cliente['NOMBRE'],
             'CORREO_ELECTRONICO' => $cliente['CORREO_ELECTRONICO'],
-            'ROL' => $cliente['ROL'], // Guardamos el rol en sesión
+            'ROL' => $cliente['ROL'],
             'isLoggedIn' => true,
         ]);
 
@@ -199,6 +199,7 @@ class ClienteControlador extends BaseController
 
     return redirect()->to('/login')->with('error', 'Correo o contraseña incorrectos.');
 }
+
 
 
     public function logout()

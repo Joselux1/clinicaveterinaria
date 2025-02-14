@@ -13,16 +13,28 @@
     <div class="container border position-absolute top-50 start-50 translate-middle w-25 p-3">
         <form action="<?= base_url('login/process') ?>" method="post">
             <?= csrf_field(); ?>
+            
+            <?php if (isset($validation)): ?>
+                <div class="alert alert-danger mb-4">
+                    <?= $validation->listErrors() ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (session()->has('error')): ?>
+                <div class="alert alert-danger mb-4">
+                    <?= session('error') ?>
+                </div>
+            <?php endif; ?>
 
-            <div class="border border-black text-center text-light bg-primary mb-4 py-3">Iniciar Sesión</div>
+            <div class="border border-black text-center text-light bg-primary mb-4 py-3">Login</div>
         
             <div class="mb-2">
-                <label for="email" class="form-label">Correo Electrónico</label>
+                <label for="CORREO_ELECTRONICO" class="form-label">Correo Electrónico</label>
                 <input type="email" class="form-control" id="CORREO_ELECTRONICO" name="CORREO_ELECTRONICO" placeholder="Introduce tu correo" required>
             </div>
 
             <div class="mb-2">
-                <label for="password" class="form-label">Contraseña</label>
+                <label for="CONTRASEÑA" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="CONTRASEÑA" name="CONTRASEÑA" placeholder="Introduce tu contraseña" required>
             </div>
 
