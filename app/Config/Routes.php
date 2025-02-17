@@ -30,6 +30,7 @@ $routes->post('/citas/actualizar/(:num)', 'CitasControlador::actualizar/$1');  /
 $routes->get('/citas/actualizar/(:num)', 'CitasControlador::actualizar/$1');  // Mostrar formulario para actualizar una cita
 $routes->get('/citas/eliminar/(:num)', 'CitasControlador::eliminar/$1');  // Eliminar una cita
 $routes->get('/citas/baja/(:num)', 'CitasControlador::baja/$1');  // Marcar una cita como "baja"
+$routes->post('/citas/reactivar/(:num)', 'CitasControlador::reactivar/$1');
 
 // Rutas para el controlador de Veterinario
 $routes->get('veterinarios', 'VeterinarioControlador::index');  // Mostrar lista de veterinarios
@@ -46,6 +47,7 @@ $routes->post('mascotas/guardar', 'MascotaControlador::guardarMascota');  // Gua
 $routes->get('mascotas/editar/(:num)', 'MascotaControlador::guardarMascota/$1');  // Editar mascota
 $routes->post('mascotas/editar/(:num)', 'MascotaControlador::guardarMascota/$1');  // Guardar cambios en mascota
 $routes->get('mascotas/eliminar/(:num)', 'MascotaControlador::borrar/$1');  // Eliminar mascota
+$routes->post('mascotas/reactivar/(:num)', 'MascotaControlador::reactivar/$1');
 
 // Rutas para MedicamentoController
 $routes->get('medicamentos', 'MedicamentoControlador::index');

@@ -574,6 +574,15 @@
 																					<div class="menu-item px-3">
 																						<a href="<?= base_url('citas/eliminar/') . esc($cita['PK_ID_CITA']) ?>" class="btn btn-danger btn-sm w-100" onclick="return confirm('¿Estás seguro de eliminar este Cita?');">Eliminar</a>
 																					</div>
+																					<div class="menu-item px-3">
+																						<?php if ($cita['FECHA_BAJA']): ?>
+																						<form action="<?= base_url('citas/reactivar/' . $cita['PK_ID_CITA']) ?>" method="post" style="display:inline;">
+																							<?= csrf_field() ?>
+																							<button type="submit" class="btn btn-success btn-sm w-100">Dar de Alta</button>
+																						</form>
+																						<?php endif; ?>
+																					</div></tr>
+																					
 																				</div>
 																			</td>
 																		</tr>

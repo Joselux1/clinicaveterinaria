@@ -128,4 +128,11 @@ public function eliminar($id)
         $this->citaModel->update($id, $data);
         return redirect()->to('/citas')->with('success', 'Cita marcada como baja');
     }
+    public function reactivar($id)
+    {
+        $citaModel = new CitaModel();
+        $citaModel->update($id, ['FECHA_BAJA' => null]);
+    
+        return redirect()->to('/citas')->with('success', 'Citas reactivado correctamente.');
+    }
 }

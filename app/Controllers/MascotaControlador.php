@@ -123,4 +123,11 @@ class MascotaControlador extends BaseController
     
         return redirect()->to('/mascotas')->with('success', 'Mascota marcada como dada de baja correctamente.');
     }
+    public function reactivar($id)
+    {
+        $mascotaModel = new MascotaModel();
+        $mascotaModel->update($id, ['FECHA_BAJA' => null]);
+    
+        return redirect()->to('/mascotas')->with('success', 'Mascota reactivado correctamente.');
+    }
 }
