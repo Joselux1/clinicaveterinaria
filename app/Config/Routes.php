@@ -73,3 +73,8 @@ $routes->post('RolControlador/filtrarPorRol', 'RolControlador::filtrarPorRol'); 
 //agregar usuario 
 $routes->post('/agregar_usuario', 'ClienteControlador::AgregarUsuario'); // Procesa el formulario y agrega el usuario
 
+//Eventos
+$routes->get('/eventos', 'EventoControlador::index');
+$routes->get('/busquedaEventos', 'EventoControlador::busquedaEventos');
+$routes->post('/añadirEventos', 'EventoControlador::añadirEvento');
+$routes->delete('/borrarEventos/(:num)', 'EventoControlador::borrarEvento/$1');//CORREGIR 
