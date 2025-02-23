@@ -45,7 +45,7 @@
 				<!--begin::Brand-->
 				<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 					<!--begin::Logo-->
-					<a href="../../demo1/dist/index.html">
+					<a href="http://localhost/clinicaveterinaria/public/">
 						<img alt="Logo" src="../assets/media/logos/clinica.png" class="h-200px logo" />
 					</a>
 					<!--end::Logo-->
@@ -196,7 +196,7 @@
 				<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
 					<div class="card shadow-sm border-0 rounded-3">
 										<div class="card-body text-center">
-											<h5 class="card-title">Usuario Logueado</h5>
+											<h5 class="card-title">Usuario</h5>
 											<hr>
 											<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
 											<p class="card-text">
@@ -236,8 +236,7 @@
 								<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 									<!--begin::Item-->
 									<li class="breadcrumb-item text-muted">
-										<a href="../../demo1/dist/index.html"
-											class="text-muted text-hover-primary">Home</a>
+									<a href="http://localhost/clinicaveterinaria/public/" class="text-muted text-hover-primary">Inicio</a>
 									</li>
 									<!--end::Item-->
 									<!--begin::Item-->
@@ -246,7 +245,7 @@
 									</li>
 									<!--end::Item-->
 									<!--begin::Item-->
-									<li class="breadcrumb-item text-muted">User Management</li>
+									<li class="breadcrumb-item text-muted">Listas</li>
 									<!--end::Item-->
 									<!--begin::Item-->
 									<li class="breadcrumb-item">
@@ -254,15 +253,15 @@
 									</li>
 									<!--end::Item-->
 									<!--begin::Item-->
-									<li class="breadcrumb-item text-muted">Users</li>
-									<!--end::Item-->
-									<!--begin::Item-->
-									<li class="breadcrumb-item">
-										<span class="bullet bg-gray-200 w-5px h-2px"></span>
+									<li class="breadcrumb-item text-muted">
+									<a href="http://localhost/clinicaveterinaria/public/clientes" class="text-muted text-hover-primary">Clientes</a>
 									</li>
 									<!--end::Item-->
 									<!--begin::Item-->
-									<li class="breadcrumb-item text-dark">Users List</li>
+							
+									<!--end::Item-->
+									<!--begin::Item-->
+									
 									<!--end::Item-->
 								</ul>
 								<!--end::Breadcrumb-->
@@ -473,8 +472,8 @@
 											<!--end::Menu 1-->
 											<!--end::Filter-->
 											<!--begin::Export-->
-											<button type="button" class="btn btn-light-primary me-3"
-												data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
+											<a href="<?php echo base_url('clientes/exportarCSV'); ?>"><button type="button" class="btn btn-light-primary me-3"
+											 data-bs-target="#kt_modal_export_users">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -489,11 +488,11 @@
 															fill="#C4C4C4" />
 													</svg>
 												</span>
-												<!--end::Svg Icon-->Export</button>
+												<!--end::Svg Icon-->Export</button></a>
 											<!--end::Export-->
 											<!--begin::Add user-->
 
-											<a href="<?= base_url(relativePath: 'clientes/crear') ?>"><button type="button" class="btn btn-primary">					
+											<a href="<?= base_url(relativePath: 'clientes/crear') ?>"><button type="button" class="btn btn-light-primary me-3"">					
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -634,12 +633,38 @@
 									<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 										<!--begin::Table head-->
 										<thead>
-											<!--begin::Table row-->
-											<tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
-												<th class="min-w-125px">Clientes</th>
-												<th class="min-w-125px">Correo Electrónico</th>
-												<th class="min-w-125px">Rol</th>
-												<th class="text-end min-w-100px">Acciones</th>
+											<tr>
+												<th  class="min-w-125px">
+													<a href="<?= base_url('clientes') ?>?ordenar_por=NOMBRE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'NOMBRE' ? 'desc' : 'asc' ?>">
+															Clientes
+															<?php if ($ordenar_por == 'NOMBRE'): ?>
+																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+															<?php else: ?>
+																<i class="bi bi-arrow-up-down"></i> <!-- Flecha neutra -->
+															<?php endif; ?>
+													</a>
+												</th>
+												<th  class="min-w-125px">
+													<a href="<?= base_url('clientes') ?>?ordenar_por=CORREO_ELECTRONICO&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'CORREO_ELECTRONICO' ? 'desc' : 'asc' ?>">
+														Correo Electrónico 
+														<?php if ($ordenar_por == 'CORREO_ELECTRONICO'): ?>
+															<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+														<?php else: ?>
+															<i class="bi bi-arrow-up-down"></i>
+														<?php endif; ?>
+													</a>
+												</th>
+												<th  class="min-w-125px">
+													<a href="<?= base_url('clientes') ?>?ordenar_por=ROL&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'ROL' ? 'desc' : 'asc' ?>">
+																Rol
+																<?php if ($ordenar_por == 'ROL'): ?>
+																	<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+																<?php else: ?>
+																	<i class="bi bi-arrow-up-down"></i>
+																<?php endif; ?>
+													</a>
+												</th>
+												<th class="text-end min-w-100px text-primary">Acciones</th>
 											</tr>
 
 											<!--end::Table row-->

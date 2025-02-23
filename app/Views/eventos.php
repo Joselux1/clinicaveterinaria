@@ -202,7 +202,7 @@
 				<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
 					<div class="card shadow-sm border-0 rounded-3">
 										<div class="card-body text-center">
-											<h5 class="card-title">Usuario Logueado</h5>
+											<h5 class="card-title">Usuario </h5>
 											<hr>
 											<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
 											<p class="card-text">
@@ -415,16 +415,19 @@
 								<!--end::Card header-->
 								<!--begin::Card body-->
 								<div class="card-body pt-0">
-								<a href="<?= base_url(relativePath: 'citas/crear') ?>">
-													<button type="button" class="btn btn-primary position-absolute top-0 end-0"style="margin:60px" >
-												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-												<span class="svg-icon svg-icon-2">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-														<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="black" />
-														<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
-													</svg>
-												</span>
-												<!--end::Svg Icon-->Añadir</button></a>
+								<a href="<?= base_url('eventos/crear') ?>">
+									<button type="button" class="btn btn-primary position-absolute top-0 end-0" style="margin:60px">
+										<!--begin::Svg Icon-->
+										<span class="svg-icon svg-icon-2">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="black" />
+												<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+										Añadir
+									</button>
+								</a>
 									<!--begin::Table-->
 								<div class="kt-container mt-5">
 									<h2>Calendario</h2>

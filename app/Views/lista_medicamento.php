@@ -38,7 +38,7 @@
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="../../demo1/dist/index.html">
+						<a href="http://localhost/clinicaveterinaria/public/">
 						<img alt="Logo" src="../assets/media/logos/clinica.png" class="h-200px logo" />
 						</a>
 						<!--end::Logo-->
@@ -167,7 +167,7 @@
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
 					<div class="card shadow-sm border-0 rounded-3">
 										<div class="card-body text-center">
-											<h5 class="card-title">Usuario Logueado</h5>
+											<h5 class="card-title">Usuario</h5>
 											<hr>
 											<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
 											<p class="card-text">
@@ -205,7 +205,7 @@
 									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 										<!--begin::Item-->
 										<li class="breadcrumb-item text-muted">
-											<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+											<a href="http://localhost/clinicaveterinaria/public/" class="text-muted text-hover-primary">Inicio</a>
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
@@ -214,7 +214,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">User Management</li>
+										<li class="breadcrumb-item text-muted">Listas</li>
 										<!--end::Item-->
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
@@ -222,16 +222,11 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">Users</li>
+										<li class="breadcrumb-item text-muted">
+										<a href="http://localhost/clinicaveterinaria/public/" class="text-muted text-hover-primary">Medicamentos</a></li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item">
-											<span class="bullet bg-gray-200 w-5px h-2px"></span>
-										</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark">Users List</li>
-										<!--end::Item-->
+								
 									</ul>
 									<!--end::Breadcrumb-->
 								</div>
@@ -423,7 +418,7 @@
 												<!--end::Svg Icon-->Export</button>
 												<!--end::Export-->
 												<!--begin::Add user-->
-												<a href="<?= base_url(relativePath: 'medicamentos/crear') ?>"><button type="button" class="btn btn-primary">
+												<a href="<?= base_url(relativePath: 'medicamentos/crear') ?>"><button type="button" class="btn btn-light-primary me-3"">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -535,16 +530,37 @@
 										<!--begin::Table-->
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 											<!--begin::Table head-->
-											<thead>
-												<!--begin::Table row-->
-												<tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
+										
 												
-													<th class="min-w-125px">Nombre</th>
-													<th class="min-w-125px">Descripcion</th>
-													<th class="text-end min-w-100px">Acciones</th>	
+											<thead>
+												<tr>
+													<th  class="min-w-125px">
+														<a href="<?= base_url('medicamentos') ?>?ordenar_por=NOMBRE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'NOMBRE' ? 'desc' : 'asc' ?>">
+															Nombre
+																<?php if ($ordenar_por == 'NOMBRE'): ?>
+																	<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+																<?php else: ?>
+																	<i class="bi bi-arrow-up-down"></i> <!-- Flecha neutra -->
+																<?php endif; ?>
+														</a>
+													</th>
+													<th  class="min-w-125px">
+														<a href="<?= base_url('medicamentos') ?>?ordenar_por=DESCRIPCION&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'DESCRIPCION' ? 'desc' : 'asc' ?>">
+															Descripcion 
+															<?php if ($ordenar_por == 'DESCRIPCION'): ?>
+																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+															<?php else: ?>
+																<i class="bi bi-arrow-up-down"></i>
+															<?php endif; ?>
+															</a>
+														</th>
+													
+													<th class="text-end min-w-100px text-primary" >Acciones</th>
 												</tr>
+
 												<!--end::Table row-->
 											</thead>
+										
 											<!--end::Table head-->
 											<!--begin::Table body-->
 											<tbody class="text-gray-600 fw-bold">

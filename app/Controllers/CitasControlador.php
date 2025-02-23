@@ -16,11 +16,23 @@ class CitasControlador extends BaseController
     {
         $citasModel = new CitaModel();
         
+        // Obtener filtros
         $fecha = $this->request->getVar('FECHA');
         $diagnostico = $this->request->getVar('DIAGNOSTICO');
         $tratamiento = $this->request->getVar('TRATAMIENTO');
         $fecha_baja = $this->request->getVar('FECHA_BAJA');
         $filtroFechaBaja = $this->request->getVar('filtro_fecha_baja') ?? '1'; // Por defecto muestra activos
+    
+        // Obtener parámetros de ordenación
+        $ordenar_por = $this->request->getVar('ordenar_por') ?? 'FECHA';
+        $ordenar_direccion = $this->request->getVar('ordenar_direccion') ?? 'asc';
+    
+        // Columnas permitidas para ordenar
+        $columnas_permitidas = ['FECHA', 'DIAGNOSTICO', 'TRATAMIENTO'];
+        
+        if (!in_array($ordenar_por, $columnas_permitidas)) {
+            $ordenar_por = 'FECHA'; // Valor por defecto
+        }
     
         // Construir la consulta
         $query = $citasModel->select('cita.*, cliente.NOMBRE as CLIENTE_NOMBRE, mascota.NOMBRE as MASCOTA_NOMBRE, medicamento.NOMBRE as MEDICAMENTO_NOMBRE')
@@ -40,7 +52,7 @@ class CitasControlador extends BaseController
             $query->like('cita.TRATAMIENTO', $tratamiento);
         }
     
-        // Aplicar filtro según el valor del selector
+        // Aplicar filtro de fecha de baja
         switch ($filtroFechaBaja) {
             case '1': // Activos
                 $query->where('cita.FECHA_BAJA', null);
@@ -55,17 +67,26 @@ class CitasControlador extends BaseController
                 break;
         }
     
-        $perPage = 3; // Número de elementos por página
+        // Aplicar ordenación
+        $query->orderBy('cita.' . $ordenar_por, $ordenar_direccion);
+    
+        // Paginación
+        $perPage = 3;
         $data['citas'] = $query->paginate($perPage);
         $data['pager'] = $citasModel->pager;
+    
+        // Enviar parámetros a la vista
         $data['fecha'] = $fecha ?? '';
         $data['diagnostico'] = $diagnostico ?? '';
         $data['tratamiento'] = $tratamiento ?? '';
         $data['fecha_baja'] = $fecha_baja ?? '';
         $data['filtro_fecha_baja'] = $filtroFechaBaja;
+        $data['ordenar_por'] = $ordenar_por;
+        $data['ordenar_direccion'] = $ordenar_direccion;
     
         return view('lista_cita', $data);
     }
+    
     
     
 

@@ -11,14 +11,20 @@ class MedicamentoControlador extends BaseController
     {
         $medicamentoModel = new MedicamentoModel();
     
+        // Capturar filtros de búsqueda
         $nombre = $this->request->getVar('NOMBRE');
         $descripcion = $this->request->getVar('DESCRIPCION');
         $fecha_baja = $this->request->getVar('FECHA_BAJA');
-        $filtroFechaBaja = $this->request->getVar('filtro_fecha_baja') ?? '1'; // Por defecto muestra activos
+        $filtroFechaBaja = $this->request->getVar('filtro_fecha_baja') ?? '1'; // Activos por defecto
     
-        // Construir la consulta
+        // Capturar parámetros de ordenación
+        $ordenar_por = $this->request->getVar('ordenar_por') ?? 'NOMBRE';
+        $ordenar_direccion = $this->request->getVar('ordenar_direccion') ?? 'asc';
+    
+        // Construcción de la consulta
         $query = $medicamentoModel->select('*');
     
+        // Aplicar filtros de búsqueda
         if (!empty($nombre)) {
             $query->like('NOMBRE', $nombre);
         }
@@ -27,12 +33,12 @@ class MedicamentoControlador extends BaseController
             $query->like('DESCRIPCION', $descripcion);
         }
     
-        // Aplicar filtro según el valor del selector
+        // Aplicar filtro según el estado de baja
         switch ($filtroFechaBaja) {
             case '1': // Activos
                 $query->where('FECHA_BAJA', null);
                 break;
-            case '2': // Dados de baja
+            case '2': // Archivados
                 $query->where('FECHA_BAJA IS NOT NULL');
                 break;
             case '3': // Todos (sin filtro)
@@ -42,16 +48,28 @@ class MedicamentoControlador extends BaseController
                 break;
         }
     
-        $perPage = 3; // Número de elementos por página
+        // Aplicar ordenación
+        $columnas_validas = ['NOMBRE', 'DESCRIPCION'];
+        if (in_array($ordenar_por, $columnas_validas)) {
+            $query->orderBy($ordenar_por, $ordenar_direccion);
+        }
+    
+        // Paginación
+        $perPage = 3;
         $data['medicamentos'] = $query->paginate($perPage);
         $data['pager'] = $medicamentoModel->pager;
+    
+        // Enviar filtros y ordenación a la vista
         $data['nombre'] = $nombre ?? '';
         $data['descripcion'] = $descripcion ?? '';
         $data['fecha_baja'] = $fecha_baja ?? '';
         $data['filtro_fecha_baja'] = $filtroFechaBaja;
+        $data['ordenar_por'] = $ordenar_por;
+        $data['ordenar_direccion'] = $ordenar_direccion;
     
         return view('lista_medicamento', $data);
-    }    
+    }
+     
     public function guardarMedicamento($id = null)
     {
         $medicamentoModel = new MedicamentoModel();
@@ -65,7 +83,7 @@ class MedicamentoControlador extends BaseController
             $validation->setRules([
                 'NOMBRE' => 'required|min_length[3]|max_length[50]',
                 'DESCRIPCION' => 'required|min_length[3]|max_length[255]',
-                //'CITA_ID' => 'required|integer',
+     
             ]);
 
             if (!$validation->withRequest($this->request)->run()) {

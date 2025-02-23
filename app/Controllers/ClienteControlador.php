@@ -14,11 +14,25 @@ class ClienteControlador extends BaseController
         $nombre = $this->request->getVar('NOMBRE');
         $correo = $this->request->getVar('CORREO_ELECTRONICO');
         $fecha_baja = $this->request->getVar('FECHA_BAJA');
-        $filtroFechaBaja = $this->request->getVar('filtro_fecha_baja') ?? '1'; // Por defecto muestra activos
+        $filtroFechaBaja = $this->request->getVar('filtro_fecha_baja') ?? '1';
+        
+        // Parámetros de ordenación
+        $ordenar_por = $this->request->getVar('ordenar_por') ?? 'NOMBRE'; 
+        $ordenar_direccion = $this->request->getVar('ordenar_direccion') ?? 'asc';
+    
+        // Asegurar valores válidos para evitar SQL Injection
+        $columnas_permitidas = ['cliente.NOMBRE', 'cliente.CORREO_ELECTRONICO', 'rol.ROL'];
+        if (!in_array($ordenar_por, ['NOMBRE', 'CORREO_ELECTRONICO', 'ROL'])) {
+            $ordenar_por = 'NOMBRE'; // Valor por defecto si el usuario envía algo incorrecto
+        }
+        
+        // Ajustar nombre de la columna para la consulta
+        $ordenar_columna = $ordenar_por === 'ROL' ? 'rol.ROL' : 'cliente.' . $ordenar_por;
     
         // Construir la consulta
         $query = $clienteModel->select('cliente.*, rol.ROL')
-                              ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left');
+                              ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
+                              ->orderBy($ordenar_columna, $ordenar_direccion);
     
         if (!empty($nombre)) {
             $query->like('cliente.NOMBRE', $nombre);
@@ -28,7 +42,6 @@ class ClienteControlador extends BaseController
             $query->like('cliente.CORREO_ELECTRONICO', $correo);
         }
     
-        // Aplicar filtro según el valor del selector
         switch ($filtroFechaBaja) {
             case '1': // Activos
                 $query->where('cliente.FECHA_BAJA', null);
@@ -39,13 +52,17 @@ class ClienteControlador extends BaseController
             case '3': // Todos (sin filtro)
                 break;
             default:
-                $query->where('cliente.FECHA_BAJA', null); // Por defecto, activos
+                $query->where('cliente.FECHA_BAJA', null);
                 break;
         }
     
-        $perPage = 3; // Número de elementos por página
+        $perPage = 3;
         $data['clientes'] = $query->paginate($perPage);
         $data['pager'] = $clienteModel->pager;
+        
+        // Pasamos los valores a la vista para que las flechas funcionen correctamente
+        $data['ordenar_por'] = $ordenar_por;
+        $data['ordenar_direccion'] = $ordenar_direccion;
         $data['nombre'] = $nombre ?? '';
         $data['correo'] = $correo ?? '';
         $data['fecha_baja'] = $fecha_baja ?? '';
@@ -53,6 +70,7 @@ class ClienteControlador extends BaseController
     
         return view('lista_cliente', $data);
     }
+    
     
     
 
@@ -243,6 +261,36 @@ class ClienteControlador extends BaseController
     
      
         return redirect()->to('clientes')->with('success', 'Usuario agregado correctamente.');
+    }
+
+    public function exportarCSV()
+    {
+        $clienteModel = new ClienteModel();
+
+        $clientes = $clienteModel->select('cliente.NOMBRE, cliente.CORREO_ELECTRONICO, rol.ROL')
+                                 ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
+                                 ->findAll();
+    
+        // Definir el nombre del archivo de exportación
+        $filename = 'clientes_' . date('Ymd') . '.csv';
+    
+        // Configurar cabeceras para forzar la descarga
+        header("Content-Type: text/csv; charset=utf-8");
+        header("Content-Disposition: attachment; filename=\"$filename\"");
+    
+        // Abrir la salida como un archivo CSV
+        $output = fopen('php://output', 'w');
+    
+        // cabecera del CSV
+        fputcsv($output, ['Nombre', 'Correo Electrónico', 'Rol']);
+    
+        // Escribir los datos de los clientes en el archivo
+        foreach ($clientes as $cliente) {
+            fputcsv($output, [$cliente['NOMBRE'], $cliente['CORREO_ELECTRONICO'], $cliente['ROL']]);
+        }
+    
+        fclose($output);
+        exit;
     }
     
 

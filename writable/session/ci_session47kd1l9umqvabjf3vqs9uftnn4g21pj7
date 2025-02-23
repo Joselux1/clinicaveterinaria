@@ -1,1 +1,0 @@
-__ci_last_regenerate|i:1739531765;PK_ID_CLIENTE|s:2:"56";NOMBRE|s:8:"Patricia";CORREO_ELECTRONICO|s:21:"patricia123@gmail.com";ROL|s:13:"Administrador";isLoggedIn|b:1;_ci_previous_url|s:47:"http://localhost/clinicaveterinaria/public/home";__ci_vars|a:1:{s:5:"error";s:3:"new";}error|s:33:"Correo o contraseña incorrectos.";

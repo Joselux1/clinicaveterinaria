@@ -76,5 +76,10 @@ $routes->post('/agregar_usuario', 'ClienteControlador::AgregarUsuario'); // Proc
 //Eventos
 $routes->get('/eventos', 'EventoControlador::index');
 $routes->get('/busquedaEventos', 'EventoControlador::busquedaEventos');
-$routes->post('/añadirEventos', 'EventoControlador::añadirEvento');
-$routes->delete('/borrarEventos/(:num)', 'EventoControlador::borrarEvento/$1');//CORREGIR 
+$routes->get('eventos/crear', 'EventoControlador::guardarEvento');  // Muestra el formulario
+$routes->post('eventos/guardar', 'EventoControlador::guardarEvento');  // Guarda el evento
+$routes->delete('/borrarEventos/(:num)', 'EventoControlador::borrarEvento/$1');
+$routes->get('eventos/obtener', 'EventoControlador::obtenerEventos');
+
+//exportar  
+$routes->get('clientes/exportarCSV', 'ClienteControlador::exportarCSV');

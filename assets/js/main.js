@@ -74,11 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let barChart = new ApexCharts(document.querySelector("#barChartGrafico"), barChartOptions);
     barChart.render();
 });
-
 $(document).ready(function () {
     const calendarEl = document.getElementById('calendar');
 
-    // Inicializar FullCalendar
     const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         selectable: true,
@@ -86,26 +84,27 @@ $(document).ready(function () {
         locale: 'es',
         firstDay: 1,
 
-        // Cargar eventos desde el servidor
-        events: function(fetchInfo, successCallback, failureCallback) {
-            
-         
-        },
+        // Cargar eventos desde la API
+        events: 'http://localhost/tu-proyecto/public/eventos/obtener',
 
-        // Añadir evento
         select: function (info) {
             const title = prompt('Título del evento:');
             if (title) {
-            
+                $.ajax({
+                    url: 'http://localhost/tu-proyecto/public/eventos/guardar',
+                    method: 'POST',
+                    data: {
+                        TITULO: title,
+                        FECHA_INICIO: info.startStr,
+                        FECHA_FIN: info.endStr || info.startStr,
+                        DESCRIPCION_ES: ''
+                    },
+                    success: function () {
+                        calendar.refetchEvents();
+                    }
+                });
             }
         },
-
-        // Eliminar evento
-        eventClick: function (info) {
-            if (confirm('¿Deseas eliminar este evento?')) {
-              
-            }
-        }
     });
 
     calendar.render();

@@ -161,7 +161,7 @@
 							</div>
 
 							<div class="menu-item">
-								<a class="menu-link" href="../../demo1/dist/apps/calendar.html">
+								<a class="menu-link" href="http://localhost/clinicaveterinaria/public/eventos">
 									<span class="menu-icon">
 										<!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
 										<span class="svg-icon svg-icon-2">
@@ -195,7 +195,7 @@
 								<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer"> 
 								<div class="card shadow-sm border-0 rounded-3">
 									<div class="card-body text-center">
-										<h5 class="card-title">Usuario Logueado</h5>
+										<h5 class="card-title">Usuario </h5>
 										<hr>
 										<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
 										<p class="card-text">
