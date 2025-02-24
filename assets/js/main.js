@@ -84,28 +84,30 @@ $(document).ready(function () {
         locale: 'es',
         firstDay: 1,
 
-        // Cargar eventos desde la API
-        events: 'http://localhost/tu-proyecto/public/eventos/obtener',
+        events: 'http://127.0.0.1/clinicaveterinaria/public/eventos/obtener',
 
         select: function (info) {
             const title = prompt('Título del evento:');
             if (title) {
                 $.ajax({
-                    url: 'http://localhost/tu-proyecto/public/eventos/guardar',
+                    url: 'http://127.0.0.1/clinicaveterinaria/public/eventos/guardar',
                     method: 'POST',
-                    data: {
+                    contentType: 'application/json',  // Asegura que el backend lo reciba como JSON
+                    data: JSON.stringify({
                         TITULO: title,
                         FECHA_INICIO: info.startStr,
                         FECHA_FIN: info.endStr || info.startStr,
                         DESCRIPCION_ES: ''
-                    },
+                    }),
                     success: function () {
                         calendar.refetchEvents();
                     }
                 });
+                
             }
         },
     });
 
     calendar.render();
 });
+

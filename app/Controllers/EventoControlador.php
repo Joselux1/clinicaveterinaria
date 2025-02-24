@@ -16,6 +16,8 @@ class EventoControlador extends BaseController
 
     public function index()
     {
+        
+        
         return view('eventos');
     }
 
@@ -38,57 +40,49 @@ class EventoControlador extends BaseController
         $data = $query->findAll();
         return $this->response->setJSON($data);
     }
-
     public function guardarEvento($id = null)
     {
         $eventoModel = new EventoModel();
         helper(['form', 'url']);
     
-        // Cargar datos del evento si es edición
-        $data['evento'] = $id ? $eventoModel->find($id) : null;
+        // Reglas de validación
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'TITULO' => 'required|min_length[3]|max_length[100]',
+            'FECHA_INICIO' => 'required',
+            'FECHA_FIN' => 'permit_empty',
+            'DESCRIPCION_ES' => 'permit_empty|max_length[500]',
+            'DESCRIPCION_ENG' => 'permit_empty|max_length[500]'
+        ]);
     
-        if ($this->request->getMethod() == 'POST') {
-            // Reglas de validación
-            $validation = \Config\Services::validation();
-            $validation->setRules([
-                'TITULO' => 'required|min_length[3]|max_length[100]',
-                'FECHA_INICIO' => 'required',
-                'FECHA_FIN' => 'permit_empty',
-                'DESCRIPCION_ES' => 'permit_empty|max_length[500]',
-                'DESCRIPCION_ENG' => 'permit_empty|max_length[500]'
+        if (!$validation->withRequest($this->request)->run()) {
+            // Retornar errores en formato JSON
+            return $this->response->setJSON([
+                'status' => 'error',
+                'errors' => $validation->getErrors()
             ]);
-    
-            if (!$validation->withRequest($this->request)->run()) {
-                // Mostrar errores de validación
-                $data['validation'] = $validation;
-            } else {
-                // Preparar datos del formulario
-                $eventoData = [
-                    'TITULO' => $this->request->getPost('TITULO'),
-                    'FECHA_INICIO' => $this->request->getPost('FECHA_INICIO'),
-                    'FECHA_FIN' => $this->request->getPost('FECHA_FIN'),
-                    'DESCRIPCION_ES' => $this->request->getPost('DESCRIPCION_ES'),
-                    'DESCRIPCION_ENG' => $this->request->getPost('DESCRIPCION_ENG'),
-                    'FECHA_ELIMINACION' => null // Se puede manejar posteriormente si es necesario
-                ];
-    
-                if ($id) {
-                    // Actualizar evento existente
-                    $eventoModel->update($id, $eventoData);
-                    $message = 'Evento actualizado correctamente.';
-                } else {
-                    // Crear nuevo evento
-                    $eventoModel->save($eventoData);
-                    $message = 'Evento creado correctamente.';
-                }
-    
-                // Redirigir al listado con un mensaje de éxito
-                return redirect()->to('/eventos')->with('success', $message);
-            }
         }
     
-        // Cargar la vista del formulario (crear/editar)
-        return view('eventos_form', $data);
+        // Datos del evento
+        $eventoData = [
+            'TITULO' => $this->request->getPost('TITULO'),
+            'FECHA_INICIO' => $this->request->getPost('FECHA_INICIO'),
+            'FECHA_FIN' => $this->request->getPost('FECHA_FIN'),
+            'DESCRIPCION_ES' => $this->request->getPost('DESCRIPCION_ES'),
+            'DESCRIPCION_ENG' => $this->request->getPost('DESCRIPCION_ENG'),
+            'FECHA_ELIMINACION' => null
+        ];
+    
+        // Guardar o actualizar
+        if ($id) {
+            $eventoModel->update($id, $eventoData);
+            $message = 'Evento actualizado correctamente.';
+        } else {
+            $eventoModel->save($eventoData);
+            $message = 'Evento creado correctamente.';
+        }
+    
+       return redirect()->to('/eventos')->with('success', $message);
     }
     
 
@@ -113,27 +107,32 @@ class EventoControlador extends BaseController
         return redirect()->to('/eventos')->with('success', 'Evento actualizado con éxito');
     }
     public function obtenerEventos()
-{
-    $eventoModel = new EventoModel();
-    $eventos = $eventoModel->findAll();
-
-    if (empty($eventos)) {
-        return $this->response->setJSON([]);
+    {
+        $eventoModel = new EventoModel();
+        $eventos = $eventoModel->findAll();
+    
+        if (empty($eventos)) {
+            return $this->response->setJSON([]); // No hay eventos
+        }
+    
+        $eventosFormateados = [];
+        foreach ($eventos as $evento) {
+            $eventosFormateados[] = [
+                'id' => $evento['PK_ID_EVENTO'],  
+                'title' => $evento['TITULO'],
+                'start' => $evento['FECHA_INICIO'],
+                'end' => $evento['FECHA_FIN'] ?? $evento['FECHA_INICIO'],
+                'description' => $evento['DESCRIPCION_ES'] 
+            ];
+        }
+    
+        // Habilitar CORS
+        return $this->response
+            ->setHeader('Access-Control-Allow-Origin', '*')
+            ->setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+            ->setHeader('Access-Control-Allow-Headers', 'Content-Type')
+            ->setJSON($eventosFormateados);
     }
-    // Formatear eventos para FullCalendar
-    $eventosFormateados = [];
-    foreach ($eventos as $evento) {
-        $eventosFormateados[] = [
-            'id' => $evento['PK_ID_EVENTO'],  // Asegúrate de que este campo sea el ID del evento en la BD
-            'title' => $evento['TITULO'],
-            'start' => $evento['FECHA_INICIO'],
-            'end' => $evento['FECHA_FIN'] ?? $evento['FECHA_INICIO'], // Si no hay fecha fin, usa la de inicio
-            'description' => $evento['DESCRIPCION_ES'] // Opcional
-        ];
-    }
-
-    return $this->response->setJSON($eventosFormateados);
-}
+    
 
 }
-

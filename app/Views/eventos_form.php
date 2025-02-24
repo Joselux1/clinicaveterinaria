@@ -369,7 +369,7 @@
 
                                                             <div class="mb-3">
                                                                 <label for="DESCRIPCION_ES" class="form-label">Descripción (Español)</label>
-                                                                <textarea name="DESCRIPTION_ES" id="DESCRIPCION_ES" class="form-control"><?= isset($evento) ? esc($evento['DESCRIPCION_ES']) : '' ?></textarea>
+                                                                <input  name="DESCRIPTION_ES" id="DESCRIPCION_ES" class="form-control"><?= isset($evento) ? esc($evento['DESCRIPCION_ES']) : '' ?>
                                                             </div>
 
                                                           

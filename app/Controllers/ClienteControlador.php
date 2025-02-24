@@ -20,12 +20,7 @@ class ClienteControlador extends BaseController
         $ordenar_por = $this->request->getVar('ordenar_por') ?? 'NOMBRE'; 
         $ordenar_direccion = $this->request->getVar('ordenar_direccion') ?? 'asc';
     
-        // Asegurar valores válidos para evitar SQL Injection
-        $columnas_permitidas = ['cliente.NOMBRE', 'cliente.CORREO_ELECTRONICO', 'rol.ROL'];
-        if (!in_array($ordenar_por, ['NOMBRE', 'CORREO_ELECTRONICO', 'ROL'])) {
-            $ordenar_por = 'NOMBRE'; // Valor por defecto si el usuario envía algo incorrecto
-        }
-        
+   
         // Ajustar nombre de la columna para la consulta
         $ordenar_columna = $ordenar_por === 'ROL' ? 'rol.ROL' : 'cliente.' . $ordenar_por;
     
