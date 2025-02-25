@@ -545,53 +545,54 @@
 										<!--begin::Table-->
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 											<!--begin::Table head-->
-								
 											<thead>
 												<tr>
-													<th  class="min-w-125px">
-														<a href="<?= base_url('mascotas') ?>?ordenar_por=NOMBRE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'NOMBRE' ? 'desc' : 'asc' ?>">
+													<th class="min-w-125px">
+														<a href="<?= base_url('mascotas') ?>?ordenar_por=NOMBRE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'NOMBRE' ? 'desc' : 'asc' ?>
+															&NOMBRE=<?= esc($nombre) ?>&ESPECIE=<?= esc($especie) ?>&RAZA=<?= esc($raza) ?>&EDAD=<?= esc($edad) ?>">
 															Nombre
-																<?php if ($ordenar_por == 'NOMBRE'): ?>
-																	<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
-																<?php else: ?>
-																	<i class="bi bi-arrow-up-down"></i> <!-- Flecha neutra -->
-																<?php endif; ?>
+															<?php if ($ordenar_por == 'NOMBRE'): ?>
+																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+															<?php else: ?>
+																<i class="bi bi-arrow-up-down"></i>
+															<?php endif; ?>
 														</a>
 													</th>
-													<th  class="min-w-125px">
-														<a href="<?= base_url('mascotas') ?>?ordenar_por=ESPECIE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'ESPECIE' ? 'desc' : 'asc' ?>">
-															Especie 
+													<th class="min-w-125px">
+														<a href="<?= base_url('mascotas') ?>?ordenar_por=ESPECIE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'ESPECIE' ? 'desc' : 'asc' ?>
+															&NOMBRE=<?= esc($nombre) ?>&ESPECIE=<?= esc($especie) ?>&RAZA=<?= esc($raza) ?>&EDAD=<?= esc($edad) ?>">
+															Especie
 															<?php if ($ordenar_por == 'ESPECIE'): ?>
 																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
 															<?php else: ?>
 																<i class="bi bi-arrow-up-down"></i>
 															<?php endif; ?>
-															</a>
-														</th>
-													<th  class="min-w-125px">
-														<a href="<?= base_url('mascotas') ?>?ordenar_por=RAZA&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'RAZA' ? 'desc' : 'asc' ?>">
-																Raza
-																	<?php if ($ordenar_por == 'RAZA'): ?>
-																		<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
-																	<?php else: ?>
-																		<i class="bi bi-arrow-up-down"></i>
-																	<?php endif; ?>
 														</a>
 													</th>
-													<th  class="min-w-125px">
-														<a href="<?= base_url('mascotas') ?>?ordenar_por=EDAD&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'EDAD' ? 'desc' : 'asc' ?>">
-																Edad
-																	<?php if ($ordenar_por == 'EDAD'): ?>
-																		<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
-																	<?php else: ?>
-																		<i class="bi bi-arrow-up-down"></i>
-																	<?php endif; ?>
+													<th class="min-w-125px">
+														<a href="<?= base_url('mascotas') ?>?ordenar_por=RAZA&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'RAZA' ? 'desc' : 'asc' ?>
+															&NOMBRE=<?= esc($nombre) ?>&ESPECIE=<?= esc($especie) ?>&RAZA=<?= esc($raza) ?>&EDAD=<?= esc($edad) ?>">
+															Raza
+															<?php if ($ordenar_por == 'RAZA'): ?>
+																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+															<?php else: ?>
+																<i class="bi bi-arrow-up-down"></i>
+															<?php endif; ?>
 														</a>
 													</th>
-													<th class="text-end min-w-100px text-primary" >Acciones</th>
+													<th class="min-w-125px">
+														<a href="<?= base_url('mascotas') ?>?ordenar_por=EDAD&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'EDAD' ? 'desc' : 'asc' ?>
+															&NOMBRE=<?= esc($nombre) ?>&ESPECIE=<?= esc($especie) ?>&RAZA=<?= esc($raza) ?>&EDAD=<?= esc($edad) ?>">
+															Edad
+															<?php if ($ordenar_por == 'EDAD'): ?>
+																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+															<?php else: ?>
+																<i class="bi bi-arrow-up-down"></i>
+															<?php endif; ?>
+														</a>
+													</th>
+													<th class="text-end min-w-100px text-primary">Acciones</th>
 												</tr>
-
-												<!--end::Table row-->
 											</thead>
 											<!--end::Table head-->
 											<!--begin::Table body-->

@@ -538,43 +538,45 @@
 										<!--begin::Table-->
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 											<!--begin::Table head-->
-										<thead>
-											<tr>
-												<th  class="min-w-125px">
-													<a href="<?= base_url('citas') ?>?ordenar_por=FECHA&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'FECHA' ? 'desc' : 'asc' ?>">
+											<thead>
+												<tr>
+													<th class="min-w-125px">
+														<a href="<?= base_url('citas') ?>?ordenar_por=FECHA&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'FECHA' ? 'desc' : 'asc' ?>
+															&FECHA=<?= esc($fecha) ?>&DIAGNOSTICO=<?= esc($diagnostico) ?>&TRATAMIENTO=<?= esc($tratamiento) ?>">
 															Fecha
 															<?php if ($ordenar_por == 'FECHA'): ?>
 																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
 															<?php else: ?>
-																<i class="bi bi-arrow-up-down"></i> <!-- Flecha neutra -->
+																<i class="bi bi-arrow-up-down"></i>
 															<?php endif; ?>
-													</a>
-												</th>
-												<th  class="min-w-125px">
-													<a href="<?= base_url('citas') ?>?ordenar_por=DIAGNOSTICO&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'DIAGNOSTICO' ? 'desc' : 'asc' ?>">
-														Diagnosticos 
-														<?php if ($ordenar_por == 'DIAGNOSTICO'): ?>
-															<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
-														<?php else: ?>
-															<i class="bi bi-arrow-up-down"></i>
-														<?php endif; ?>
-													</a>
-												</th>
-												<th  class="min-w-125px">
-													<a href="<?= base_url('citas') ?>?ordenar_por=TRATAMIENTO&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'TRATAMIENTO' ? 'desc' : 'asc' ?>">
-																Tratamiento
-																<?php if ($ordenar_por == 'TRATAMIENTO'): ?>
-																	<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
-																<?php else: ?>
-																	<i class="bi bi-arrow-up-down"></i>
-																<?php endif; ?>
-													</a>
-												</th>
-												<th class="text-end min-w-100px text-primary" >Acciones</th>
-											</tr>
+														</a>
+													</th>
+													<th class="min-w-125px">
+														<a href="<?= base_url('citas') ?>?ordenar_por=DIAGNOSTICO&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'DIAGNOSTICO' ? 'desc' : 'asc' ?>
+															&FECHA=<?= esc($fecha) ?>&DIAGNOSTICO=<?= esc($diagnostico) ?>&TRATAMIENTO=<?= esc($tratamiento) ?>">
+															Diagnósticos
+															<?php if ($ordenar_por == 'DIAGNOSTICO'): ?>
+																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+															<?php else: ?>
+																<i class="bi bi-arrow-up-down"></i>
+															<?php endif; ?>
+														</a>
+													</th>
+													<th class="min-w-125px">
+														<a href="<?= base_url('citas') ?>?ordenar_por=TRATAMIENTO&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'TRATAMIENTO' ? 'desc' : 'asc' ?>
+															&FECHA=<?= esc($fecha) ?>&DIAGNOSTICO=<?= esc($diagnostico) ?>&TRATAMIENTO=<?= esc($tratamiento) ?>">
+															Tratamiento
+															<?php if ($ordenar_por == 'TRATAMIENTO'): ?>
+																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+															<?php else: ?>
+																<i class="bi bi-arrow-up-down"></i>
+															<?php endif; ?>
+														</a>
+													</th>
+													<th class="text-end min-w-100px text-primary">Acciones</th>
+												</tr>
+											</thead>
 
-											<!--end::Table row-->
-										</thead>
 											<!--end::Table head-->
 											<!--begin::Table body-->
 											<tbody class="text-gray-600 fw-bold">

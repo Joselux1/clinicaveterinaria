@@ -531,35 +531,34 @@
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 											<!--begin::Table head-->
 										
-												
 											<thead>
 												<tr>
-													<th  class="min-w-125px">
-														<a href="<?= base_url('medicamentos') ?>?ordenar_por=NOMBRE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'NOMBRE' ? 'desc' : 'asc' ?>">
+													<th class="min-w-125px">
+														<a href="<?= base_url('medicamentos') ?>?ordenar_por=NOMBRE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'NOMBRE' ? 'desc' : 'asc' ?>
+															&NOMBRE=<?= esc($nombre) ?>&DESCRIPCION=<?= esc($descripcion) ?>">
 															Nombre
-																<?php if ($ordenar_por == 'NOMBRE'): ?>
-																	<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
-																<?php else: ?>
-																	<i class="bi bi-arrow-up-down"></i> <!-- Flecha neutra -->
-																<?php endif; ?>
+															<?php if ($ordenar_por == 'NOMBRE'): ?>
+																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+															<?php else: ?>
+																<i class="bi bi-arrow-up-down"></i>
+															<?php endif; ?>
 														</a>
 													</th>
-													<th  class="min-w-125px">
-														<a href="<?= base_url('medicamentos') ?>?ordenar_por=DESCRIPCION&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'DESCRIPCION' ? 'desc' : 'asc' ?>">
-															Descripcion 
+													<th class="min-w-125px">
+														<a href="<?= base_url('medicamentos') ?>?ordenar_por=DESCRIPCION&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'DESCRIPCION' ? 'desc' : 'asc' ?>
+															&NOMBRE=<?= esc($nombre) ?>&DESCRIPCION=<?= esc($descripcion) ?>">
+															Descripción
 															<?php if ($ordenar_por == 'DESCRIPCION'): ?>
 																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
 															<?php else: ?>
 																<i class="bi bi-arrow-up-down"></i>
 															<?php endif; ?>
-															</a>
-														</th>
-													
-													<th class="text-end min-w-100px text-primary" >Acciones</th>
+														</a>
+													</th>
+													<th class="text-end min-w-100px text-primary">Acciones</th>
 												</tr>
-
-												<!--end::Table row-->
 											</thead>
+
 										
 											<!--end::Table head-->
 											<!--begin::Table body-->
@@ -597,7 +596,7 @@
 															</tbody>
 														</table>
 														<div class="mt-4">
-															<?= $pager->only(['NOMBRE'])->links('default', 'custom_pagination') ?>
+															<?= $pager->only(['NOMBRE',',DESCRIPCION'])->links('default', 'custom_pagination') ?>
 														</div>
 													</div>
 											</tbody>

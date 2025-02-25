@@ -244,8 +244,8 @@
 								<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 									<!--begin::Item-->
 									<li class="breadcrumb-item text-muted">
-										<a href="../../demo1/dist/index.html"
-											class="text-muted text-hover-primary">Home</a>
+										<a href="http://localhost/clinicaveterinaria/public/"
+											class="text-muted text-hover-primary">Inicio</a>
 									</li>
 									<!--end::Item-->
 									<!--begin::Item-->
@@ -254,23 +254,9 @@
 									</li>
 									<!--end::Item-->
 									<!--begin::Item-->
-									<li class="breadcrumb-item text-muted">User Management</li>
+									<li class="breadcrumb-item text-muted">Calendario</li>
 									<!--end::Item-->
-									<!--begin::Item-->
-									<li class="breadcrumb-item">
-										<span class="bullet bg-gray-200 w-5px h-2px"></span>
-									</li>
-									<!--end::Item-->
-									<!--begin::Item-->
-									<li class="breadcrumb-item text-muted">Users</li>
-									<!--end::Item-->
-									<!--begin::Item-->
-									<li class="breadcrumb-item">
-										<span class="bullet bg-gray-200 w-5px h-2px"></span>
-									</li>
-									<!--end::Item-->
-									<!--begin::Item-->
-									<li class="breadcrumb-item text-dark">Users List</li>
+									
 									<!--end::Item-->
 								</ul>
 								<!--end::Breadcrumb-->

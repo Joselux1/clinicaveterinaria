@@ -634,19 +634,21 @@
 										<!--begin::Table head-->
 										<thead>
 											<tr>
-												<th  class="min-w-125px">
-													<a href="<?= base_url('clientes') ?>?ordenar_por=NOMBRE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'NOMBRE' ? 'desc' : 'asc' ?>">
-															Clientes
-															<?php if ($ordenar_por == 'NOMBRE'): ?>
-																<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
-															<?php else: ?>
-																<i class="bi bi-arrow-up-down"></i> <!-- Flecha neutra -->
-															<?php endif; ?>
+												<th class="min-w-125px">
+													<a href="<?= base_url('clientes') ?>?ordenar_por=NOMBRE&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'NOMBRE' ? 'desc' : 'asc' ?>
+														&NOMBRE=<?= esc($nombre) ?>&CORREO_ELECTRONICO=<?= esc($correo) ?>&filtro_fecha_baja=<?= esc($filtro_fecha_baja) ?>">
+														Clientes
+														<?php if ($ordenar_por == 'NOMBRE'): ?>
+															<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+														<?php else: ?>
+															<i class="bi bi-arrow-up-down"></i>
+														<?php endif; ?>
 													</a>
 												</th>
-												<th  class="min-w-125px">
-													<a href="<?= base_url('clientes') ?>?ordenar_por=CORREO_ELECTRONICO&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'CORREO_ELECTRONICO' ? 'desc' : 'asc' ?>">
-														Correo Electrónico 
+												<th class="min-w-125px">
+													<a href="<?= base_url('clientes') ?>?ordenar_por=CORREO_ELECTRONICO&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'CORREO_ELECTRONICO' ? 'desc' : 'asc' ?>
+														&NOMBRE=<?= esc($nombre) ?>&CORREO_ELECTRONICO=<?= esc($correo) ?>&filtro_fecha_baja=<?= esc($filtro_fecha_baja) ?>">
+														Correo Electrónico
 														<?php if ($ordenar_por == 'CORREO_ELECTRONICO'): ?>
 															<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
 														<?php else: ?>
@@ -654,21 +656,21 @@
 														<?php endif; ?>
 													</a>
 												</th>
-												<th  class="min-w-125px">
-													<a href="<?= base_url('clientes') ?>?ordenar_por=ROL&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'ROL' ? 'desc' : 'asc' ?>">
-																Rol
-																<?php if ($ordenar_por == 'ROL'): ?>
-																	<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
-																<?php else: ?>
-																	<i class="bi bi-arrow-up-down"></i>
-																<?php endif; ?>
+												<th class="min-w-125px">
+													<a href="<?= base_url('clientes') ?>?ordenar_por=ROL&ordenar_direccion=<?= $ordenar_direccion == 'asc' && $ordenar_por == 'ROL' ? 'desc' : 'asc' ?>
+														&NOMBRE=<?= esc($nombre) ?>&CORREO_ELECTRONICO=<?= esc($correo) ?>&filtro_fecha_baja=<?= esc($filtro_fecha_baja) ?>">
+														Rol
+														<?php if ($ordenar_por == 'ROL'): ?>
+															<i class="bi <?= $ordenar_direccion == 'asc' ? 'bi-arrow-up' : 'bi-arrow-down' ?>"></i>
+														<?php else: ?>
+															<i class="bi bi-arrow-up-down"></i>
+														<?php endif; ?>
 													</a>
 												</th>
 												<th class="text-end min-w-100px text-primary">Acciones</th>
 											</tr>
-
-											<!--end::Table row-->
 										</thead>
+
 										<!--end::Table head-->
 										<!--begin::Table body-->
 										<tbody class="text-gray-600 fw-bold">
@@ -730,7 +732,7 @@
 										</tbody>
 									</table>
 									<div class="mt-4">
-										<?= $pager->only(['NOMBRE'])->links('default', 'custom_pagination') ?>
+										<?= $pager->only(['NOMBRE', 'CORREO_ELECTRONICO', 'filtro_fecha_baja', 'ordenar_por', 'ordenar_direccion'])->links('default', 'custom_pagination') ?>
 									</div>
 								</div>
 								</tbody>

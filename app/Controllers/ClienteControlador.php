@@ -74,7 +74,7 @@ class ClienteControlador extends BaseController
         $clienteModel = new ClienteModel();
         helper(['form', 'url']);
     
-        // Cargar datos del cliente si es edición
+        // Cargar datos del cliente si es editar
         $data['cliente'] = $id ? $clienteModel->find($id) : null;
     
         if ($this->request->getMethod() == 'POST') {
