@@ -692,26 +692,32 @@
 																	</svg>
 																</span>
 															</a>
-															<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
-																data-kt-menu="true">
-																<div class="menu-item px-3">
-																	<a href="<?= base_url('clientes/editar/' . $cliente['PK_ID_CLIENTE']) ?>"
-																		class="btn btn-warning btn-sm w-100">Editar</a>
-																</div>
-																<div class="menu-item px-3">
-																	<a href="<?= base_url('clientes/eliminar/') . esc($cliente['PK_ID_CLIENTE']) ?>"
-																		class="btn btn-danger btn-sm w-100"
-																		onclick="return confirm('¿Estás seguro de eliminar este cliente?');">Eliminar</a>
-																</div>
-																<div class="menu-item px-3">
-																	<?php if ($cliente['FECHA_BAJA']): ?>
-																	<form action="<?= base_url('clientes/reactivar/' . $cliente['PK_ID_CLIENTE']) ?>" method="post" style="display:inline;">
-																		<?= csrf_field() ?>
-																		<button type="submit" class="btn btn-success btn-sm w-100">Dar de Alta</button>
-																	</form>
-																	<?php endif; ?>
-																</div>
+															<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"	data-kt-menu="true">
+																			<div class="menu-item px-3">
+																				<a href="<?= base_url('clientes/editar/' . $cliente['PK_ID_CLIENTE']) ?>"
+																					class="btn btn-warning btn-sm w-100">Editar</a>
+																			</div>
+
+																			<!-- Mostrar "Eliminar" solo si el cliente NO está dado de baja -->
+																			<?php if (!$cliente['FECHA_BAJA']): ?>
+																			<div class="menu-item px-3">
+																				<a href="<?= base_url('clientes/eliminar/') . esc($cliente['PK_ID_CLIENTE']) ?>"
+																					class="btn btn-danger btn-sm w-100"
+																					onclick="return confirm('¿Estás seguro de eliminar este cliente?');">Eliminar</a>
+																			</div>
+																			<?php endif; ?>
+
+																			<!-- Mostrar "Dar de Alta" solo si el cliente está dado de baja -->
+																			<?php if ($cliente['FECHA_BAJA']): ?>
+																			<div class="menu-item px-3">
+																				<form action="<?= base_url('clientes/reactivar/' . $cliente['PK_ID_CLIENTE']) ?>" method="post" style="display:inline;">
+																					<?= csrf_field() ?>
+																					<button type="submit" class="btn btn-success btn-sm w-100">Dar de Alta</button>
+																				</form>
+																			</div>
+																			<?php endif; ?>
 															</div>
+
 														</td>
 													</tr>
 												<?php endforeach; ?>
@@ -724,7 +730,7 @@
 										</tbody>
 									</table>
 									<div class="mt-4">
-										<?= $pager->only(['NOMBRE', 'CORREO_ELECTRONICO'])->links('default', 'custom_pagination') ?>
+										<?= $pager->only(['NOMBRE'])->links('default', 'custom_pagination') ?>
 									</div>
 								</div>
 								</tbody>

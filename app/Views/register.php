@@ -37,7 +37,7 @@
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
 				
-						<img alt="Logo" src="assets/media/logos/clinica.png" class="h-300px" />
+						<img alt="Logo" src="../assets/media/logos/clinica.png	" class="h-300px" />
 				
 					<!--end::Logo-->
 					<!--begin::Wrapper-->

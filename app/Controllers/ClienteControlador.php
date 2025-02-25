@@ -73,9 +73,10 @@ class ClienteControlador extends BaseController
     {
         $clienteModel = new ClienteModel();
         helper(['form', 'url']);
+    
         // Cargar datos del cliente si es edición
         $data['cliente'] = $id ? $clienteModel->find($id) : null;
-
+    
         if ($this->request->getMethod() == 'POST') {
             // Reglas de validación
             $validation = \Config\Services::validation();
@@ -84,19 +85,29 @@ class ClienteControlador extends BaseController
                 'CORREO_ELECTRONICO' => 'required|valid_email',
                 'CONTRASEÑA' => 'required|min_length[6]'
             ]);
-
+    
             if (!$validation->withRequest($this->request)->run()) {
                 // Mostrar errores de validación
                 $data['validation'] = $validation;
-            }else{
+            } else {
+                $correo = $this->request->getPost('CORREO_ELECTRONICO');
+    
+                // Verificar si el correo ya está registrado
+                $clienteExistente = $clienteModel->where('CORREO_ELECTRONICO', $correo)->first();
+    
+                if ($clienteExistente && !$id) { 
+                    // Si el correo ya existe y no es una actualización, evitar el registro
+                    return redirect()->to('/clientes')->with('error', 'El correo ya está registrado.');
+                }
+    
                 // Preparar datos del formulario
                 $clienteData = [
                     'NOMBRE' => $this->request->getPost('NOMBRE'),
-                    'CORREO_ELECTRONICO' => $this->request->getPost('CORREO_ELECTRONICO'),
+                    'CORREO_ELECTRONICO' => $correo,
                     'CONTRASEÑA' => password_hash($this->request->getPost('CONTRASEÑA'), PASSWORD_DEFAULT),
-                    'FECHA_BAJA' => null // Se puede manejar posteriormente si se requiere
+                    'FECHA_BAJA' => null 
                 ];
-
+    
                 if ($id) {
                     // Actualizar cliente existente
                     $clienteModel->update($id, $clienteData);
@@ -106,16 +117,16 @@ class ClienteControlador extends BaseController
                     $clienteModel->save($clienteData);
                     $message = 'Cliente creado correctamente.';
                 }
-
+    
                 // Redirigir al listado con un mensaje de éxito
                 return redirect()->to('/clientes')->with('success', $message);
             }
         }
-
+    
         // Cargar la vista del formulario (crear/editar)
         return view('cliente_form', $data);
     }
-
+    
     public function borrar($id)
     {
        
