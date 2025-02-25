@@ -84,15 +84,15 @@ $(document).ready(function () {
         locale: 'es',
         firstDay: 1,
 
-        events: 'http://127.0.0.1/clinicaveterinaria/public/eventos/obtener',
+        events: window.location.origin+'/clinicaveterinaria/public/eventos/obtener',
 
         select: function (info) {
             const title = prompt('Título del evento:');
             if (title) {
                 $.ajax({
-                    url: 'http://127.0.0.1/clinicaveterinaria/public/eventos/guardar',
+                    url: window.location.origin+'/clinicaveterinaria/public/eventos/guardar',
                     method: 'POST',
-                    contentType: 'application/json',  // Asegura que el backend lo reciba como JSON
+                    contentType: 'application/json',  
                     data: JSON.stringify({
                         TITULO: title,
                         FECHA_INICIO: info.startStr,
