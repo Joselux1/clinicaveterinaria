@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }]
     };
-    let donutChart = new ApexCharts(document.querySelector("#donutGrafico"), donutOptions);
+    let donutChart = new ApexCharts(document.getElementById("#donutGrafico"), donutOptions);
     donutChart.render();
 
     
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     };
-    let barChart = new ApexCharts(document.querySelector("#barChartGrafico"), barChartOptions);
+    let barChart = new ApexCharts(document.getElementById("#barChartGrafico"), barChartOptions);
     barChart.render();
 });
 $(document).ready(function () {
@@ -83,31 +83,107 @@ $(document).ready(function () {
         editable: true,
         locale: 'es',
         firstDay: 1,
-
-        events: window.location.origin+'/clinicaveterinaria/public/eventos/obtener',
+        buttonText: {
+            today: 'Hoy'
+           
+        },
+        events: window.location.origin + '/clinicaveterinaria/public/eventos/obtener',
 
         select: function (info) {
-            const title = prompt('Título del evento:');
-            if (title) {
-                $.ajax({
-                    url: window.location.origin+'/clinicaveterinaria/public/eventos/guardar',
-                    method: 'POST',
-                    contentType: 'application/json',  
-                    data: JSON.stringify({
-                        TITULO: title,
-                        FECHA_INICIO: info.startStr,
-                        FECHA_FIN: info.endStr || info.startStr,
-                        DESCRIPCION_ES: ''
-                    }),
-                    success: function () {
-                        calendar.refetchEvents();
-                    }
-                });
-                
-            }
+            console.log("Fecha seleccionada:", info.startStr); // Para verificar en consola
+
+            // Rellenar los campos del formulario con la fecha seleccionada
+            $("#FECHA_INICIO").val(info.startStr + "T00:00");
+            $("#FECHA_FIN").val(info.endStr ? info.endStr + "T23:59" : info.startStr + "T23:59");
+
+            // Limpiar campos de texto
+            $("#TITULO").val("");
+            $("#DESCRIPCION_ES").val("");
+            $("#DESCRIPCION_ENG").val("");
+
+            // Mostrar el modal
+            $("#kt_modal_add_event").modal("show");
         },
+
+        eventClick: function (info) {
+            console.log("Evento clickeado", info.event.id);
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: window.location.origin + '/clinicaveterinaria/public/eventos/borrarEventos/' + info.event.id,
+                        method: 'POST',
+                        data: { _method: 'DELETE' },
+                        success: function () {
+                            Swal.fire('Eliminado!', 'El evento ha sido eliminado.', 'success');
+                            calendar.refetchEvents();
+                        },
+                        error: function (jqXHR) {
+                            console.error("Error al eliminar el evento: ", jqXHR.responseText);
+                            Swal.fire('Error!', 'No se pudo eliminar el evento.', 'error');
+                        }
+                    });
+                }
+            });
+        }
     });
 
     calendar.render();
+
+    // Manejo del envío del formulario con validación y alertas
+    $("#eventoForm").submit(function (e) {
+        e.preventDefault(); 
+        $.ajax({
+            url: $(this).attr("action"),
+            method: "POST",
+            data: $(this).serialize(),
+            success: function (response) {
+                if (response.status === "error") {
+                    let errorMessage = "";
+
+                    // Construir mensaje de error con los campos inválidos
+                    for (const campo in response.errors) {
+                        errorMessage += `• ${response.errors[campo]} <br>`;
+                    }
+
+                    // Mostrar alerta con los errores
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error al guardar el evento",
+                        html: errorMessage,
+                        confirmButtonText: "Entendido",
+                    });
+                } else {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Evento guardado",
+                        text: "El evento se ha guardado correctamente.",
+                        confirmButtonText: "OK",
+                    }).then(() => {
+                    
+                        $("#kt_modal_add_event").modal("hide");
+                        calendar.refetchEvents();
+                    });
+                }
+            },
+            error: function () {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error inesperado",
+                    text: "Hubo un problema al intentar guardar el evento.",
+                    confirmButtonText: "Cerrar",
+                });
+            },
+        });
+    });
 });
 

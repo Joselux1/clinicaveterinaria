@@ -52,11 +52,11 @@ class EventoControlador extends BaseController
             'FECHA_INICIO' => 'required',
             'FECHA_FIN' => 'permit_empty',
             'DESCRIPCION_ES' => 'permit_empty|max_length[500]',
-            'DESCRIPCION_ENG' => 'permit_empty|max_length[500]'
+      
         ]);
     
         if (!$validation->withRequest($this->request)->run()) {
-            // Retornar errores en formato JSON
+            //retorna errores
             return $this->response->setJSON([
                 'status' => 'error',
                 'errors' => $validation->getErrors()
@@ -69,7 +69,6 @@ class EventoControlador extends BaseController
             'FECHA_INICIO' => $this->request->getPost('FECHA_INICIO'),
             'FECHA_FIN' => $this->request->getPost('FECHA_FIN'),
             'DESCRIPCION_ES' => $this->request->getPost('DESCRIPCION_ES'),
-            'DESCRIPCION_ENG' => $this->request->getPost('DESCRIPCION_ENG'),
             'FECHA_ELIMINACION' => null
         ];
     
@@ -85,12 +84,25 @@ class EventoControlador extends BaseController
        return redirect()->to('/eventos')->with('success', $message);
     }
     
+   public function borrarEventos($id)
+{
 
-    public function borrarEventos($id)
-    {
-        $this->eventoModel->delete($id);
-        return redirect()->to('/eventos')->with('success', 'Evento eliminado con éxito');
+    if ($this->request->getMethod() !== 'delete' && $this->request->getPost('_method') !== 'DELETE') {
+        return $this->response->setJSON(['error' => 'Método no permitido'])->setStatusCode(405);
     }
+
+    $evento = $this->eventoModel->find($id);
+
+    if (!$evento) {
+        return $this->response->setJSON(['error' => 'Evento no encontrado'])->setStatusCode(404);
+    }
+
+    if ($this->eventoModel->delete($id)) {
+        return $this->response->setJSON(['success' => 'Evento eliminado']);
+    } else {
+        return $this->response->setJSON(['error' => 'No se pudo eliminar el evento'])->setStatusCode(500);
+    }
+}
 
     public function actualizar($id)
     {
@@ -99,7 +111,7 @@ class EventoControlador extends BaseController
             'FECHA_INICIO' => $this->request->getPost('FECHA_INICIO'),
             'FECHA_FIN' => $this->request->getPost('FECHA_FIN'),
             'DESCRIPCION_ES' => $this->request->getPost('DESCRIPCION_ES'),
-            'DESCRIPCION_ENG' => $this->request->getPost('DESCRIPCION_ENG'),
+
         ];
 
         $this->eventoModel->update($id, $data);
@@ -133,6 +145,7 @@ class EventoControlador extends BaseController
             ->setHeader('Access-Control-Allow-Headers', 'Content-Type')
             ->setJSON($eventosFormateados);
     }
+
     
 
 }

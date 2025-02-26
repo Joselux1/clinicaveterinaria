@@ -201,22 +201,25 @@
 				</div>
 				<!--end::Aside menu-->
 				<!--begin::Footer-->
-				<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-					<div class="card shadow-sm border-0 rounded-3">
-										<div class="card-body text-center">
-											<h5 class="card-title">Usuario </h5>
-											<hr>
-											<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
-											<p class="card-text">
-												<strong>Rol:</strong>
-												<span class="badge bg-primary">
-													<?= esc(session()->get('ROL')); ?>
-												</span>
-											</p>
-											<a href="<?= base_url('logout'); ?>" class="btn btn-danger w-100 mt-2">Cerrar Sesión</a>
-										</div>
-									</div>
-					</div>
+						<div class="aside-footer flex-column-auto pt-5 pb-7 px-3 px-md-5" id="kt_aside_footer">
+							<div class="card shadow-sm border-0 rounded-3">
+								<div class="card-body text-center">
+									<h5 class="card-title">Usuario</h5>
+									<hr>
+									<p class="card-text mb-1">
+										<strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?>
+									</p>
+									<p class="card-text">
+										<strong>Rol:</strong>
+										<span class="badge bg-primary">
+											<?= esc(session()->get('ROL')); ?>
+										</span>
+									</p>
+									<a href="<?= base_url('logout'); ?>" class="btn btn-danger w-100 mt-2">Cerrar Sesión</a>
+								</div>
+							</div>
+						</div>
+
 				<!--end::Footer-->
 			</div>
 			<!--end::Aside-->
@@ -388,28 +391,24 @@
 							<!--begin::Card-->
 							<div class="card">
 								<!--begin::Card header-->
-								<div class="card-header border-0 pt-6">
-									<!--begin::Card title-->
-									<div class="card-title">
-										<!--begin::Search-->
+									<div class="card-header border-0 pt-6">
+										<!--begin::Card title-->
+										<div class="card-title">
+											<!--begin::Search-->
 
-										<!--end::Search-->
+											<!--end::Search-->
+										</div>
+										<!--begin::Card title-->
+										<!--begin::Card toolbar-->
+
+										<!--end::Card toolbar-->
 									</div>
-									<!--begin::Card title-->
-									<!--begin::Card toolbar-->
-
-									<!--end::Card toolbar-->
-								</div>
 									<div class="card-body pt-0">
 													<?php if (isset($validation)): ?>
 														<div class="alert alert-danger">
 															<?= $validation->listErrors() ?>
 														</div>
 													<?php endif; ?>
-										<a href="<?= base_url('eventos/crear') ?>" class="btn btn-primary" data-bs-toggle="modal"
-										data-bs-target="#kt_modal_add_event" id="kt_toolbar_primary_button">Añadir </a>
-
-										
 										<div class="modal fade" id="kt_modal_add_event" tabindex="-1" aria-hidden="true">
 										<!--begin::Modal dialog-->
 										<div class="modal-dialog modal-dialog-centered mw-650px">
@@ -430,7 +429,7 @@
 												<!--end::Modal header-->
 
 												<!--begin::Modal body-->
-												<div class="modal-body py-10 px-lg-17">
+												<div class="modal-body py-10 px-lg-17" id="eventoModal">
 													<form id="eventoForm" action="<?= isset($evento) ? base_url('eventos/actualizar/' . $evento['PK_ID_EVENT']) : base_url('eventos/guardar') ?>" method="POST">
 														<?= csrf_field(); ?>            
 														
@@ -440,14 +439,11 @@
 														</div>
 
 														<div class="fv-row mb-9">
-															<label class="fs-6 fw-bold mb-2">Descripción Evento ES</label>
+															<label class="fs-6 fw-bold mb-2">Descripción del Evento</label>
 															<textarea name="DESCRIPCION_ES" id="DESCRIPCION_ES" class="form-control"><?= isset($evento) ? esc($evento['DESCRIPCION_ES']) : '' ?></textarea>
 														</div>
 
-														<div class="fv-row mb-9">
-															<label class="fs-6 fw-bold mb-2">Descripción Evento ENG</label>
-															<textarea name="DESCRIPCION_ENG" id="DESCRIPCION_ENG" class="form-control"><?= isset($evento) ? esc($evento['DESCRIPCION_ENG']) : '' ?></textarea>
-														</div>
+														
 
 														<div class="row row-cols-lg-2 g-10">
 															<div class="col">

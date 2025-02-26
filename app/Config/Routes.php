@@ -78,7 +78,8 @@ $routes->get('/eventos', 'EventoControlador::index');
 $routes->get('/busquedaEventos', 'EventoControlador::busquedaEventos');
 $routes->get('eventos/crear', 'EventoControlador::guardarEvento');  // Muestra el formulario
 $routes->post('eventos/guardar', 'EventoControlador::guardarEvento');  // Guarda el evento
-$routes->delete('/borrarEventos/(:num)', 'EventoControlador::borrarEvento/$1');
+$routes->delete('eventos/borrarEventos/(:num)', 'EventoControlador::borrarEventos/$1');
+
 $routes->get('eventos/obtener', 'EventoControlador::obtenerEventos');
 
 //exportar  
