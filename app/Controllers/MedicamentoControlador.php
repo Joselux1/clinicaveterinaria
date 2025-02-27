@@ -125,4 +125,43 @@ class MedicamentoControlador extends BaseController
 
     return redirect()->to('/medicamentos')->with('success', 'Medicamento marcado como dado de baja correctamente.');
 }
+public function exportarCSV()
+    {
+        $medicamentoModel = new MedicamentoModel();
+        $medicamentos = $medicamentoModel->select('NOMBRE, DESCRIPCION, CITA_ID, FECHA_BAJA')->findAll();
+        
+        // Definir el nombre del archivo con fecha
+        $filename = 'medicamentos_' . date('Ymd') . '.csv';
+
+        // Encabezados para forzar la descarga
+        header("Content-Description: File Transfer");
+        header("Content-Disposition: attachment; filename=$filename");
+        header("Content-Type: text/csv; charset=UTF-8");
+
+   
+        $output = fopen('php://output', 'w');
+
+        // Encabezados del CSV
+        fputcsv($output, ['Nombre', 'Descripción', 'ID Cita', 'Fecha Baja']);
+
+        foreach ($medicamentos as $medicamento) {
+            fputcsv($output, [
+                $medicamento['NOMBRE'],
+                $medicamento['DESCRIPCION'],
+                $medicamento['CITA_ID'],
+                $medicamento['FECHA_BAJA'] ?? 'Activo' // Si está null, mostrar "Activo"
+            ]);
+        }
+
+        fclose($output);
+        exit();
+    }
+    public function reactivar($id)
+{
+    $medicamentoModel = new MedicamentoModel();
+    $medicamentoModel->update($id, ['FECHA_BAJA' => null]);
+
+    return redirect()->to('/medicamentos')->with('success', 'Medicamento reactivado correctamente.');
+}
+
 }

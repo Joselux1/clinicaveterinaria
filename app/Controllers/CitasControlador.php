@@ -156,4 +156,47 @@ public function eliminar($id)
     
         return redirect()->to('/citas')->with('success', 'Citas reactivado correctamente.');
     }
+    public function exportarCSV()
+{
+    $citaModel = new CitaModel();
+
+    // Obtener citas con información del cliente, mascota y medicamento
+    $citas = $citaModel->select('cita.FECHA, cita.DIAGNOSTICO, cita.TRATAMIENTO, 
+                                 cliente.NOMBRE as CLIENTE, 
+                                 mascota.NOMBRE as MASCOTA, 
+                                 medicamento.NOMBRE as MEDICAMENTO')
+                       ->join('mascota', 'cita.MASCOTA_ID = mascota.PK_ID_MASCOTA', 'left')
+                       ->join('cliente', 'mascota.CLIENTE_ID = cliente.PK_ID_CLIENTE', 'left')
+                       ->join('medicamento', 'cita.PK_ID_CITA = medicamento.CITA_ID', 'left')
+                       ->findAll();
+
+    // Nombre del archivo CSV
+    $filename = 'citas_' . date('Ymd') . '.csv';
+
+    // Configurar cabeceras para la descarga
+    header("Content-Type: text/csv; charset=utf-8");
+    header("Content-Disposition: attachment; filename=\"$filename\"");
+
+    // Abrir el archivo de salida
+    $output = fopen('php://output', 'w');
+
+    // Escribir la cabecera del CSV
+    fputcsv($output, ['Fecha', 'Diagnóstico', 'Tratamiento', 'Cliente', 'Mascota', 'Medicamento']);
+
+    // Escribir cada fila con datos
+    foreach ($citas as $cita) {
+        fputcsv($output, [
+            $cita['FECHA'], 
+            $cita['DIAGNOSTICO'], 
+            $cita['TRATAMIENTO'], 
+            $cita['CLIENTE'], 
+            $cita['MASCOTA'], 
+            $cita['MEDICAMENTO']
+        ]);
+    }
+
+    fclose($output);
+    exit;
+}
+
 }

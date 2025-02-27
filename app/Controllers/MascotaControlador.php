@@ -148,4 +148,38 @@ class MascotaControlador extends BaseController
     
         return redirect()->to('/mascotas')->with('success', 'Mascota reactivado correctamente.');
     }
+    public function exportarCSV()
+    {
+        $mascotaModel = new MascotaModel();
+        $mascotas = $mascotaModel->select('NOMBRE, ESPECIE, RAZA, EDAD, CLIENTE_ID, FECHA_BAJA')->findAll();
+        
+        // Definir el nombre del archivo con fecha
+        $filename = 'mascotas_' . date('Ymd') . '.csv';
+
+        // Encabezados para forzar la descarga
+        header("Content-Description: File Transfer");
+        header("Content-Disposition: attachment; filename=$filename");
+        header("Content-Type: text/csv; charset=UTF-8");
+
+        // Abrir la salida para escribir
+        $output = fopen('php://output', 'w');
+
+        // Encabezados del CSV
+        fputcsv($output, ['Nombre', 'Especie', 'Raza', 'Edad', 'ID Cliente', 'Fecha Baja']);
+
+     
+        foreach ($mascotas as $mascota) {
+            fputcsv($output, [
+                $mascota['NOMBRE'],
+                $mascota['ESPECIE'],
+                $mascota['RAZA'],
+                $mascota['EDAD'],
+                $mascota['CLIENTE_ID'],
+                $mascota['FECHA_BAJA'] ?? 'Activo' // Si está null, mostrar "Activo"
+            ]);
+        }
+
+        fclose($output);
+        exit();
+    }
 }

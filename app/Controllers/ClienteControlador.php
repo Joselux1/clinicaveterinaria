@@ -7,6 +7,12 @@ use CodeIgniter\Controller;
 
 class ClienteControlador extends BaseController
 {
+    private $session; // Agregar esta línea
+
+    public function __construct()
+    {
+        $this->session = session();
+    }
     public function index()
     {
         $clienteModel = new ClienteModel();
@@ -298,7 +304,7 @@ class ClienteControlador extends BaseController
         fclose($output);
         exit;
     }
-    
+   
 
 }
 

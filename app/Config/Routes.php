@@ -56,6 +56,8 @@ $routes->post('medicamentos/guardar', 'MedicamentoControlador::guardarMedicament
 $routes->get('medicamentos/editar/(:num)', 'MedicamentoControlador::guardarMedicamento/$1');
 $routes->post('medicamentos/editar/(:num)', 'MedicamentoControlador::guardarMedicamento/$1');
 $routes->get('medicamentos/eliminar/(:num)', 'MedicamentoControlador::borrar/$1');
+$routes->post('medicamentos/reactivar/(:num)', 'MedicamentoControlador::reactivar/$1');
+
 
 
 //login
@@ -84,3 +86,10 @@ $routes->get('eventos/obtener', 'EventoControlador::obtenerEventos');
 
 //exportar  
 $routes->get('clientes/exportarCSV', 'ClienteControlador::exportarCSV');
+$routes->get('citas/exportar', 'CitasControlador::exportarCSV');
+$routes->get('mascotas/exportarCSV', 'MascotaControlador::exportarCSV');
+$routes->get('medicamentos/exportarCSV', 'MedicamentoControlador::exportarCSV');
+
+
+
+

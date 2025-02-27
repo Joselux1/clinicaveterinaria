@@ -676,7 +676,7 @@
 										<tbody class="text-gray-600 fw-bold">
 											<?php if (!empty($clientes) && is_array($clientes)): ?>
 												<?php foreach ($clientes as $cliente): ?>
-													<tr>
+													<tr class="<?= $cliente['FECHA_BAJA'] ? 'table-danger' : '' ?>">
 														<td><?= esc($cliente['NOMBRE']) ?></td>
 														<td><?= esc($cliente['CORREO_ELECTRONICO']) ?></td>
 														<td><?= esc($cliente['ROL']) ?></td>
@@ -694,32 +694,31 @@
 																	</svg>
 																</span>
 															</a>
-															<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"	data-kt-menu="true">
-																			<div class="menu-item px-3">
-																				<a href="<?= base_url('clientes/editar/' . $cliente['PK_ID_CLIENTE']) ?>"
-																					class="btn btn-warning btn-sm w-100">Editar</a>
-																			</div>
+															<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('clientes/editar/' . $cliente['PK_ID_CLIENTE']) ?>"
+																		class="btn btn-warning btn-sm w-100">Editar</a>
+																</div>
 
-																			<!-- Mostrar "Eliminar" solo si el cliente NO está dado de baja -->
-																			<?php if (!$cliente['FECHA_BAJA']): ?>
-																			<div class="menu-item px-3">
-																				<a href="<?= base_url('clientes/eliminar/') . esc($cliente['PK_ID_CLIENTE']) ?>"
-																					class="btn btn-danger btn-sm w-100"
-																					onclick="return confirm('¿Estás seguro de eliminar este cliente?');">Eliminar</a>
-																			</div>
-																			<?php endif; ?>
+																<!-- Mostrar "Eliminar" solo si el cliente NO está dado de baja -->
+																<?php if (!$cliente['FECHA_BAJA']): ?>
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('clientes/eliminar/') . esc($cliente['PK_ID_CLIENTE']) ?>"
+																		class="btn btn-danger btn-sm w-100"
+																		onclick="return confirm('¿Estás seguro de eliminar este cliente?');">Eliminar</a>
+																</div>
+																<?php endif; ?>
 
-																			<!-- Mostrar "Dar de Alta" solo si el cliente está dado de baja -->
-																			<?php if ($cliente['FECHA_BAJA']): ?>
-																			<div class="menu-item px-3">
-																				<form action="<?= base_url('clientes/reactivar/' . $cliente['PK_ID_CLIENTE']) ?>" method="post" style="display:inline;">
-																					<?= csrf_field() ?>
-																					<button type="submit" class="btn btn-success btn-sm w-100">Dar de Alta</button>
-																				</form>
-																			</div>
-																			<?php endif; ?>
+																<!-- Mostrar "Dar de Alta" solo si el cliente está dado de baja -->
+																<?php if ($cliente['FECHA_BAJA']): ?>
+																<div class="menu-item px-3">
+																	<form action="<?= base_url('clientes/reactivar/' . $cliente['PK_ID_CLIENTE']) ?>" method="post" style="display:inline;">
+																		<?= csrf_field() ?>
+																		<button type="submit" class="btn btn-success btn-sm w-100">Dar de Alta</button>
+																	</form>
+																</div>
+																<?php endif; ?>
 															</div>
-
 														</td>
 													</tr>
 												<?php endforeach; ?>
@@ -728,8 +727,8 @@
 													<td colspan="4" class="text-center">No hay clientes registrados.</td>
 												</tr>
 											<?php endif; ?>
-
 										</tbody>
+
 									</table>
 									<div class="mt-4">
 										<?= $pager->only(['NOMBRE', 'CORREO_ELECTRONICO', 'filtro_fecha_baja', 'ordenar_por', 'ordenar_direccion'])->links('default', 'custom_pagination') ?>
