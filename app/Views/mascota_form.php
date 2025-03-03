@@ -22,6 +22,8 @@
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	
+	
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -195,7 +197,7 @@
 									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 										<!--begin::Item-->
 										<li class="breadcrumb-item text-muted">
-											<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+											<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Inicio</a>
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
@@ -204,7 +206,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">User Management</li>
+										<li class="breadcrumb-item text-muted">Listas</li>
 										<!--end::Item-->
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
@@ -212,7 +214,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">Users</li>
+										<li class="breadcrumb-item text-muted">Mascotas</li>
 										<!--end::Item-->
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
@@ -220,7 +222,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark">Users List</li>
+										<li class="breadcrumb-item text-dark">Añadir Mascotas</li>
 										<!--end::Item-->
 									</ul>
 									<!--end::Breadcrumb-->
@@ -343,7 +345,7 @@
 													<?php endif; ?>
                                                     <div class="d-flex flex-center flex-column py-5">
                                                         <!--begin::Editar-->
-                                                       <form action="<?= base_url($mascota ? 'mascotas/editar/' . $mascota['PK_ID_MASCOTA'] : 'mascotas/guardar') ?>" method="post">
+                                                       <form  id="formulario_mascota" action="<?= base_url($mascota ? 'mascotas/editar/' . $mascota['PK_ID_MASCOTA'] : 'mascotas/guardar') ?>" method="post">
                                                             <div class="form-group">
                                                                 <label for="NOMBRE">Nombre:</label>
                                                                 <input type="text" name="NOMBRE" class="form-control" value="<?= old('NOMBRE', esc($mascota['NOMBRE'] ?? '')) ?>" required>
@@ -361,7 +363,7 @@
                                                                 <input type="number" name="EDAD" class="form-control" value="<?= old('EDAD', esc($mascota['EDAD'] ?? '')) ?>" required>
                                                             </div>
 															<!-- Botones -->
-                                                            <button type="submit" class="btn btn-success"><?= $mascota ? 'Actualizar' : 'Crear' ?> Mascota</button>
+                                                            <button type="submit" id="btnMascota" class="btn btn-success"><?= $mascota ? 'Actualizar' : 'Crear' ?> Mascota</button>
 															<a href="<?= base_url('mascotas') ?>" class="btn btn-secondary">Cancelar</a>
 														</form>
                                                     </div>
@@ -3064,6 +3066,7 @@
 		<script src="../assets/js/custom/apps/chat/chat.js"></script>
 		<script src="../assets/js/custom/modals/create-app.js"></script>
 		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="../assets/js/main.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

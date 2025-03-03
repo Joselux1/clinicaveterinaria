@@ -11,10 +11,13 @@ class ClienteControlador extends BaseController
 
     public function __construct()
     {
+        
         $this->session = session();
     }
     public function index()
     {
+
+  
         $clienteModel = new ClienteModel();
     
         $nombre = $this->request->getVar('NOMBRE');
@@ -274,29 +277,51 @@ class ClienteControlador extends BaseController
      
         return redirect()->to('clientes')->with('success', 'Usuario agregado correctamente.');
     }
-
     public function exportarCSV()
     {
         $clienteModel = new ClienteModel();
-
-        $clientes = $clienteModel->select('cliente.NOMBRE, cliente.CORREO_ELECTRONICO, rol.ROL')
-                                 ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
-                                 ->findAll();
     
-        // Definir el nombre del archivo de exportación
+        // Obtener parámetros de ordenación y filtro desde la URL
+        $ordenar_por = $this->request->getGet('ordenar_por') ?? 'NOMBRE';
+        $ordenar_direccion = $this->request->getGet('ordenar_direccion') ?? 'asc';
+        $filtro_letra = $this->request->getGet('letra') ?? '';
+    
+        // Lista blanca de columnas permitidas para ordenación
+        $columnas_validas = ['NOMBRE', 'CORREO_ELECTRONICO', 'ROL'];
+        if (!in_array($ordenar_por, $columnas_validas)) {
+            $ordenar_por = 'NOMBRE';
+        }
+    
+        $ordenar_direccion = ($ordenar_direccion === 'desc') ? 'desc' : 'asc';
+    
+        // Construir la consulta
+        $clientesQuery = $clienteModel
+            ->select('cliente.NOMBRE, cliente.CORREO_ELECTRONICO, rol.ROL')
+            ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
+            ->orderBy($ordenar_por, $ordenar_direccion);
+    
+        // Aplicar filtro si se ingresó una letra válida
+        if (!empty($filtro_letra) && preg_match('/^[A-Z]$/i', $filtro_letra)) {
+            $clientesQuery->where("cliente.NOMBRE LIKE '$filtro_letra%'", null, false);
+        }
+    
+        // Obtener los resultados
+        $clientes = $clientesQuery->findAll();
+    
+        // Nombre del archivo de exportación
         $filename = 'clientes_' . date('Ymd') . '.csv';
     
         // Configurar cabeceras para forzar la descarga
         header("Content-Type: text/csv; charset=utf-8");
         header("Content-Disposition: attachment; filename=\"$filename\"");
     
-        // Abrir la salida como un archivo CSV
+        // Abrir salida como archivo CSV
         $output = fopen('php://output', 'w');
     
-        // cabecera del CSV
+        // Escribir cabecera del CSV
         fputcsv($output, ['Nombre', 'Correo Electrónico', 'Rol']);
     
-        // Escribir los datos de los clientes en el archivo
+        // Escribir los datos de los clientes en el archivo CSV
         foreach ($clientes as $cliente) {
             fputcsv($output, [$cliente['NOMBRE'], $cliente['CORREO_ELECTRONICO'], $cliente['ROL']]);
         }
@@ -304,6 +329,11 @@ class ClienteControlador extends BaseController
         fclose($output);
         exit;
     }
+    
+
+    
+    
+    
    
 
 }

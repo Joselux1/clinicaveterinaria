@@ -1,4 +1,11 @@
+
+
+
 document.addEventListener("DOMContentLoaded", function () { 
+    // Deshabilitar el botón al enviar el formulario de mascota
+    document.getElementById("formulario_mascota").addEventListener("submit", function() {
+        document.getElementById("btnMascota").disabled = true;
+    });
     if (document.getElementById("donutGrafico")) {
         let donutOptions = {
             series: [44, 55, 41, 17],

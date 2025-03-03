@@ -195,7 +195,7 @@
 									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 										<!--begin::Item-->
 										<li class="breadcrumb-item text-muted">
-											<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+											<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Inicio</a>
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
@@ -204,7 +204,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">User Management</li>
+										<li class="breadcrumb-item text-muted">Listas</li>
 										<!--end::Item-->
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
@@ -212,7 +212,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">Users</li>
+										<li class="breadcrumb-item text-muted">Citas</li>
 										<!--end::Item-->
 										<!--begin::Item-->
 										<li class="breadcrumb-item">
@@ -220,7 +220,7 @@
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark">Users List</li>
+										<li class="breadcrumb-item text-dark">Añadir Citas</li>
 										<!--end::Item-->
 									</ul>
 									<!--end::Breadcrumb-->

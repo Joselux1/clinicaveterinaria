@@ -24,6 +24,8 @@
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -63,8 +65,8 @@
 							</div>
 							<!--end::Heading-->
 							<!--begin::Action-->
-							<button type="button" class="btn btn-light-primary fw-bolder w-100 mb-10">
-							<img alt="Logo" src="assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3 " disable />Sign in with Google</button>
+							<!--<button type="button" class="btn btn-light-primary fw-bolder w-100 mb-10">
+							<img alt="Logo" src="assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3 " disable />Sign in with Google</button>-->
 							<!--end::Action-->
 							<!--begin::Separator-->
 							<div class="d-flex align-items-center mb-10">

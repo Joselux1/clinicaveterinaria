@@ -93,3 +93,6 @@ $routes->get('medicamentos/exportarCSV', 'MedicamentoControlador::exportarCSV');
 
 
 
+//restriciones
+
+
