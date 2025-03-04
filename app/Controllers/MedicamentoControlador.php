@@ -9,6 +9,9 @@ class MedicamentoControlador extends BaseController
 {
     public function index()
     {
+        if(!session()->has('isLoggedIn')) {
+            return redirect()->to(base_url('login'));
+        }
         $medicamentoModel = new MedicamentoModel();
     
         // Capturar filtros de búsqueda

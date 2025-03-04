@@ -8,12 +8,16 @@ class CitasControlador extends BaseController
 {
     protected $citaModel;
 
+
     public function __construct()
     {
         $this->citaModel = new CitaModel();
     }
     public function index()
     {
+        if(!session()->has('isLoggedIn')) {
+            return redirect()->to(base_url('login'));
+        }
         $citasModel = new CitaModel();
         
         // Obtener filtros

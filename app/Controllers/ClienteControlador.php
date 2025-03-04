@@ -17,7 +17,9 @@ class ClienteControlador extends BaseController
     public function index()
     {
 
-  
+        if(!session()->has('isLoggedIn')) {
+            return redirect()->to(base_url('login'));
+        }
         $clienteModel = new ClienteModel();
     
         $nombre = $this->request->getVar('NOMBRE');

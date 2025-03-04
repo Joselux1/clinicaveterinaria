@@ -8,6 +8,9 @@ class MascotaControlador extends BaseController
 {
     public function index()
     {
+        if(!session()->has('isLoggedIn')) {
+            return redirect()->to(base_url('login'));
+        }
         $mascotaModel = new MascotaModel();
     
         // Capturar filtros de búsqueda
