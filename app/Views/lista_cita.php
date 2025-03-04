@@ -435,7 +435,7 @@
 																fill="#C4C4C4"/>
 														</svg>
 													</span>
-													<!--end::Svg Icon-->Export
+													<!--end::Svg Icon-->Exportar
 												</button>
 											</a>
 

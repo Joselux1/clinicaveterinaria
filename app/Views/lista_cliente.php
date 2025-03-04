@@ -441,50 +441,51 @@
 												<!--end::Separator-->
 												<!--begin::Content-->
 												<form method="GET" action="<?= base_url('clientes') ?>" class="mb-3">
-
 													<div class="px-7 py-5" data-kt-user-table-filter="form">
 														<div class="mb-10">
 															<input type="text" name="NOMBRE" class="form-control"
 																placeholder="Nombre"
-																value="<?= isset($nombre) ? esc($nombre) : '' ?>">
+																value="<?= isset($_GET['NOMBRE']) ? esc($_GET['NOMBRE']) : '' ?>">
 														</div>
 
 														<div class="mb-10">
-															<input type="text" name="CORREO_ELECTRONICO"
-																class="form-control" placeholder="Correo Electronico"
-																value="<?= esc($correo ?? '') ?>">
+															<input type="text" name="CORREO_ELECTRONICO" class="form-control"
+																placeholder="Correo Electrónico"
+																value="<?= isset($_GET['CORREO_ELECTRONICO']) ? esc($_GET['CORREO_ELECTRONICO']) : '' ?>">
 														</div>
 
 														<div class="mb-10">
 															<select name="filtro_fecha_baja" class="form-control" onchange="this.form.submit()">
-																<option value="1" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '1' ? 'selected' : '' ?>>
+																<option value="1" <?= isset($_GET['filtro_fecha_baja']) && $_GET['filtro_fecha_baja'] == '1' ? 'selected' : '' ?>>
 																	Clientes Activos
 																</option>
-																<option value="2" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '2' ? 'selected' : '' ?>>
+																<option value="2" <?= isset($_GET['filtro_fecha_baja']) && $_GET['filtro_fecha_baja'] == '2' ? 'selected' : '' ?>>
 																	Clientes Dados de Baja
 																</option>
-																<option value="3" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '3' ? 'selected' : '' ?>>
+																<option value="3" <?= isset($_GET['filtro_fecha_baja']) && $_GET['filtro_fecha_baja'] == '3' ? 'selected' : '' ?>>
 																	Todos
 																</option>
 															</select>
 														</div>
 
-
 														<div class="d-flex justify-content-end">
 															<button type="submit" class="btn btn-primary fw-bold px-6"
 																data-kt-menu-dismiss="true"
 																data-kt-user-table-filter="filter">Buscar</button>
+															
+															<!-- Botón de Exportar CSV -->
+															
 														</div>
-														<!--end::Actions-->
 													</div>
 												</form>
+
 												<!--end::Content-->
 											</div>
 											<!--end::Menu 1-->
 											<!--end::Filter-->
 											<!--begin::Export-->
 											<?php if (session()->get('ROL') === 'Administrador') : ?>
-												<a href="<?= base_url('clientes/exportarCSV'); ?>">
+												<a href="<?= base_url('clientes/exportarCSV') . '?' . $_SERVER['QUERY_STRING']; ?>">
 													<button type="button" class="btn btn-light-primary me-3" data-bs-target="#kt_modal_export_users">
 														<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
 														<span class="svg-icon svg-icon-2">
@@ -500,11 +501,14 @@
 																	17.75 10.25C18.3023 10.25 18.75 10.6977 18.75 11.25V18.25C18.75 18.8023 18.3023 19.25 
 																	17.75 19.25H5.75C5.19772 19.25 4.75 18.8023 4.75 18.25V11.25C4.75 10.6977 5.19771 10.25 
 																	5.75 10.25C6.30229 10.25 6.75 9.80228 6.75 9.25C6.75 8.69772 6.30229 8.25 5.75 8.25H4.75C3.64543 
-																	8.25 2.75 9.14543 2.75 10.25V19.25C2.75 20.3546 3.64543 21.25 4.75 21.25H18.75C19.8546 21.25 
+																	5 2.75 9.14543 2.75 10.25V19.25C2.75 20.3546 3.64543 21.25 4.75 21.25H18.75C19.8546 21.25 
 																	20.75 20.3546 20.75 19.25V10.25C20.75 9.14543 19.8546 8.25 18.75 8.25Z" fill="#C4C4C4" />
 															</svg>
 														</span>
-												<!--end::Svg Icon-->Export</button></a>
+														<!--end::Svg Icon-->Exportar
+													</button>
+												</a>
+
 						
 											<?php endif; ?>
 											<!--end::Export-->

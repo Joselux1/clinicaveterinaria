@@ -151,23 +151,64 @@ class MascotaControlador extends BaseController
     public function exportarCSV()
     {
         $mascotaModel = new MascotaModel();
-        $mascotas = $mascotaModel->select('NOMBRE, ESPECIE, RAZA, EDAD, CLIENTE_ID, FECHA_BAJA')->findAll();
-        
-        // Definir el nombre del archivo con fecha
-        $filename = 'mascotas_' . date('Ymd') . '.csv';
-
-        // Encabezados para forzar la descarga
+    
+        // Obtener filtros desde la URL
+        $filtro_nombre = $this->request->getGet('NOMBRE') ?? '';
+        $filtro_especie = $this->request->getGet('ESPECIE') ?? '';
+        $filtro_raza = $this->request->getGet('RAZA') ?? '';
+        $filtro_cliente_id = $this->request->getGet('CLIENTE_ID') ?? '';
+        $filtro_fecha_baja = $this->request->getGet('filtro_fecha_baja') ?? '3'; // 1: Activos, 2: Baja, 3: Todos
+    
+        // Construir la consulta con filtros
+        $mascotasQuery = $mascotaModel
+            ->select('NOMBRE, ESPECIE, RAZA, EDAD, CLIENTE_ID, FECHA_BAJA');
+    
+        // Aplicar filtros dinámicamente
+        if (!empty($filtro_nombre)) {
+            $mascotasQuery->like('NOMBRE', $filtro_nombre);
+        }
+    
+        if (!empty($filtro_especie)) {
+            $mascotasQuery->like('ESPECIE', $filtro_especie);
+        }
+    
+        if (!empty($filtro_raza)) {
+            $mascotasQuery->like('RAZA', $filtro_raza);
+        }
+    
+        if (!empty($filtro_cliente_id)) {
+            $mascotasQuery->where('CLIENTE_ID', $filtro_cliente_id);
+        }
+    
+        if ($filtro_fecha_baja == '1') { // Solo activos
+            $mascotasQuery->where('FECHA_BAJA IS NULL');
+        } elseif ($filtro_fecha_baja == '2') { // Solo dados de baja
+            $mascotasQuery->where('FECHA_BAJA IS NOT NULL');
+        }
+    
+        // Obtener los datos filtrados
+        $mascotas = $mascotasQuery->findAll();
+    
+        // Si no hay datos, evitar exportación vacía
+        if (empty($mascotas)) {
+            echo "No se encontraron mascotas con los filtros aplicados.";
+            exit;
+        }
+    
+        // Definir nombre del archivo
+        $filename = 'mascotas_filtradas_' . date('Ymd') . '.csv';
+    
+        // Encabezados para descarga
         header("Content-Description: File Transfer");
         header("Content-Disposition: attachment; filename=$filename");
         header("Content-Type: text/csv; charset=UTF-8");
-
+    
         // Abrir la salida para escribir
         $output = fopen('php://output', 'w');
-
-        // Encabezados del CSV
+    
+        // Encabezados CSV
         fputcsv($output, ['Nombre', 'Especie', 'Raza', 'Edad', 'ID Cliente', 'Fecha Baja']);
-
-     
+    
         foreach ($mascotas as $mascota) {
             fputcsv($output, [
                 $mascota['NOMBRE'],
@@ -175,11 +216,12 @@ class MascotaControlador extends BaseController
                 $mascota['RAZA'],
                 $mascota['EDAD'],
                 $mascota['CLIENTE_ID'],
-                $mascota['FECHA_BAJA'] ?? 'Activo' // Si está null, mostrar "Activo"
+                $mascota['FECHA_BAJA'] ?? 'Activo'
             ]);
         }
-
+    
         fclose($output);
         exit();
     }
+    
 }

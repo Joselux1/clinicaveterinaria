@@ -165,7 +165,7 @@
 					</div>
 					<!--end::Aside menu-->
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-					<div class="card shadow-sm border-0 rounded-3">
+								<div class="card shadow-sm border-0 rounded-3">
 										<div class="card-body text-center">
 											<h5 class="card-title">Usuario</h5>
 											<hr>
@@ -428,7 +428,7 @@
 																	fill="#C4C4C4"/>
 															</svg>
 														</span>
-														<!--end::Svg Icon-->Export
+														<!--end::Svg Icon-->Exportar
 													</button>
 												</a>
 
@@ -627,6 +627,10 @@
 
 											<!--end::Table body-->
 										</table>
+										
+									<div class="mt-4">
+										<?= $pager->only(['NOMBRE','filtro_fecha_baja', 'ordenar_por', 'ordenar_direccion'])->links('default', 'custom_pagination') ?>
+									</div>
 										<!--end::Table-->
 									</div>
 									<!--end::Card body-->

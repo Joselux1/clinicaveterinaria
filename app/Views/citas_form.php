@@ -37,7 +37,7 @@
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="../../demo1/dist/index.html">
+						<a href="http://localhost/clinicaveterinaria/public/">
 						<img alt="Logo" src="../assets/media/logos/clinica.png" class="h-200px logo" />
 						</a>
 						<!--end::Logo-->
@@ -155,21 +155,25 @@
 						</div>
 						<!--end::Aside Menu-->
 					</div>
-					<!--end::Aside menu-->
-					<!--begin::Footer-->
+					<!--end::Aside menu-->	
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-						<a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="200+ in-house components and 3rd-party plugins">
-							<span class="btn-label">Docs &amp; Components</span>
-							<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
-							<span class="svg-icon btn-icon svg-icon-2">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM15 17C15 16.4 14.6 16 14 16H8C7.4 16 7 16.4 7 17C7 17.6 7.4 18 8 18H14C14.6 18 15 17.6 15 17ZM17 12C17 11.4 16.6 11 16 11H8C7.4 11 7 11.4 7 12C7 12.6 7.4 13 8 13H16C16.6 13 17 12.6 17 12ZM17 7C17 6.4 16.6 6 16 6H8C7.4 6 7 6.4 7 7C7 7.6 7.4 8 8 8H16C16.6 8 17 7.6 17 7Z" fill="black" />
-									<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black" />
-								</svg>
-							</span>
-							<!--end::Svg Icon-->
-						</a>
+									<div class="card shadow-sm border-0 rounded-3">
+										<div class="card-body text-center">
+											<h5 class="card-title">Usuario</h5>
+											<hr>
+											<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
+											<p class="card-text">
+												<strong>Rol:</strong>
+												<span class="badge bg-primary">
+													<?= esc(session()->get('ROL')); ?>
+												</span>
+											</p>
+											<a href="<?= base_url('logout'); ?>" class="btn btn-danger w-100 mt-2">Cerrar Sesión</a>
+										</div>
+									</div>
 					</div>
+					<!--begin::Footer-->
+					
 					<!--end::Footer-->
 				</div>
 				<!--end::Aside-->
@@ -342,9 +346,11 @@
 														</div>
 													<?php endif; ?>
                                                     <div class="d-flex flex-center flex-column py-5">
+														
                                                         <!--begin::Editar-->
-										<form action="<?= isset($cita) ? base_url('citas/actualizar/' . $cita['PK_ID_CITA']): base_url('citas/guardar') ?>" method="POST">
-										<?= csrf_field(); ?>							
+													<form action="<?= isset($cita) ? base_url('citas/actualizar/' . $cita['PK_ID_CITA']): base_url('citas/guardar') ?>" method="POST">
+													<?= csrf_field(); ?>				
+														<h1 class="text-center">Citas</h1>
 															<!-- Fecha de la cita -->
 															<div class="mb-3">
 																<label for="FECHA" class="form-label">Fecha</label>

@@ -37,7 +37,7 @@
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="../../demo1/dist/index.html">
+						<a href="http://localhost/clinicaveterinaria/public/">
 						<img alt="Logo" src="../assets/media/logos/clinica.png" class="h-200px logo" />
 						</a>
 						<!--end::Logo-->
@@ -154,13 +154,14 @@
 							<!--end::Menu-->
 						</div>
 						<!--end::Aside Menu-->
+						
 					</div>
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
 						<div class="card shadow-sm border-0 rounded-3">
 										<div class="card-body text-center">
-											<h5 class="card-title">Usuario Logueado</h5>
+											<h5 class="card-title">Usuario </h5>
 											<hr>
 											<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
 											<p class="card-text">
@@ -345,6 +346,8 @@
 												</div>
 											<?php endif; ?>
                                                     <div class="d-flex flex-center flex-column py-5">
+
+														<h1>Clientes</h1><br>
                                                         <!--begin::Editar-->
                                                             <form action="<?= isset($cliente) ? base_url('clientes/editar/') . $cliente['PK_ID_CLIENTE'] : base_url('clientes/guardar') ?>" method="post">
                                                                 <?= csrf_field(); ?>

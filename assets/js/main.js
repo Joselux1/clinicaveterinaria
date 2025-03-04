@@ -2,10 +2,8 @@
 
 
 document.addEventListener("DOMContentLoaded", function () { 
-    // Deshabilitar el botón al enviar el formulario de mascota
-    document.getElementById("formulario_mascota").addEventListener("submit", function() {
-        document.getElementById("btnMascota").disabled = true;
-    });
+
+
     if (document.getElementById("donutGrafico")) {
         let donutOptions = {
             series: [44, 55, 41, 17],
@@ -108,6 +106,19 @@ $(document).ready(function () {
     });
 
     calendar.render();
+
+    $(document).ready(function () {
+    $("#FECHA_INICIO, #FECHA_FIN").on("change", function () {
+        let fechaInicio = new Date($("#FECHA_INICIO").val());
+        let fechaFin = new Date($("#FECHA_FIN").val());
+
+        if (fechaFin < fechaInicio) {
+            alert("La fecha de fin no puede ser anterior a la fecha de inicio");
+            $("#FECHA_FIN").val($("#FECHA_INICIO").val()); // Ajusta la fecha de fin
+        }
+    });
+});
+
 
     // Manejo del envío del formulario con validación y alertas
     $("#eventoForm").submit(function (e) {

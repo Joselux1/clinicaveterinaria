@@ -37,7 +37,7 @@
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="../../demo1/dist/index.html">
+						<a href="http://localhost/clinicaveterinaria/public/">
 						<img alt="Logo" src="../assets/media/logos/clinica.png" class="h-200px logo" />
 						</a>
 						<!--end::Logo-->

@@ -277,59 +277,70 @@ class ClienteControlador extends BaseController
      
         return redirect()->to('clientes')->with('success', 'Usuario agregado correctamente.');
     }
+
     public function exportarCSV()
-    {
-        $clienteModel = new ClienteModel();
-    
-        // Obtener parámetros de ordenación y filtro desde la URL
-        $ordenar_por = $this->request->getGet('ordenar_por') ?? 'NOMBRE';
-        $ordenar_direccion = $this->request->getGet('ordenar_direccion') ?? 'asc';
-        $filtro_letra = $this->request->getGet('letra') ?? '';
-    
-        // Lista blanca de columnas permitidas para ordenación
-        $columnas_validas = ['NOMBRE', 'CORREO_ELECTRONICO', 'ROL'];
-        if (!in_array($ordenar_por, $columnas_validas)) {
-            $ordenar_por = 'NOMBRE';
-        }
-    
-        $ordenar_direccion = ($ordenar_direccion === 'desc') ? 'desc' : 'asc';
-    
-        // Construir la consulta
-        $clientesQuery = $clienteModel
-            ->select('cliente.NOMBRE, cliente.CORREO_ELECTRONICO, rol.ROL')
-            ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
-            ->orderBy($ordenar_por, $ordenar_direccion);
-    
-        // Aplicar filtro si se ingresó una letra válida
-        if (!empty($filtro_letra) && preg_match('/^[A-Z]$/i', $filtro_letra)) {
-            $clientesQuery->where("cliente.NOMBRE LIKE '$filtro_letra%'", null, false);
-        }
-    
-        // Obtener los resultados
-        $clientes = $clientesQuery->findAll();
-    
-        // Nombre del archivo de exportación
-        $filename = 'clientes_' . date('Ymd') . '.csv';
-    
-        // Configurar cabeceras para forzar la descarga
-        header("Content-Type: text/csv; charset=utf-8");
-        header("Content-Disposition: attachment; filename=\"$filename\"");
-    
-        // Abrir salida como archivo CSV
-        $output = fopen('php://output', 'w');
-    
-        // Escribir cabecera del CSV
-        fputcsv($output, ['Nombre', 'Correo Electrónico', 'Rol']);
-    
-        // Escribir los datos de los clientes en el archivo CSV
-        foreach ($clientes as $cliente) {
-            fputcsv($output, [$cliente['NOMBRE'], $cliente['CORREO_ELECTRONICO'], $cliente['ROL']]);
-        }
-    
-        fclose($output);
+{
+    $clienteModel = new ClienteModel();
+
+    // Obtener filtros desde la URL
+    $filtro_nombre = $this->request->getGet('NOMBRE') ?? '';
+    $filtro_correo = $this->request->getGet('CORREO_ELECTRONICO') ?? '';
+    $filtro_fecha_baja = $this->request->getGet('filtro_fecha_baja') ?? '3'; // 1: Activos, 2: Baja, 3: Todos
+    $ordenar_por = $this->request->getGet('ordenar_por') ?? 'NOMBRE';
+    $ordenar_direccion = $this->request->getGet('ordenar_direccion') ?? 'asc';
+
+    // Validar que la columna de ordenación sea segura
+    $columnas_validas = ['NOMBRE', 'CORREO_ELECTRONICO', 'ROL'];
+    if (!in_array($ordenar_por, $columnas_validas)) {
+        $ordenar_por = 'NOMBRE';
+    }
+    $ordenar_direccion = ($ordenar_direccion === 'desc') ? 'desc' : 'asc';
+
+    // Construir la consulta con filtros
+    $clientesQuery = $clienteModel
+        ->select('cliente.NOMBRE, cliente.CORREO_ELECTRONICO, rol.ROL')
+        ->join('rol', 'cliente.ID_ROL = rol.PK_ID_ROL', 'left')
+        ->orderBy($ordenar_por, $ordenar_direccion);
+
+    // **Aplicar filtros**
+    if (!empty($filtro_nombre)) {
+        $clientesQuery->like('cliente.NOMBRE', $filtro_nombre);
+    }
+
+    if (!empty($filtro_correo)) {
+        $clientesQuery->like('cliente.CORREO_ELECTRONICO', $filtro_correo);
+    }
+
+    if ($filtro_fecha_baja == '1') { // Solo clientes activos
+        $clientesQuery->where('cliente.FECHA_BAJA IS NULL');
+    } elseif ($filtro_fecha_baja == '2') { // Solo clientes dados de baja
+        $clientesQuery->where('cliente.FECHA_BAJA IS NOT NULL');
+    }
+
+    // Obtener los clientes filtrados
+    $clientes = $clientesQuery->findAll();
+
+    // Si no hay clientes, mostrar mensaje en vez de exportar CSV vacío
+    if (empty($clientes)) {
+        echo "No se encontraron clientes con los filtros aplicados.";
         exit;
     }
+
+    // **Generar CSV**
+    $filename = 'clientes_filtrados_' . date('Ymd') . '.csv';
+    header("Content-Type: text/csv; charset=utf-8");
+    header("Content-Disposition: attachment; filename=\"$filename\"");
     
+    $output = fopen('php://output', 'w');
+    fputcsv($output, ['Nombre', 'Correo Electrónico', 'Rol']);
+    
+    foreach ($clientes as $cliente) {
+        fputcsv($output, [$cliente['NOMBRE'], $cliente['CORREO_ELECTRONICO'], $cliente['ROL']]);
+    }
+
+    fclose($output);
+    exit;
+}
 
     
     
