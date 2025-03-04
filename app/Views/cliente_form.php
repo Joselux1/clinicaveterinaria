@@ -366,7 +366,7 @@
                                                                     <input type="password" name="CONTRASEÑA" id="CONTRASEÑA" class="form-control" 
                                                                         value="" <?= isset($cliente) ? '' : 'required' ?>>
                                                                 </div>
-                                                                <button type="submit" class="btn btn-success"><?= isset($cliente) ? 'Actualizar' : 'Guardar' ?></button>
+                                                                <button type="submit" class="btn btn-success" id="btnGuardar" ><?= isset($cliente) ? 'Actualizar' : 'Guardar' ?></button>
                                                                 <a href="<?= base_url('clientes') ?>" class="btn btn-secondary">Cancelar</a>
                                                             </form>
                                                     </div>
@@ -3069,6 +3069,7 @@
 		<script src="../assets/js/custom/apps/chat/chat.js"></script>
 		<script src="../assets/js/custom/modals/create-app.js"></script>
 		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="../assets/js/main.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

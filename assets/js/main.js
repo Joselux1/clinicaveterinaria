@@ -2,7 +2,9 @@
 
 
 document.addEventListener("DOMContentLoaded", function () { 
-
+    document.querySelector("form").addEventListener("submit", function () {
+        document.getElementById("btnGuardar").disabled = true;
+    });
 
     if (document.getElementById("donutGrafico")) {
         let donutOptions = {

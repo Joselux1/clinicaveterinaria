@@ -374,7 +374,7 @@
 														
 
 															<!-- Botones -->
-															<button type="submit" class="btn btn-success"><?= isset($cita) ? 'Actualizar' : 'Guardar' ?></button>
+															<button type="submit" id="btnGuardar" class="btn btn-success"><?= isset($cita) ? 'Actualizar' : 'Guardar' ?></button>
 															<a href="<?= base_url('citas') ?>" class="btn btn-secondary">Cancelar</a>
 														</form>
                                                     </div>
@@ -3077,6 +3077,7 @@
 		<script src="../assets/js/custom/apps/chat/chat.js"></script>
 		<script src="../assets/js/custom/modals/create-app.js"></script>
 		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="../assets/js/main.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
