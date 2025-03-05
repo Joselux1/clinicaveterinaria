@@ -55,58 +55,37 @@
             <!--begin::Col-->
             <div class="col-md-6 pe-lg-10">
                 <!--begin::Form-->
-                <form action="mailto:joseluisparadadominguez@gmail.com" method="post" enctype="text/plain" class="form mb-15" id="kt_contact_form">
-                    <h1 class="fw-bolder text-dark mb-9">Reservar Cita</h1>
-                    <!--begin::Input group-->
-                    <div class="row mb-5">
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="fs-5 fw-bold mb-2">Nombre</label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid" placeholder="" name="name" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--end::Label-->
-                            <label class="fs-5 fw-bold mb-2">Correo Electrónico</label>
-                            <!--end::Label-->
-                            <!--end::Input-->
-                            <input type="text" class="form-control form-control-solid" placeholder="" name="email" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Col-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-5 fv-row">
-                        <!--begin::Label-->
-                        <label class="fs-5 fw-bold mb-2">Teléfono</label>
-                        <!--end::Label-->
-                        <!--begin::Input-->
-                        <input class="form-control form-control-solid" placeholder="" name="subject" />
-                        <!--end::Input-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-10 fv-row">
-                        <label class="fs-6 fw-bold mb-2">Mensaje</label>
-                        <textarea class="form-control form-control-solid" rows="6" name="message" placeholder=""></textarea>
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Submit-->
-                    <button type="submit" class="btn btn-primary" id="kt_contact_submit_button">
-                        <!--begin::Indicator-->
-                        <span class="indicator-label">Enviar</span>
-                        <span class="indicator-progress">Please wait...
-                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                        <!--end::Indicator-->
-                    </button>
-                    <!--end::Submit-->
-                </form>
+                <form action="https://formspree.io/f/mwplekby" method="POST" class="form mb-15" id="kt_contact_form">
+						<h1 class="fw-bolder text-dark mb-9">Reservar Cita</h1>
+						
+						<div class="row mb-5">
+							<div class="col-md-6 fv-row">
+								<label class="fs-5 fw-bold mb-2">Nombre</label>
+								<input type="text" class="form-control form-control-solid" name="name" required />
+							</div>
+							
+							<div class="col-md-6 fv-row">
+								<label class="fs-5 fw-bold mb-2">Correo Electrónico</label>
+								<input type="email" class="form-control form-control-solid" name="email" required />
+							</div>
+						</div>
+						
+						<div class="d-flex flex-column mb-5 fv-row">
+							<label class="fs-5 fw-bold mb-2">Teléfono</label>
+							<input type="tel" class="form-control form-control-solid" name="phone" required pattern="[0-9]+" title="Solo se permiten números" />
+						</div>
+						
+						<div class="d-flex flex-column mb-10 fv-row">
+							<label class="fs-6 fw-bold mb-2">Mensaje</label>
+							<textarea class="form-control form-control-solid" rows="6" name="message" required></textarea>
+						</div>
+						
+						<button type="submit" class="btn btn-primary">
+							<span class="indicator-label">Enviar</span>
+							<span class="indicator-progress">Por favor espera...
+							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+						</button>
+					</form>
                 <!--end::Form-->
             </div>
             <!--end::Col-->
@@ -165,41 +144,28 @@
         <!--begin::Card-->
         <div class="card mb-4 bg-light text-center">
             <!--begin::Body-->
-            <div class="card-body py-12">
+            <div class="card-body py-12" id="desabilitar">
                 <!--begin::Icon-->
                 <a href="#" class="mx-4">
                     <img src="assets/media/svg/brand-logos/facebook-4.svg" class="h-30px my-2" alt="" />
                 </a>
                 <!--end::Icon-->
                 <!--begin::Icon-->
-                <a href="#" class="mx-4">
+                <a href="#" class="mx-4" >
                     <img src="assets/media/svg/brand-logos/instagram-2-1.svg" class="h-30px my-2" alt="" />
                 </a>
+                
                 <!--end::Icon-->
                 <!--begin::Icon-->
                 <a href="#" class="mx-4">
-                    <img src="assets/media/svg/brand-logos/github.svg" class="h-30px my-2" alt="" />
+                    <img src="assets/media/svg/brand-logos/pinterest-p.svg" class="h-30px my-2" alt=""  />
                 </a>
                 <!--end::Icon-->
                 <!--begin::Icon-->
                 <a href="#" class="mx-4">
-                    <img src="assets/media/svg/brand-logos/behance.svg" class="h-30px my-2" alt="" />
+                    <img src="assets/media/svg/brand-logos/twitter.svg" class="h-30px my-2" alt=""/>
                 </a>
-                <!--end::Icon-->
-                <!--begin::Icon-->
-                <a href="#" class="mx-4">
-                    <img src="assets/media/svg/brand-logos/pinterest-p.svg" class="h-30px my-2" alt="" />
-                </a>
-                <!--end::Icon-->
-                <!--begin::Icon-->
-                <a href="#" class="mx-4">
-                    <img src="assets/media/svg/brand-logos/twitter.svg" class="h-30px my-2" alt="" />
-                </a>
-                <!--end::Icon-->
-                <!--begin::Icon-->
-                <a href="#" class="mx-4">
-                    <img src="assets/media/svg/brand-logos/dribbble-icon-1.svg" class="h-30px my-2" alt="" />
-                </a>
+
                 <!--end::Icon-->
             </div>
             <!--end::Body-->

@@ -2,7 +2,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function () { 
-
+ let btnDesabilitar = document.getElementById("desabilitar");
     
     document.querySelector("form").addEventListener("submit", function () {
         document.getElementById("btnGuardar").disabled = true;
@@ -44,6 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let barChart = new ApexCharts(document.getElementById("barChartGrafico"), barChartOptions);
         barChart.render();
     }
+
+    //desabilitar botones 
+    btnDesabilitar.addEventListener("click", function(event) {
+        event.preventDefault(); // Evita la acción del enlace
+    });
 });
 
 $(document).ready(function () {
