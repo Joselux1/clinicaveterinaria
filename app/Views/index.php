@@ -18,20 +18,14 @@
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
-		<!--begin::Page Vendor Stylesheets(used by this page)-->
-		<link href="../assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/custom/leaflet/leaflet.bundle.css" rel="stylesheet" type="text/css" />
+
+		<link href="../assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-				<!-- jQuery primero -->
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<!-- Luego Select2 -->
-		<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-
-
-		<!--end::Global Stylesheets Bundle--> 
+		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -49,6 +43,175 @@
         <p>Has iniciado sesión correctamente.</p>
     </div>
 		<div class="d-flex flex-column flex-root">
+		<?php if (session()->get('ROL') === 'Usuario') : ?>    
+		
+
+					<div class="container mt-5">
+					<div class="card">
+    <!--begin::Body-->
+    <div class="card-body p-lg-17">
+        <!--begin::Row-->
+        <div class="row mb-3">
+            <!--begin::Col-->
+            <div class="col-md-6 pe-lg-10">
+                <!--begin::Form-->
+                <form action="mailto:joseluisparadadominguez@gmail.com" method="post" enctype="text/plain" class="form mb-15" id="kt_contact_form">
+                    <h1 class="fw-bolder text-dark mb-9">Reservar Cita</h1>
+                    <!--begin::Input group-->
+                    <div class="row mb-5">
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="fs-5 fw-bold mb-2">Nombre</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" class="form-control form-control-solid" placeholder="" name="name" />
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--end::Label-->
+                            <label class="fs-5 fw-bold mb-2">Correo Electrónico</label>
+                            <!--end::Label-->
+                            <!--end::Input-->
+                            <input type="text" class="form-control form-control-solid" placeholder="" name="email" />
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-5 fv-row">
+                        <!--begin::Label-->
+                        <label class="fs-5 fw-bold mb-2">Teléfono</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input class="form-control form-control-solid" placeholder="" name="subject" />
+                        <!--end::Input-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-10 fv-row">
+                        <label class="fs-6 fw-bold mb-2">Mensaje</label>
+                        <textarea class="form-control form-control-solid" rows="6" name="message" placeholder=""></textarea>
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Submit-->
+                    <button type="submit" class="btn btn-primary" id="kt_contact_submit_button">
+                        <!--begin::Indicator-->
+                        <span class="indicator-label">Enviar</span>
+                        <span class="indicator-progress">Please wait...
+                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        <!--end::Indicator-->
+                    </button>
+                    <!--end::Submit-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-md-6 ps-lg-10">
+                <!--begin::Map-->
+                <div id="map" class="w-100 rounded mb-2 mb-lg-0 mt-2" style="height: 486px"></div>
+                <!--end::Map-->
+            </div>
+            <!--end::Col-->
+        </div>
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row g-5 mb-5 mb-lg-15">
+            <!--begin::Col-->
+            <div class="col-sm-6 pe-lg-10">
+                <!--begin::Phone-->
+                <div class="text-center bg-light card-rounded d-flex flex-column justify-content-center p-10 h-lg-100">
+                    <!--begin::Icon-->
+                    <!--SVG file not found: icons/duotune/finance/fin006.svgPhone.svg-->
+                    <!--end::Icon-->
+                    <!--begin::Subtitle-->
+                    <h1 class="text-dark fw-bolder my-5">Telefono Urgencias</h1>
+                    <!--end::Subtitle-->
+                    <!--begin::Number-->
+                    <div class="text-gray-700 fw-bold fs-2">+34 632328823</div>
+                    <!--end::Number-->
+                </div>
+                <!--end::Phone-->
+            </div>
+            <!--end::Col-->
+            <!--begin::Col-->
+            <div class="col-sm-6 ps-lg-10">
+                <!--begin::Address-->
+                <div class="text-center bg-light card-rounded d-flex flex-column justify-content-center p-10 h-lg-100">
+                    <!--begin::Icon-->
+                    <span class="svg-icon svg-icon-3tx svg-icon-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path opacity="0.3" d="M18.0624 15.3453L13.1624 20.7453C12.5624 21.4453 11.5624 21.4453 10.9624 20.7453L6.06242 15.3453C4.56242 13.6453 3.76242 11.4453 4.06242 8.94534C4.56242 5.34534 7.46242 2.44534 11.0624 2.04534C15.8624 1.54534 19.9624 5.24534 19.9624 9.94534C20.0624 12.0453 19.2624 13.9453 18.0624 15.3453Z" fill="black" />
+                            <path d="M12.0624 13.0453C13.7193 13.0453 15.0624 11.7022 15.0624 10.0453C15.0624 8.38849 13.7193 7.04535 12.0624 7.04535C10.4056 7.04535 9.06241 8.38849 9.06241 10.0453C9.06241 11.7022 10.4056 13.0453 12.0624 13.0453Z" fill="black" />
+                        </svg>
+                    </span>
+                    <!--end::Icon-->
+                    <!--begin::Subtitle-->
+                    <h1 class="text-dark fw-bolder my-5">Sanlúcar de barrameda</h1>
+                    <!--end::Subtitle-->
+                    <!--begin::Description-->
+                    <div class="text-gray-700 fs-3 fw-bold">Av. las Piletas</div>
+                    <!--end::Description-->
+                </div>
+                <!--end::Address-->
+            </div>
+            <!--end::Col-->
+        </div>
+        <!--end::Row-->
+        <!--begin::Card-->
+        <div class="card mb-4 bg-light text-center">
+            <!--begin::Body-->
+            <div class="card-body py-12">
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="assets/media/svg/brand-logos/facebook-4.svg" class="h-30px my-2" alt="" />
+                </a>
+                <!--end::Icon-->
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="assets/media/svg/brand-logos/instagram-2-1.svg" class="h-30px my-2" alt="" />
+                </a>
+                <!--end::Icon-->
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="assets/media/svg/brand-logos/github.svg" class="h-30px my-2" alt="" />
+                </a>
+                <!--end::Icon-->
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="assets/media/svg/brand-logos/behance.svg" class="h-30px my-2" alt="" />
+                </a>
+                <!--end::Icon-->
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="assets/media/svg/brand-logos/pinterest-p.svg" class="h-30px my-2" alt="" />
+                </a>
+                <!--end::Icon-->
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="assets/media/svg/brand-logos/twitter.svg" class="h-30px my-2" alt="" />
+                </a>
+                <!--end::Icon-->
+                <!--begin::Icon-->
+                <a href="#" class="mx-4">
+                    <img src="assets/media/svg/brand-logos/dribbble-icon-1.svg" class="h-30px my-2" alt="" />
+                </a>
+                <!--end::Icon-->
+            </div>
+            <!--end::Body-->
+        </div>
+        <!--end::Card-->
+    </div>
+    <!--end::Body-->
+</div>
+
+					</div>
+				
+			<?php endif; ?>
 			<!--begin::Page-->
 			<div class="page d-flex flex-row flex-column-fluid">
 				<!--begin::Aside-->
@@ -86,7 +249,7 @@
 						<?php if (session()->get('ROL') === 'Usuario') : ?>    
 							<div class="menu-item">
 								<div class="menu-content pt-8 pb-2">
-									<span class="menu-section text-muted text-uppercase fs-8 ls-1">Citas</span>
+									<span class="menu-section text-muted text-uppercase fs-8 ls-1">Reservar Cita</span>
 								</div>
 							</div>
 						<?php endif; ?>
@@ -3129,11 +3292,34 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+		<script src="assets/plugins/custom/leaflet/leaflet.bundle.js"></script>
+		<!--end::Page Vendors Javascript-->
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="assets/js/custom/apps/support-center/tickets/create.js"></script>
+		<script src="assets/js/custom/documentation/documentation.js"></script>
+		<script src="assets/js/custom/pages/company/contact.js"></script>
+		<script src="assets/js/custom/widgets.js"></script>
+		<script src="assets/js/custom/apps/chat/chat.js"></script>
+		<script src="assets/js/custom/modals/create-app.js"></script>
+		<script src="assets/js/custom/modals/upgrade-plan.js"></script>
+		<script>
+        // Crear el mapa
+        let map = L.map('map').setView([40.7128, -74.0060], 13);  
 
+        // Agregar el mapa de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
+        // Función para cambiar la ubicación
+        function cambiarUbicacion(lat, lon) {
+            map.setView([lat, lon], 13); // Cambiar la vista del mapa
+        }
 
-		<!--end::Page Custom Javascript-->
-		<!--end::Javascript-->
+        // Llamar a la función con nuevas coordenadas (Ej. Madrid)
+        cambiarUbicacion(36.779846, -6.363533);
+    </script>
+					
 	</body>
 	<!--end::Body-->
 </html>

@@ -36,7 +36,6 @@ class Filters extends BaseFilters
         'performance'   => PerformanceMetrics::class,
         'admin' => \App\Filters\AdminFiltros::class,
         'usuario' => \App\Filters\UsuarioFiltro::class,
-        'auth' => \App\Filters\AuthFilter::class,
     ];
 
     /**
@@ -108,8 +107,7 @@ class Filters extends BaseFilters
      */
     public array $filters = [
 
-            'admin' => ['before' => ['admin/*', 'clientes/*', 'roles/*']],
-            'auth' => ['before' => ['home/*', 'clientes/*', 'mascotas/*']], // Rutas protegidas
+            'admin' => ['before' => ['admin/*', 'clientes/*', 'roles/*']], // Rutas protegidas
             
         ];
         
