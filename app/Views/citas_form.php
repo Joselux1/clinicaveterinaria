@@ -133,7 +133,7 @@
 								</div>
 								
 								<div class="menu-item">
-									<a class="menu-link" href="../../demo1/dist/apps/calendar.html">
+									<a class="menu-link" href="http://localhost/clinicaveterinaria/public/eventos">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -339,45 +339,54 @@
 								<!--begin::Card-->
                                         <div class="card mb-5 mb-xl-8">
 											<!--begin::Card body-->
-											<div class="card-body">
+												<div class="card-body">
 													<?php if (isset($validation)): ?>
 														<div class="alert alert-danger">
 															<?= $validation->listErrors() ?>
 														</div>
 													<?php endif; ?>
-                                                    <div class="d-flex flex-center flex-column py-5">
-														
-                                                        <!--begin::Editar-->
-													<form action="<?= isset($cita) ? base_url('citas/actualizar/' . $cita['PK_ID_CITA']): base_url('citas/guardar') ?>" method="POST">
-													<?= csrf_field(); ?>				
-														<h1 class="text-center">Citas</h1>
-															<!-- Fecha de la cita -->
-															<div class="mb-3">
-																<label for="FECHA" class="form-label">Fecha</label>
-																<input type="date" name="FECHA" id="FECHA" class="form-control" 
-																	value="<?= isset($cita) ? esc($cita['FECHA']) : '' ?>" required>
-															</div>
+													<div class="d-flex flex-center flex-column py-5">
+														<h1 class="text-center mb-4">Citas</h1>
 
-															<!-- Diagnóstico -->
-															<div class="mb-3">
-																<label for="DIAGNOSTICO" class="form-label">Diagnóstico</label>
-																<input type="text" name="DIAGNOSTICO" id="DIAGNOSTICO" class="form-control" 
-																	value="<?= isset($cita) ? esc($cita['DIAGNOSTICO']) : '' ?>" required>
-															</div>
+														<!-- Ficha de Cita -->
+														<div class="card shadow-sm border-0 rounded-3 p-4" style="width: 100%; max-width: 500px;">
+															<div class="card-body">
+																<form action="<?= isset($cita) ? base_url('citas/actualizar/' . $cita['PK_ID_CITA']) : base_url('citas/guardar') ?>" method="POST">
+																	<?= csrf_field(); ?>
 
-															<!-- Tratamiento -->
-															<div class="mb-3">
-																<label for="TRATAMIENTO" class="form-label">Tratamiento</label>
-																<input type="text" name="TRATAMIENTO" id="TRATAMIENTO" class="form-control" 
-																	value="<?= isset($cita) ? esc($cita['TRATAMIENTO']) : '' ?>" required>
-															</div>
-														
+																	<!-- Fecha de la cita -->
+																	<div class="mb-3">
+																		<label for="FECHA" class="form-label">Fecha</label>
+																		<input type="date" name="FECHA" id="FECHA" class="form-control" 
+																			value="<?= isset($cita) ? esc($cita['FECHA']) : '' ?>" required>
+																	</div>
 
-															<!-- Botones -->
-															<button type="submit" id="btnGuardar" class="btn btn-success"><?= isset($cita) ? 'Actualizar' : 'Guardar' ?></button>
-															<a href="<?= base_url('citas') ?>" class="btn btn-secondary">Cancelar</a>
-														</form>
-                                                    </div>
+																	<!-- Diagnóstico -->
+																	<div class="mb-3">
+																		<label for="DIAGNOSTICO" class="form-label">Diagnóstico</label>
+																		<input type="text" name="DIAGNOSTICO" id="DIAGNOSTICO" class="form-control" 
+																			value="<?= isset($cita) ? esc($cita['DIAGNOSTICO']) : '' ?>" required>
+																	</div>
+
+																	<!-- Tratamiento -->
+																	<div class="mb-3">
+																		<label for="TRATAMIENTO" class="form-label">Tratamiento</label>
+																		<input type="text" name="TRATAMIENTO" id="TRATAMIENTO" class="form-control" 
+																			value="<?= isset($cita) ? esc($cita['TRATAMIENTO']) : '' ?>" required>
+																	</div>
+
+																	<!-- Botones -->
+																	<div class="text-center">
+																		<button type="submit" id="btnGuardar" class="btn btn-success">
+																			<?= isset($cita) ? 'Actualizar' : 'Guardar' ?>
+																		</button>
+																		<a href="<?= base_url('citas') ?>" class="btn btn-secondary">Cancelar</a>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+
                                                     <!--end::User Info-->
                                                     <!--end::Summary-->
                                                    

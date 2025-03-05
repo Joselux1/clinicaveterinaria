@@ -135,7 +135,7 @@
 								</div>
 								
 								<div class="menu-item">
-									<a class="menu-link" href="../../demo1/dist/apps/calendar.html">
+									<a class="menu-link" href="http://localhost/clinicaveterinaria/public/eventos">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -348,30 +348,54 @@
 														</div>
 													<?php endif; ?>
                                                     <div class="d-flex flex-center flex-column py-5">
-														<h1>Mascotas</h1> <br>
-                                                        <!--begin::Editar-->
-                                                       <form  id="formulario_mascota" action="<?= base_url($mascota ? 'mascotas/editar/' . $mascota['PK_ID_MASCOTA'] : 'mascotas/guardar') ?>" method="post">
-                                                            <div class="form-group">
-                                                                <label for="NOMBRE">Nombre:</label>
-                                                                <input type="text" name="NOMBRE" class="form-control" value="<?= old('NOMBRE', esc($mascota['NOMBRE'] ?? '')) ?>" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="ESPECIE">Especie:</label>
-                                                                <input type="text" name="ESPECIE" class="form-control" value="<?= old('ESPECIE', esc($mascota['ESPECIE'] ?? '')) ?>" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="RAZA">Raza:</label>
-                                                                <input type="text" name="RAZA" class="form-control" value="<?= old('RAZA', esc($mascota['RAZA'] ?? '')) ?>" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="EDAD">Edad:</label>
-                                                                <input type="number" name="EDAD" class="form-control" value="<?= old('EDAD', esc($mascota['EDAD'] ?? '')) ?>" required>
-                                                            </div><br>
-															<!-- Botones -->
-                                                            <button type="submit" id="btnGuardar" class="btn btn-success"><?= $mascota ? 'Actualizar' : 'Crear' ?> </button>
-															<a href="<?= base_url('mascotas') ?>" class="btn btn-secondary">Cancelar</a>
-														</form>
-                                                    </div>
+														<h1 class="text-center mb-4">Mascotas</h1>
+
+														<!-- Ficha de Mascota -->
+														<div class="card shadow-sm border-0 rounded-3 p-4" style="width: 100%; max-width: 500px;">
+															<div class="card-body">
+																<form id="formulario_mascota" action="<?= base_url($mascota ? 'mascotas/editar/' . $mascota['PK_ID_MASCOTA'] : 'mascotas/guardar') ?>" method="post">
+																	<?= csrf_field(); ?>
+
+																	<!-- Nombre -->
+																	<div class="mb-3">
+																		<label for="NOMBRE" class="form-label">Nombre</label>
+																		<input type="text" name="NOMBRE" id="NOMBRE" class="form-control" 
+																			value="<?= old('NOMBRE', esc($mascota['NOMBRE'] ?? '')) ?>" required>
+																	</div>
+
+																	<!-- Especie -->
+																	<div class="mb-3">
+																		<label for="ESPECIE" class="form-label">Especie</label>
+																		<input type="text" name="ESPECIE" id="ESPECIE" class="form-control" 
+																			value="<?= old('ESPECIE', esc($mascota['ESPECIE'] ?? '')) ?>" required>
+																	</div>
+
+																	<!-- Raza -->
+																	<div class="mb-3">
+																		<label for="RAZA" class="form-label">Raza</label>
+																		<input type="text" name="RAZA" id="RAZA" class="form-control" 
+																			value="<?= old('RAZA', esc($mascota['RAZA'] ?? '')) ?>" required>
+																	</div>
+
+																	<!-- Edad -->
+																	<div class="mb-3">
+																		<label for="EDAD" class="form-label">Edad</label>
+																		<input type="number" name="EDAD" id="EDAD" class="form-control" 
+																			value="<?= old('EDAD', esc($mascota['EDAD'] ?? '')) ?>" required>
+																	</div>
+
+																	<!-- Botones -->
+																	<div class="text-center">
+																		<button type="submit" id="btnGuardar" class="btn btn-success">
+																			<?= $mascota ? 'Actualizar' : 'Crear' ?>
+																		</button>
+																		<a href="<?= base_url('mascotas') ?>" class="btn btn-secondary">Cancelar</a>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+
                                                     <!--end::User Info-->
                                                     <!--end::Summary-->
                                                    

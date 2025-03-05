@@ -443,13 +443,12 @@
 															<textarea name="DESCRIPCION_ES" id="DESCRIPCION_ES" class="form-control"><?= isset($evento) ? esc($evento['DESCRIPCION_ES']) : '' ?></textarea>
 														</div>
 
-														
-
 														<div class="row row-cols-lg-2 g-10">
 															<div class="col">
 																<div class="fv-row mb-9">
 																	<label class="fs-6 fw-bold mb-2 required">Fecha de Inicio</label>
-																	<input type="datetime-local" name="FECHA_INICIO" id="FECHA_INICIO" class="form-control" value="<?= isset($evento) ? esc($evento['FECHA_INICIO']) : '' ?>" required>
+																	<input type="datetime-local" name="FECHA_INICIO" id="FECHA_INICIO" class="form-control" value="<?= isset($evento) ? esc($evento['FECHA_INICIO']) : '' ?>" required
+																		min="<?= date('Y-m-d\TH:i', time()) ?>"> <!-- Fecha mínima actual -->
 																</div>
 															</div>
 															<div class="col">
@@ -461,6 +460,7 @@
 														</div>
 													</form>
 												</div>
+
 												<!--end::Modal body-->
 
 												<!--begin::Modal footer-->

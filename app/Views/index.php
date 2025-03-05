@@ -336,22 +336,29 @@
 			<?php endif; ?>		
 					<!--end::Aside menu-->
 								<!--begin::Footer-->
-								<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer"> 
-								<div class="card shadow-sm border-0 rounded-3">
-									<div class="card-body text-center">
-										<h5 class="card-title">Usuario </h5>
-										<hr>
-										<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
-										<p class="card-text">
-											<strong>Rol:</strong>
-											<span class="badge bg-primary">
-												<?= esc(session()->get('ROL')); ?>
-											</span>
-										</p>
-										<a href="<?= base_url('logout'); ?>" class="btn btn-danger w-100 mt-2">Cerrar Sesión</a>
-									</div>
-								</di>
-							</div>
+							
+										<!-- Contenido del sidebar arriba -->
+									
+
+										<!-- Login siempre abajo -->
+										<div class="aside-footer flex-column-auto pt-5 pb-7 px-5 mt-auto" id="kt_aside_footer"> 
+											<div class="card shadow-sm border-0 rounded-3">
+												<div class="card-body text-center">
+													<h5 class="card-title">Usuario</h5>
+													<hr>
+													<p class="card-text mb-1"><strong>Nombre:</strong> <?= esc(session()->get('NOMBRE')); ?></p>
+													<p class="card-text">
+														<strong>Rol:</strong>
+														<span class="badge bg-primary">
+															<?= esc(session()->get('ROL')); ?>
+														</span>
+													</p>
+													<a href="<?= base_url('logout'); ?>" class="btn btn-danger w-100 mt-2">Cerrar Sesión</a>
+												</div>
+											</div>
+										</div>
+								
+
 
 
 											<!--end::Footer-->

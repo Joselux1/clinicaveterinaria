@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
     btnDesabilitar.addEventListener("click", function(event) {
         event.preventDefault(); // Evita la acción del enlace
     });
+
+    
 });
 
 $(document).ready(function () {
@@ -112,21 +114,30 @@ $(document).ready(function () {
                 }
             });
         }
+        
     });
 
     calendar.render();
-
+    
     $(document).ready(function () {
-    $("#FECHA_INICIO, #FECHA_FIN").on("change", function () {
-        let fechaInicio = new Date($("#FECHA_INICIO").val());
-        let fechaFin = new Date($("#FECHA_FIN").val());
-
-        if (fechaFin < fechaInicio) {
-            alert("La fecha de fin no puede ser anterior a la fecha de inicio");
-            $("#FECHA_FIN").val($("#FECHA_INICIO").val()); // Ajusta la fecha de fin
-        }
+        // Establece la fecha mínima en el campo de fecha de inicio
+        let fechaMinima = new Date().toISOString().slice(0, 16); // Fecha y hora actual en formato adecuado para datetime-local
+        $("#FECHA_INICIO").attr("min", fechaMinima); // Establece el min del campo FECHA_INICIO
+        
+        // Validación y ajuste de las fechas
+        $("#FECHA_INICIO, #FECHA_FIN").on("change", function () {
+            let fechaInicio = new Date($("#FECHA_INICIO").val());
+            let fechaFin = new Date($("#FECHA_FIN").val());
+    
+            // Validación de fecha de fin (no puede ser anterior a la fecha de inicio)
+            if (fechaFin < fechaInicio) {
+                alert("La fecha de fin no puede ser anterior a la fecha de inicio");
+                $("#FECHA_FIN").val($("#FECHA_INICIO").val()); // Ajusta la fecha de fin a la de inicio
+            }
+        });
     });
-});
+    
+    
 
 
     // Manejo del envío del formulario con validación y alertas
@@ -181,5 +192,7 @@ $(document).ready(function () {
 
  
 });
+
+
 
 

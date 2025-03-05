@@ -133,7 +133,7 @@
 								</div>
 								
 								<div class="menu-item">
-									<a class="menu-link" href="../../demo1/dist/apps/calendar.html">
+									<a class="menu-link" href="http://localhost/clinicaveterinaria/public/eventos">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -351,40 +351,40 @@
 															<?= $validation->listErrors() ?>
 														</div>
 													<?php endif; ?>
-                                                    <div class="d-flex flex-center flex-column py-5">
-                                                        <!--begin::Editar-->
-                                                        <form action="<?= base_url(isset($medicamento) ? 'medicamentos/editar/' . esc($medicamento['PK_ID_MEDICAMENTO']) : 'medicamentos/guardar') ?>" method="post">
-                                                            <?= csrf_field(); ?>
-															<h1 class="text-center">Medicamentos</h1><br>
-                                                            <div class="mb-3">
-                                                                <label for="NOMBRE" class="form-label">Nombre</label>
-                                                                <input type="text" class="form-control" id="NOMBRE" name="NOMBRE" value="<?= isset($medicamento) ? esc($medicamento['NOMBRE']) : '' ?>" required>
-                                                            </div>
+													<div class="d-flex flex-center flex-column py-5">
+														<h1 class="text-center mb-4">Medicamentos</h1>
 
-                                                            <div class="mb-3">
-                                                                <label for="DESCRIPCION" class="form-label">Descripción</label>
-                                                                <input type="text" class="form-control" id="DESCRIPCION" name="DESCRIPCION" value="<?= isset($medicamento) ? esc($medicamento['DESCRIPCION']) : '' ?>" required>
-                                                            </div>
-															
-															<div class="mb-10">
-																<select name="filtro_fecha_baja" class="form-control" onchange="this.form.submit()">
-																	<option value="1" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '1' ? 'selected' : '' ?>>
-																		Medicamentos Activos
-																	</option>
-																	<option value="2" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '2' ? 'selected' : '' ?>>
-																		Medicamentos Archivados
-																	</option>
-																	<option value="3" <?= isset($filtro_fecha_baja) && $filtro_fecha_baja == '3' ? 'selected' : '' ?>>
-																		Todos
-																	</option>
-																</select>
+														<!-- Ficha de Medicamento -->
+														<div class="card shadow-sm border-0 rounded-3 p-4" style="width: 100%; max-width: 500px;">
+															<div class="card-body">
+																<form action="<?= base_url(isset($medicamento) ? 'medicamentos/editar/' . esc($medicamento['PK_ID_MEDICAMENTO']) : 'medicamentos/guardar') ?>" method="post">
+																	<?= csrf_field(); ?>
+
+																	<!-- Nombre -->
+																	<div class="mb-3">
+																		<label for="NOMBRE" class="form-label">Nombre</label>
+																		<input type="text" class="form-control" id="NOMBRE" name="NOMBRE" value="<?= isset($medicamento) ? esc($medicamento['NOMBRE']) : '' ?>" required>
+																	</div>
+
+																	<!-- Descripción -->
+																	<div class="mb-3">
+																		<label for="DESCRIPCION" class="form-label">Descripción</label>
+																		<input type="text" class="form-control" id="DESCRIPCION" name="DESCRIPCION" value="<?= isset($medicamento) ? esc($medicamento['DESCRIPCION']) : '' ?>" required>
+																	</div>
+
+
+																	<!-- Botones -->
+																	<div class="text-center">
+																		<button type="submit" id="btnGuardar" class="btn btn-success">
+																			<?= isset($medicamento) ? 'Actualizar' : 'Añadir' ?>
+																		</button>
+																		<a href="<?= base_url('medicamentos') ?>" class="btn btn-secondary">Cancelar</a>
+																	</div>
+																</form>
 															</div>
+														</div>
+													</div>
 
-
-                                                       
-                                                            <button type="submit" id="btnGuardar" class="btn btn-success"><?= isset($medicamento) ? 'Actualizar ' : 'Añadir ' ?></button>
-															<a href="<?= base_url('medicamentos') ?>" class="btn btn-secondary">Cancelar</a>
-                                                    </div>
                                                     <!--end::User Info-->
                                                     <!--end::Summary-->
                                                    

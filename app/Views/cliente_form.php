@@ -133,7 +133,7 @@
 								</div>
 								
 								<div class="menu-item">
-									<a class="menu-link" href="../../demo1/dist/apps/calendar.html">
+									<a class="menu-link" href="http://localhost/clinicaveterinaria/public/eventos">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -345,31 +345,44 @@
 													<?= $validation->listErrors() ?>
 												</div>
 											<?php endif; ?>
-                                                    <div class="d-flex flex-center flex-column py-5">
+                                                   <div class="d-flex flex-center flex-column py-5">
+															<h1>Clientes</h1><br>
+															
+															<!-- Ficha de Cliente -->
+															<div class="card shadow-sm border-0 rounded-3 p-4" style="width: 100%; max-width: 500px;">
+																<div class="card-body">
+																	<form action="<?= isset($cliente) ? base_url('clientes/editar/') . $cliente['PK_ID_CLIENTE'] : base_url('clientes/guardar') ?>" method="post">
+																		<?= csrf_field(); ?>
+																		
+																		<div class="mb-3">
+																			<label for="NOMBRE" class="form-label">Nombre</label>
+																			<input type="text" name="NOMBRE" id="NOMBRE" class="form-control" 
+																				value="<?= isset($cliente) ? esc($cliente['NOMBRE']) : '' ?>" required>
+																		</div>
 
-														<h1>Clientes</h1><br>
-                                                        <!--begin::Editar-->
-                                                            <form action="<?= isset($cliente) ? base_url('clientes/editar/') . $cliente['PK_ID_CLIENTE'] : base_url('clientes/guardar') ?>" method="post">
-                                                                <?= csrf_field(); ?>
-                                                                <div class="mb-3">
-                                                                    <label for="NOMBRE" class="form-label">Nombre</label>
-                                                                    <input type="text" name="NOMBRE" id="NOMBRE" class="form-control" 
-                                                                        value="<?= isset($cliente) ? esc($cliente['NOMBRE']) : '' ?>" required>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="CORREO_ELECTRONICO" class="form-label">Correo Electrónico</label>
-                                                                    <input type="email" name="CORREO_ELECTRONICO" id="CORREO_ELECTRONICO" class="form-control" 
-                                                                        value="<?= isset($cliente) ? esc($cliente['CORREO_ELECTRONICO']) : '' ?>" required>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="CONTRASEÑA" class="form-label">Contraseña</label>
-                                                                    <input type="password" name="CONTRASEÑA" id="CONTRASEÑA" class="form-control" 
-                                                                        value="" <?= isset($cliente) ? '' : 'required' ?>>
-                                                                </div>
-                                                                <button type="submit" class="btn btn-success" id="btnGuardar" ><?= isset($cliente) ? 'Actualizar' : 'Guardar' ?></button>
-                                                                <a href="<?= base_url('clientes') ?>" class="btn btn-secondary">Cancelar</a>
-                                                            </form>
-                                                    </div>
+																		<div class="mb-3">
+																			<label for="CORREO_ELECTRONICO" class="form-label">Correo Electrónico</label>
+																			<input type="email" name="CORREO_ELECTRONICO" id="CORREO_ELECTRONICO" class="form-control" 
+																				value="<?= isset($cliente) ? esc($cliente['CORREO_ELECTRONICO']) : '' ?>" required>
+																		</div>
+
+																		<div class="mb-3">
+																			<label for="CONTRASEÑA" class="form-label">Contraseña</label>
+																			<input type="password" name="CONTRASEÑA" id="CONTRASEÑA" class="form-control" 
+																				value="" <?= isset($cliente) ? '' : 'required' ?>>
+																		</div>
+
+																		<div class="text-center">
+																			<button type="submit" class="btn btn-success" id="btnGuardar">
+																				<?= isset($cliente) ? 'Actualizar' : 'Guardar' ?>
+																			</button>
+																			<a href="<?= base_url('clientes') ?>" class="btn btn-secondary">Cancelar</a>
+																		</div>
+																	</form>
+																</div>
+															</div>
+													</div>
+
                                                     <!--end::User Info-->
                                                     <!--end::Summary-->
                                                    
