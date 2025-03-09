@@ -62,7 +62,7 @@
 							<!--begin::Input group-->
 							<div class="fv-row mb-10">
 								<!--begin::Label-->
-								<label for="CORREO_ELECTRONICO" class="form-label fs-6 fw-bolder text-dark">Correo Electrónico</label>
+								<label for="CORREO_ELECTRONICO" class="form-label fs-6 fw-bolder text-dark required">Correo Electrónico</label>
 								<!--end::Label-->
 								<!--begin::Input-->
 								<input class="form-control form-control-lg form-control-solid" type="text" id="CORREO_ELECTRONICO" name="CORREO_ELECTRONICO" placeholder="Introduce tu correo" autocomplete="off" />
@@ -74,7 +74,7 @@
 								<!--begin::Wrapper-->
 								<div class="d-flex flex-stack mb-2">
 									<!--begin::Label-->
-									<label  for="CONTRASEÑA"  class="form-label fw-bolder text-dark fs-6 mb-0">Contraseña</label>
+									<label  for="CONTRASEÑA"  class="form-label fw-bolder text-dark fs-6 mb-0 required">Contraseña</label>
 									<!--end::Label-->
 									<!--begin::Link-->
 									

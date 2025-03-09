@@ -6,8 +6,8 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', 'Home::index');
-$routes->get('home', 'Home::index');
+$routes->get('/', 'inicio::index');
+$routes->get('inicio', 'inicio::index');
 
 
 // Rutas para ClienteController

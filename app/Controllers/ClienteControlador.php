@@ -229,7 +229,7 @@ class ClienteControlador extends BaseController
             'isLoggedIn' => true,
         ]);
 
-        return redirect()->to('/home')->with('success', 'Inicio de sesión exitoso.');
+        return redirect()->to('/inicio')->with('success', 'Inicio de sesión exitoso.');
     }
 
     return redirect()->to('/login')->with('error', 'Correo o contraseña incorrectos.');
